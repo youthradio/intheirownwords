@@ -47,7 +47,10 @@
 }
 .textdown {
 	padding-top: 38px;
-	padding-left: 45px;
+/*	padding-left: 45px;*/
+}
+body {
+	margin-bottom: 90px;
 }
 
 
