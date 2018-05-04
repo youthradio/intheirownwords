@@ -1,41 +1,108 @@
-/*div{
+/* div{
 	border: 1px solid black;
-}*/
-.title {
-	font-size: 48px;
-	text-align: center;
+} */
+body {
+	margin-bottom: 90px;
+	background-color: #FCFCFC;
 }
-.text {
-	text-align: center;
+
+h1{
+	font-family: 'Nunito Sans', sans-serif;
+	font-weight: 800;
+	color: grey;
+	font-size: 7em;
+
+}
+
+li{
+	display: inline;
+	margin-left: 10px;
+}
+p{
+	font-family: 'Nunito Sans', sans-serif;
+	font-size: 1.5em;
+	color:grey;
+}
+
+h2,h3,h4{
+	font-family: 'Nunito Sans', sans-serif;
+	color:grey;
+}
+
+h3, h2{
+	font-weight: 800;
 }
 .box {
  	background-color: purple;
  	height: 45px;
  	text-align: center;
 }
-.images {
-	height: 50px;
-	width: 100px;
-}
-.circles { 
-	width: 100px; height: 100px; 
-	background-color: #ffff80;
-	-moz-border-radius: 50px; 
-	-webkit-border-radius: 50px; 
-	border-radius: 50px; 
-	min-width: 100px;
+
+
+.circles {
+	width: 100px; height: 100px;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+	/* 	min-width: 100px;
 	min-height: 100px;
 	max-height: 100px;
 	max-width: 100px;
-	display: block;
-    margin-left: auto;
-    margin-right: auto;
-} 
+display: block; */
+  /* margin-left: auto; */
+  /*margin-right: auto;*/
+}
+
+.person1{
+	background-color:rgba(245, 166, 35, 0.3);
+	border: 3px solid #f5a623;
+	border-radius: 50%;
+
+
+}
+
+.p1text h3, .p1text p, .p1text em{
+	color: #f5a623;
+}
+
+
+.person2{
+	background-color:rgba(74, 144, 226, 0.3);
+	border: 3px solid #4a90e2;
+	border-radius: 50%;
+}
+
+.p2text h3, .p2text p, .p2text em {
+	color: #4a90e2;
+}
+
+
+.person3{
+	background-color:rgba(189, 16, 224, 0.3);
+	border: 3px solid #BD10e0;
+	border-radius: 50%;
+}
+
+.p3text h3, .p3text p, .p3text em{
+	color: #BD10e0;
+}
+
+.person4{
+	background-color:rgba(61, 196, 166, 0.3);
+	border: 3px solid #3dc4a6;
+	border-radius: 50%;
+}
+
+.p4text h3, .p4text p, .p4text em{
+	color: #3dc4a6;
+}
+
+
 #twitterimg {
 	height: 30px;
 	width: 45px;
 }
-.space {
+/* .space {
 	padding-left: 85px;
 }
 .subhead {
@@ -49,12 +116,3 @@
 	padding-top: 38px;
 /*	padding-left: 45px;*/
 }
-body {
-	margin-bottom: 90px;
-}
-
-
-
-
-
-
