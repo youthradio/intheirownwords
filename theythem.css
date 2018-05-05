@@ -1,9 +1,12 @@
-/* div{
+ /* div{
 	border: 1px solid black;
 } */
+
 body {
 	margin-bottom: 90px;
 	background-color: #FCFCFC;
+	font-family: 'Nunito Sans', sans-serif;
+
 }
 
 h1{
@@ -14,13 +17,25 @@ h1{
 
 }
 
-li{
+
+li {
 	display: inline;
-	margin-left: 10px;
+	margin-left: 5px;
+
 }
+
+li a{
+	color: grey;
+	font-size: 1.1em;
+}
+
+a:hover{
+	color: #3ec0be;
+}
+
 p{
 	font-family: 'Nunito Sans', sans-serif;
-	font-size: 1.5em;
+	font-size: 1.3em;
 	color:grey;
 }
 
@@ -32,26 +47,12 @@ h2,h3,h4{
 h3, h2{
 	font-weight: 800;
 }
-.box {
- 	background-color: purple;
- 	height: 45px;
- 	text-align: center;
+
+h2{
+	font-size: 3em;
 }
 
-
-.circles {
-	width: 100px; height: 100px;
-	-moz-border-radius: 50px;
-	-webkit-border-radius: 50px;
-	border-radius: 50px;
-	/* 	min-width: 100px;
-	min-height: 100px;
-	max-height: 100px;
-	max-width: 100px;
-display: block; */
-  /* margin-left: auto; */
-  /*margin-right: auto;*/
-}
+/* PEOPLE */
 
 .person1{
 	background-color:rgba(245, 166, 35, 0.3);
@@ -61,8 +62,16 @@ display: block; */
 
 }
 
-.p1text h3, .p1text p, .p1text em{
+.p1text{
 	color: #f5a623;
+}
+
+.p1text h3,  .p1text h2, .p1text p, .p1text em{
+	color: #f5a623;
+}
+
+.p1q{
+	font-size: 1.4em;
 }
 
 
@@ -97,22 +106,17 @@ display: block; */
 	color: #3dc4a6;
 }
 
+.chat{
+	background-image: url(Jbub.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.chat p{
+	padding: 100px;
+}
 
 #twitterimg {
 	height: 30px;
 	width: 45px;
-}
-/* .space {
-	padding-left: 85px;
-}
-.subhead {
-	text-align: center;
-	font-size: 20px;
-}
-.wtext {
-	padding-top: 40px;
-}
-.textdown {
-	padding-top: 38px;
-/*	padding-left: 45px;*/
 }
