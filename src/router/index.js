@@ -18,8 +18,7 @@ export default new Router({
       components: {
         header: MHeader,
         section: MSection,
-        footer: MFooter,
-        notf: NotFoundComponent
+        footer: MFooter
       },
       props: {
         section: true
@@ -52,7 +51,9 @@ export default new Router({
     },
     {
       path: '*',
-      component: NotFoundComponent
+      components: {
+        notfound: NotFoundComponent
+      }
     }
   ]
 })

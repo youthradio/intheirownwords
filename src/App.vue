@@ -2,9 +2,11 @@
   <div id="app">
     <div class="container-fluid">
       <router-view name="header"/>
+      <router-view name="profile"/>
       <router-view name="section"/>
       <router-view name="conversation"/>
       <router-view name="footer"/>
+      <router-view name="notfound"/>
     </div>
   </div>
 </template>
