@@ -1,7 +1,11 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <div class="container-fluid">
+      <router-view name="header"/>
+      <router-view name="section"/>
+      <router-view name="conversation"/>
+      <router-view name="footer"/>
+    </div>
   </div>
 </template>
 
@@ -12,12 +16,10 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  @import url("https://fonts.googleapis.com/css?family=Ramabhadra");
+  @import url("https://fonts.googleapis.com/css?family=Montserrat");
+  @import url("https://fonts.googleapis.com/css?family=Lato");
+  @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,800");
+  #app {
+  }
 </style>
