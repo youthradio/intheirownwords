@@ -4,6 +4,7 @@ import MHeader from '@/components/MHeader'
 import MFooter from '@/components/MFooter'
 import MSection from '@/components/MSection'
 import MConversation from '@/components/MConversation'
+import MTopics from '@/components/MTopics'
 import MPersonProfile from '@/components/MPersonProfile'
 import NotFoundComponent from '@/components/NotFoundComponent'
 
@@ -18,10 +19,12 @@ export default new Router({
       components: {
         header: MHeader,
         section: MSection,
+        topics: MTopics,
         footer: MFooter
       },
       props: {
-        section: true
+        section: true,
+        topics: true
       }
     },
     {

@@ -6,7 +6,7 @@
               </a>
       </div>
       <div class="col-12 col-md-6 my-auto ">
-        <h1 class="">  They / Them </h1>
+        <h1 class="">   <router-link :to="{ name: 'Home', params: {}}">They / Them</router-link> </h1>
       </div>
       <div class="col-md-3 col-12 my-auto">
         <ul>
