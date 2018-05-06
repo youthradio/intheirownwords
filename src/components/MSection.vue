@@ -26,7 +26,9 @@
               <div class="row">
 
                 <div class="col-4 col-md-12">
-                  <img class="img-fluid person1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFzA50b0MoyZUx7UxC8ccyvXpRRx6R7fAG_FhVVnhEhSVsiuUA">
+                  <router-link :to="{ name: 'PersonRoute', params: { person: person }}">
+                      <img :class="`img-fluid person${index+1}`" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFzA50b0MoyZUx7UxC8ccyvXpRRx6R7fAG_FhVVnhEhSVsiuUA">
+                  </router-link>
                 </div>
                 <div class="col-8 col-md-12">
                   <div :class="`p${index+1}text text-md-center pt-3`">

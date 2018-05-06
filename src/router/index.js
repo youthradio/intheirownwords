@@ -46,10 +46,12 @@ export default new Router({
       name: 'PersonRoute',
       components: {
         header: MHeader,
-        profile: MPersonProfile
+        profile: MPersonProfile,
+        topics: MTopics
       },
       props: {
-        profile: true
+        profile: true,
+        topics: true
       }
     },
     {
