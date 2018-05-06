@@ -20,81 +20,24 @@
     </div>
     <div>
       <div class="row">
-        <div class="col-12 col-md-2 ">
-        </div>
-        <div class="col-12  col-md-8">
+        <div class="col-12  col-md-8 offset-md-2">
           <div class="row ">
-            <div class="col-12 col-md-3 text-left">
+            <div v-for="(data, person, index) in people" :key="index" class="col-12 col-md-3 text-left">
               <div class="row">
 
                 <div class="col-4 col-md-12">
                   <img class="img-fluid person1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFzA50b0MoyZUx7UxC8ccyvXpRRx6R7fAG_FhVVnhEhSVsiuUA">
                 </div>
                 <div class="col-8 col-md-12">
-                  <div class="p1text text-md-center pt-3">
-                    <h3> Person1  </h3>
-                    <em> This is a quotes</em>
-                    <p> 16, he/they </p>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="col-12 col-md-3">
-              <div class="row">
-                <div class="col-4 col-md-12 ">
-                  <img class="img-fluid person2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFzA50b0MoyZUx7UxC8ccyvXpRRx6R7fAG_FhVVnhEhSVsiuUA">
-
-                </div>
-
-                <div class="col-8 col-md-12">
-                  <div class="p2text text-md-center pt-3">
-                    <h3> Person1  </h3>
-                    <em> This is a quotes</em>
-                    <p> 16, he/they </p>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="col-12 col-md-3">
-
-              <div class="row">
-                <div class="col-4 col-md-12">
-                  <img class="img-fluid person3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFzA50b0MoyZUx7UxC8ccyvXpRRx6R7fAG_FhVVnhEhSVsiuUA">
-                </div>
-                <div class="col-8 col-md-12">
-                  <div class="p3text text-md-center pt-3">
-                    <h3> Person1  </h3>
-                    <em> This is a quotes</em>
-                    <p> 16, he/they </p>
+                  <div :class="`p${index+1}text text-md-center pt-3`">
+                    <h3> {{ person }}  </h3>
+                    <em> {{ data.info.Quote }} </em>
+                    <p> {{ data.info.Age }}, {{ data.info.Pronoum }}</p>
                   </div>
                 </div>
               </div>
             </div>
-
-            <div class="col-12 col-md-3">
-              <div class="row">
-                <div class="col-4 col-md-12">
-                  <img class="img-fluid person4" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFzA50b0MoyZUx7UxC8ccyvXpRRx6R7fAG_FhVVnhEhSVsiuUA">
-
-                </div>
-                <div class="col-8 col-md-12">
-                  <div class="p4text text-md-center pt-3">
-                    <h3> Person1  </h3>
-                    <em> This is a quotes</em>
-                    <p> 16, he/they </p>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
           </div>
-        </div>
-        <div class="col-12 col-md-2">
         </div>
       </div>
     </div>
@@ -104,13 +47,16 @@
 
 <script>
 export default {
-  name: 'MSection',
   props: {
+    people: {
+      type: Object
+    },
     topic: {
       type: String,
       default: ''
     }
   },
+  name: 'MSection',
   data () {
     return {
       msg: 'section sds sds'

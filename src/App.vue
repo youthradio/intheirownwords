@@ -3,8 +3,8 @@
     <div
     class="container-fluid">
       <router-view name="header"/>
-      <router-view name="profile"/>
-      <router-view name="section"/>
+      <router-view :people="allPeople" name="profile"/>
+      <router-view :people="allPeople" name="section"/>
       <router-view :topics="allTopics" name="topics"/>
       <router-view name="conversation"/>
       <router-view name="footer"/>
@@ -19,16 +19,34 @@ export default {
   data () {
     return {
       loading: false,
-      appData: null,
-      allTopics: null
+      appData: null
+      // allTopics: null,
+      // allPeople: null
     }
   },
-  watch: {
-    /**
-    * Filters data data is fetched
-    */
-    appData: function () {
-      this.allTopics = this.getTopics()
+  // watch: {
+  //   /**
+  //   * Filters data when data is ready
+  //   */
+  //   appData: function () {
+  //     this.allTopics = this.getTopics()
+  //     this.allPeople = this.getPeople()
+  //   }
+  // },
+  computed: {
+    allTopics: function () {
+      if (!this.loading) {
+        return this.getTopics()
+      } else {
+        return null
+      }
+    },
+    allPeople: function () {
+      if (!this.loading) {
+        return this.getPeople()
+      } else {
+        return null
+      }
     }
   },
   methods: {
@@ -39,7 +57,6 @@ export default {
         .then(data => {
           this.loading = false
           this.appData = data
-          console.log(data)
         })
     },
     getTopics: function () {
@@ -50,6 +67,21 @@ export default {
         }
         return a
       }, {})
+    },
+    getPeople: function () {
+      let p = {}
+      Object.entries(this.allTopics).forEach((topic) => {
+        topic[1].people.forEach(person => {
+          if (!p[person]) {
+            p[person] = {
+              topics: [],
+              info: this.appData.people.filter(e => e['Person  Name'] === person)[0]
+            }
+          }
+          p[person].topics.push(topic[0])
+        })
+      })
+      return p
     }
   },
   created () {

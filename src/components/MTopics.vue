@@ -15,32 +15,13 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-12 col-md-8 offset-md-2">
-
+    <div class="col-8 offset-2">
       <div class="row">
-        <div class="col-12 col-md-4 align-middle">
+        <div v-for="(data, topic, index) in topics" :key="index" class="col-6 col-sm align-middle p-2">
           <div class="card">
             <img src="../assets/images/vin1.png" class="card-img">
             <div class="card-img-overlay h-100 d-flex align-items-center justify-content-center">
-              <h4> <router-link :to="{ name: 'Conversation', params: { topic: 'Presentation' }}">Presentation</router-link> </h4>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-4">
-          <div class="card">
-            <img src="../assets/images/vin2.png" class="card-img">
-            <div class="card-img-overlay h-100 d-flex align-items-center justify-content-center">
-              <h4> <router-link :to="{ name: 'Conversation', params: { topic: 'Race-and-Identity' }}">Race & Identity</router-link> </h4>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-4">
-          <div class="card">
-            <img src="../assets/images/vin3.svg" class="card-img">
-            <div class="card-img-overlay h-100 d-flex align-items-center justify-content-center">
-              <h4> <router-link :to="{ name: 'Conversation', params: { topic: 'Love-and-Dating' }}">Love & Dating</router-link> </h4>
+              <h4> <router-link :to="{ name: 'Conversation', params: { topic: topic }}">{{topic}}</router-link> </h4>
             </div>
           </div>
         </div>
