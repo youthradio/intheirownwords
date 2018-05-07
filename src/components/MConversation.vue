@@ -57,14 +57,15 @@ export default {
   created () {
     console.log('Conversation', this.topics, this.topic)
   },
-  watch: {
-    topics () {
+  mounted () {
+    this.$nextTick(function () {
       console.log('DONee', this.topics)
-    }
+    })
   },
   computed: {
     selectedTopicTranscripts () {
-      return this.topics[this.topic].transcript
+      return null
+      // return this.topics[this.topic].transcript
     }
   },
   data () {

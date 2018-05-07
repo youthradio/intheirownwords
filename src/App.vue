@@ -24,11 +24,11 @@ export default {
       allPeople: null
     }
   },
-  watch: {
-    appData: function () {
+  mounted () {
+    this.$nextTick(function () {
       this.allTopics = this.getTopics()
       this.allPeople = this.getPeople()
-    }
+    })
   },
   methods: {
     fetchData () {

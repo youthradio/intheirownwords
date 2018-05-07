@@ -14,13 +14,9 @@ script:
 after_success:
   - cd dist
   - cp index.html 404.html
-deploy:
-  provider: pages
-  verbose: true
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: dist
-  keep-history: false
-  target-branch: gh-pages
-  on:
-    branch: vue-js
+  - git add --all .
+  - git commit --message "Automatically update from travis-ci"
+  - git push --quiet "https://${GITHUB_TOKEN}@${GH_REF}" gh-pages:gh-pages
+env:
+  global:
+    - GH_REF: github.com/youthradio/theythem
