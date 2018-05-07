@@ -11,6 +11,9 @@
 </template>
 
 <script>
+
+import AllData from './assets/data/alldata.json'
+
 export default {
   name: 'App',
   data () {
@@ -29,13 +32,15 @@ export default {
   },
   methods: {
     fetchData () {
-      this.loading = true
-      fetch('https://gist.githubusercontent.com/radames/49a68c2631890b7934025b4402cb2619/raw/968b21c84b611c5ee6957c9c85dd897409569453/alldata.json')
-        .then(d => d.json())
-        .then(data => {
-          this.loading = false
-          this.appData = data
-        })
+      this.appData = AllData
+      this.loading = false
+      console.log(this.appData)
+      // fetch('assets/data/alldata.json')
+      //   .then(d => d.json())
+      //   .then(data => {
+      //     this.loading = false
+      //     this.appData = data
+      //   })
     },
     getTopics () {
       return this.appData.data.reduce((a, b) => {
