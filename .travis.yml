@@ -11,6 +11,9 @@ before_install:
 script:
   - npm install
   - npm run build
+after_success:
+  - cd dist
+  - cp index.html 404.html
 deploy:
   provider: pages
   verbose: true
