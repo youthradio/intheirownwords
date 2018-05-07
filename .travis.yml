@@ -12,7 +12,7 @@ script:
   - npm install
   - npm run build
 after_success:
-  - cd dist
+  - cd $TRAVIS_BUILD_DIR/dist
   - cp index.html 404.html
   - git add --all .
   - git commit --message "Automatically update from travis-ci"
