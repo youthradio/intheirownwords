@@ -1,6 +1,5 @@
 <template>
-  <div id="app">
-    <div class="container-fluid">
+    <div >
       <router-view name="header"/>
       <router-view :people="allPeople" name="profile"/>
       <router-view :people="allPeople" name="section"/>
@@ -9,7 +8,6 @@
       <router-view name="footer"/>
       <router-view name="notfound"/>
     </div>
-  </div>
 </template>
 
 <script>

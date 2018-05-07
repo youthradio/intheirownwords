@@ -1,11 +1,11 @@
 <template>
   <section>
-    <div class="row my-3">
+    <div v-if="topic === ''" class="row my-3">
       <div class="col-2 my-auto">
         <hr>
       </div>
       <div class="col-12  col-md-8">
-        <div v-if="topic === ''">
+        <div>
           <p>
             It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here,
             content here', making it look like readable infancy. </p>

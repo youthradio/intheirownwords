@@ -58,7 +58,7 @@ export default {
     console.log('Conversation', this.topics, this.topic)
   },
   watch: {
-    topics (){
+    topics () {
       console.log('DONee', this.topics)
     }
   },
@@ -81,6 +81,7 @@ export default {
     }
   }
 }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
