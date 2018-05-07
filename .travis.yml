@@ -6,7 +6,8 @@ cache:
   - node_modules
 before_install:
   - "npm install -g csvtojson"
-  - sh -e csvdata/processCsv.sh
+  - cd csvdata/
+  - sh -e processCsv.sh
 script:
   - npm install
   - npm run build
