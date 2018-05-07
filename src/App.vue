@@ -1,12 +1,11 @@
 <template>
   <div id="app">
-    <div
-    class="container-fluid">
+    <div class="container-fluid">
       <router-view name="header"/>
       <router-view :people="allPeople" name="profile"/>
       <router-view :people="allPeople" name="section"/>
       <router-view :topics="allTopics" name="topics"/>
-      <router-view name="conversation"/>
+      <router-view :topics="allTopics" name="conversation"/>
       <router-view name="footer"/>
       <router-view name="notfound"/>
     </div>

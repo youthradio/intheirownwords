@@ -11,7 +11,8 @@
                   </audio>
           </div>
         </div>
-        <div class="row">
+        <div v-for="(transLine, index) in selectedTopicTranscripts" :key="index" class="row">
+        <!-- <div class="row"> -->
           <div class="col-2">
             <img class="img-fluid person1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFzA50b0MoyZUx7UxC8ccyvXpRRx6R7fAG_FhVVnhEhSVsiuUA">
           </div>
@@ -46,8 +47,22 @@ export default {
   name: 'MConversation',
   props: {
     topic: {
-      type: String,
-      required: true
+      type: String
+      // required: true
+    },
+    topics: {
+      type: Object
+      // required: true
+    }
+  },
+  computed: {
+    selectedTopicTranscripts: function () {
+      if (!this.$parent.loading) {
+        var topics = this.$props.topics
+        return topics[this.$props.topic].transcript
+      } else {
+        return null
+      }
     }
   },
   data () {
