@@ -58,6 +58,9 @@ export default {
       default: ''
     }
   },
+  created () {
+    console.log('Section', this.people, this.topic)
+  },
   name: 'MSection',
   data () {
     return {

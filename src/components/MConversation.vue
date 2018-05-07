@@ -1,5 +1,6 @@
 <template>
   <main>
+
         <div class="row text-center py-4">
           <!--selected -->
           <div class="col-12">
@@ -12,7 +13,7 @@
           </div>
         </div>
         <div v-for="(transLine, index) in selectedTopicTranscripts" :key="index" class="row">
-        <!-- <div class="row"> -->
+          {{transLine }}
           <div class="col-2">
             <img class="img-fluid person1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFzA50b0MoyZUx7UxC8ccyvXpRRx6R7fAG_FhVVnhEhSVsiuUA">
           </div>
@@ -48,26 +49,35 @@ export default {
   props: {
     topic: {
       type: String
-      // required: true
     },
     topics: {
       type: Object
-      // required: true
+    }
+  },
+  created () {
+    console.log('Conversation', this.topics, this.topic)
+  },
+  watch: {
+    topics (){
+      console.log('DONee', this.topics)
     }
   },
   computed: {
-    selectedTopicTranscripts: function () {
-      if (!this.$parent.loading) {
-        var topics = this.$props.topics
-        return topics[this.$props.topic].transcript
-      } else {
-        return null
-      }
+    selectedTopicTranscripts () {
+      return this.topics[this.topic].transcript
     }
   },
   data () {
     return {
       msg: 'conversation'
+    }
+  },
+  filters: {
+    getLine: function (value) {
+      console.log(value)
+      console.log(value.filter(e => e !== ''))
+      if (!value) return ''
+      return null
     }
   }
 }

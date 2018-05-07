@@ -23,6 +23,7 @@ export default new Router({
         footer: MFooter
       },
       props: {
+        people: true,
         section: true,
         topics: true
       }

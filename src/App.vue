@@ -18,34 +18,15 @@ export default {
   data () {
     return {
       loading: false,
-      appData: null
-      // allTopics: null,
-      // allPeople: null
+      appData: null,
+      allTopics: null,
+      allPeople: null
     }
   },
-  // watch: {
-  //   /**
-  //   * Filters data when data is ready
-  //   */
-  //   appData: function () {
-  //     this.allTopics = this.getTopics()
-  //     this.allPeople = this.getPeople()
-  //   }
-  // },
-  computed: {
-    allTopics: function () {
-      if (!this.loading) {
-        return this.getTopics()
-      } else {
-        return null
-      }
-    },
-    allPeople: function () {
-      if (!this.loading) {
-        return this.getPeople()
-      } else {
-        return null
-      }
+  watch: {
+    appData: function () {
+      this.allTopics = this.getTopics()
+      this.allPeople = this.getPeople()
     }
   },
   methods: {
@@ -58,7 +39,7 @@ export default {
           this.appData = data
         })
     },
-    getTopics: function () {
+    getTopics () {
       return this.appData.data.reduce((a, b) => {
         a[b.Topic] = {
           people: b.People.split(',').map(t => t.trim()),
@@ -67,7 +48,7 @@ export default {
         return a
       }, {})
     },
-    getPeople: function () {
+    getPeople () {
       let p = {}
       Object.entries(this.allTopics).forEach((topic) => {
         topic[1].people.forEach(person => {
