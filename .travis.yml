@@ -16,7 +16,7 @@ after_success:
   - cp index.html 404.html
   - git add --all .
   - git commit --message "Automatically update from travis-ci"
-  - git push --quiet "https://${GITHUB_TOKEN}@${GH_REF}" gh-pages:gh-pages
+  - git push --quiet "https://${GITHUB_TOKEN}@${GH_REF}" vue-js:gh-pages
 env:
   global:
     - GH_REF: github.com/youthradio/theythem.git
