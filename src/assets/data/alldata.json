@@ -1,0 +1,278 @@
+{
+  "data": [
+    {
+      "ID": "1",
+      "Conversation": "transcript-1",
+      "Topic": "Presentation",
+      "Audio": "",
+      "Topic Image": "",
+      "Text": "",
+      "People": "Desmond, Jen, Paulina"
+    },
+    {
+      "ID": "2",
+      "Conversation": "transcript-2",
+      "Topic": "Love & Dating",
+      "Audio": "",
+      "Topic Image": "",
+      "Text": "",
+      "People": "Paulina, Jen"
+    },
+    {
+      "ID": "3",
+      "Conversation": "transcript-3",
+      "Topic": "Race & Identity",
+      "Audio": "",
+      "Topic Image": "",
+      "Text": "",
+      "People": "Paulina, Jen, Malia"
+    },
+    {
+      "ID": "4",
+      "Conversation": "transcript-4",
+      "Topic": "Coming Out",
+      "Audio": "",
+      "Topic Image": "",
+      "Text": "",
+      "People": "Jen, Desmond"
+    }
+  ],
+  "people": [
+    {
+      "Person  Name": "Desmond",
+      "Person Color": "green",
+      "Person Image": "person.png",
+      "Pronoum": "He/They",
+      "Age": "21",
+      "Quote": "\"never giveup\"",
+      "Essay": "Hello one day <span class=\"highlight> beutiful </span>"
+    },
+    {
+      "Person  Name": "Malia",
+      "Person Color": "red",
+      "Person Image": "person.png",
+      "Pronoum": "He/They",
+      "Age": "17",
+      "Quote": "\"never giveup\"",
+      "Essay": "Hello one day <span class=\"highlight> beutiful </span>"
+    },
+    {
+      "Person  Name": "Paulina",
+      "Person Color": "yellow",
+      "Person Image": "person.png",
+      "Pronoum": "None preferred",
+      "Age": "16",
+      "Quote": "\"never giveup\"",
+      "Essay": "Hello one day <span class=\"highlight> beutiful </span>"
+    },
+    {
+      "Person  Name": "Jen",
+      "Person Color": "purple",
+      "Person Image": "person.png",
+      "Pronoum": "None preferred",
+      "Age": "16",
+      "Quote": "\"never giveup\"",
+      "Essay": "Hello one day <span class=\"highlight> beutiful </span>"
+    }
+  ],
+  "transcript-1": [
+    {
+      "Desmond": "",
+      "Malia": "",
+      "Paulina": "",
+      "Jen": "",
+      "Audio Start": "",
+      "Audio End": ""
+    },
+    {
+      "Desmond": "Hello",
+      "Malia": "",
+      "Paulina": "",
+      "Jen": "",
+      "Audio Start": "0:00:00",
+      "Audio End": "0:00:40"
+    },
+    {
+      "Desmond": "",
+      "Malia": "Hello again",
+      "Paulina": "",
+      "Jen": "",
+      "Audio Start": "0:00:45",
+      "Audio End": "0:01:10"
+    },
+    {
+      "Desmond": "Hello again 2",
+      "Malia": "",
+      "Paulina": "",
+      "Jen": "",
+      "Audio Start": "0:01:10",
+      "Audio End": "0:01:20"
+    },
+    {
+      "Desmond": "",
+      "Malia": "",
+      "Paulina": "Hello again 3",
+      "Jen": "",
+      "Audio Start": "0:01:20",
+      "Audio End": "0:01:50"
+    },
+    {
+      "Desmond": "",
+      "Malia": "",
+      "Paulina": "",
+      "Jen": "Hello again 4",
+      "Audio Start": "0:01:50",
+      "Audio End": "0:02:20"
+    }
+  ],
+  "transcript-2": [
+    {
+      "Desmond": "",
+      "Malia": "",
+      "Paulina": "",
+      "Jen": "",
+      "Audio Start": "",
+      "Audio End": ""
+    },
+    {
+      "Desmond": "Hello",
+      "Malia": "",
+      "Paulina": "",
+      "Jen": "",
+      "Audio Start": "0:00:00",
+      "Audio End": "0:00:40"
+    },
+    {
+      "Desmond": "",
+      "Malia": "Hello again",
+      "Paulina": "",
+      "Jen": "",
+      "Audio Start": "0:00:45",
+      "Audio End": "0:01:10"
+    },
+    {
+      "Desmond": "Hello again 2",
+      "Malia": "",
+      "Paulina": "",
+      "Jen": "",
+      "Audio Start": "0:01:10",
+      "Audio End": "0:01:20"
+    },
+    {
+      "Desmond": "",
+      "Malia": "",
+      "Paulina": "Hello again 3",
+      "Jen": "",
+      "Audio Start": "0:01:20",
+      "Audio End": "0:01:50"
+    },
+    {
+      "Desmond": "",
+      "Malia": "",
+      "Paulina": "",
+      "Jen": "Hello again 4",
+      "Audio Start": "0:01:50",
+      "Audio End": "0:02:20"
+    }
+  ],
+  "transcript-3": [
+    {
+      "Desmond": "",
+      "Malia": "",
+      "Paulina": "",
+      "Jen": "",
+      "Audio Start": "",
+      "Audio End": ""
+    },
+    {
+      "Desmond": "Hello",
+      "Malia": "",
+      "Paulina": "",
+      "Jen": "",
+      "Audio Start": "0:00:00",
+      "Audio End": "0:00:40"
+    },
+    {
+      "Desmond": "",
+      "Malia": "Hello again",
+      "Paulina": "",
+      "Jen": "",
+      "Audio Start": "0:00:45",
+      "Audio End": "0:01:10"
+    },
+    {
+      "Desmond": "Hello again 2",
+      "Malia": "",
+      "Paulina": "",
+      "Jen": "",
+      "Audio Start": "0:01:10",
+      "Audio End": "0:01:20"
+    },
+    {
+      "Desmond": "",
+      "Malia": "",
+      "Paulina": "Hello again 3",
+      "Jen": "",
+      "Audio Start": "0:01:20",
+      "Audio End": "0:01:50"
+    },
+    {
+      "Desmond": "",
+      "Malia": "",
+      "Paulina": "",
+      "Jen": "Hello again 4",
+      "Audio Start": "0:01:50",
+      "Audio End": "0:02:20"
+    }
+  ],
+  "transcript-4": [
+    {
+      "Desmond": "",
+      "Malia": "",
+      "Paulina": "",
+      "Jen": "",
+      "Audio Start": "",
+      "Audio End": ""
+    },
+    {
+      "Desmond": "Hello",
+      "Malia": "",
+      "Paulina": "",
+      "Jen": "",
+      "Audio Start": "0:00:00",
+      "Audio End": "0:00:40"
+    },
+    {
+      "Desmond": "",
+      "Malia": "Hello again",
+      "Paulina": "",
+      "Jen": "",
+      "Audio Start": "0:00:45",
+      "Audio End": "0:01:10"
+    },
+    {
+      "Desmond": "Hello again 2",
+      "Malia": "",
+      "Paulina": "",
+      "Jen": "",
+      "Audio Start": "0:01:10",
+      "Audio End": "0:01:20"
+    },
+    {
+      "Desmond": "",
+      "Malia": "",
+      "Paulina": "Hello again 3",
+      "Jen": "",
+      "Audio Start": "0:01:20",
+      "Audio End": "0:01:50"
+    },
+    {
+      "Desmond": "",
+      "Malia": "",
+      "Paulina": "",
+      "Jen": "Hello again 4",
+      "Audio Start": "0:01:50",
+      "Audio End": "0:02:20"
+    }
+  ]
+}
