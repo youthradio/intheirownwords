@@ -6,10 +6,12 @@
           <div class="col-12">
             <img src="../assets/images/vin3.svg" class="img-fluid">
             <h2> Topic </h2>
-            <audio controls>
-                    <source src="horse.mp3" type="audio/mpeg">
+            <Plyr class="player-custom-style" :options="playerOptions" ref="audioPlayer" :emit="['play','timeupdate']" @play="onAudioPlay" @timeupdate="onTime">
+                  <audio>
+                    <source src="../assets/a.mp3" type="audio/mp3">
                     Your browser does not support the audio tag.
                   </audio>
+            </Plyr>
           </div>
         </div>
         <div v-for="(person, passage, index) in selectedTopicTranscripts()" :key="index" class="row">
@@ -29,6 +31,8 @@
 </template>
 
 <script>
+import { Plyr } from 'vue-plyr'
+
 export default {
   name: 'MConversation',
   props: {
@@ -51,6 +55,35 @@ export default {
       const textRecord = Object.entries(value).splice(3)
       if (!value) return ''
       return textRecord.filter(e => e[1] !== '')[0] // return only record with text
+    },
+    onTime (value) {
+      console.log(this.$refs.audioPlayer.player.currentTime)
+    },
+    onAudioPlay (value) {
+      console.log(this.$refs.audioPlayer.player.currentTime)
+    }
+  },
+  computed: {
+    playerOptions () {
+      return {
+        iconUrl: require('../../node_modules/plyr/dist/plyr.svg'),
+        'volume': 1,
+        controls: [
+          'play-large', // The large play button in the center
+          // 'restart', // Restart playback
+          // 'rewind', // Rewind by the seek time (default 10 seconds)
+          'play', // Play/pause playback
+          // 'fast-forward', // Fast forward by the seek time (default 10 seconds)
+          'progress', // The progress bar and scrubber for playback and buffering
+          'current-time', // The current time of playback
+          // 'duration', // The full duration of the media
+          'mute', // Toggle mute
+          'volume', // Volume control
+          'pip', // Picture-in-picture (currently Safari only)
+          'airplay' // Airplay (currently Safari only)
+          // 'settings' // Settings menu
+        ]
+      }
     }
   },
   data () {
@@ -60,11 +93,17 @@ export default {
   },
   filters: {
 
+  },
+  components: {
+    Plyr
   }
 }
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.player-custom-style >>> .plyr--audio .plyr__controls {
+  background: none;
+}
+
 </style>
