@@ -43,7 +43,8 @@ export default {
     },
     getTopics () {
       return this.appData.data.reduce((a, b) => {
-        a[b.Topic] = {
+        a[slug(b.Topic)] = {
+          topic: b.Topic,
           people: b.People.split(',').map(t => t.trim()),
           transcript: this.appData[`transcript-${b.ID}`]
         }
@@ -70,6 +71,13 @@ export default {
     this.fetchData()
   }
 }
+// https://gist.github.com/mathewbyrne/1280286
+/*eslint-disable */
+const slug = (e) => e.toString().toLowerCase().trim()
+  .replace(/\s+/g, '-')
+  .replace(/&/g, '-and-')
+  .replace(/[^\w\-]+/g, '')
+  .replace(/\-\-+/g, '-')
 </script>
 
 <style>
