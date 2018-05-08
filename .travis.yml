@@ -14,9 +14,13 @@ script:
 after_success:
   - cd $TRAVIS_BUILD_DIR/dist
   - cp index.html 404.html
-  - git add --all .
-  - git commit --message "Automatically update from travis-ci"
-  - git push --quiet "https://${GITHUB_TOKEN}@${GH_REF}" vue-js:gh-pages
-env:
-  global:
-    - GH_REF: github.com/youthradio/theythem.git
+deploy:
+  provider: pages
+  verbose: true
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist
+  keep-history: false
+  target-branch: gh-pages
+  on:
+    branch: vue-js
