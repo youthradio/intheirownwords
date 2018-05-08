@@ -8,7 +8,7 @@
             <h2> Topic </h2>
             <Plyr class="player-custom-style" :options="playerOptions" ref="audioPlayer" :emit="['play','timeupdate']" @play="onAudioPlay" @timeupdate="onTime">
                   <audio>
-                    <source src="../assets/a.mp3" type="audio/mp3">
+                    <source src="../assets/audio/a.mp3" type="audio/mp3">
                     Your browser does not support the audio tag.
                   </audio>
             </Plyr>
