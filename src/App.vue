@@ -34,7 +34,6 @@ export default {
     fetchData () {
       this.appData = AllData
       this.loading = false
-      console.log(this.appData)
       // fetch('assets/data/alldata.json')
       //   .then(d => d.json())
       //   .then(data => {
