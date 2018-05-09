@@ -1,5 +1,5 @@
-ID,Conversation,Topic,Audio ,Topic Image,Text,People
-1,transcript-1,Presentation,,,,"Desmond, Jen, Paulina"
-2,transcript-2,Love & Dating,,,,"Paulina, Jen"
-3,transcript-3,Race & Identity,,,,"Paulina, Jen, Malia"
-4,transcript-4,Coming Out,,,,"Jen, Desmond"
+ID,Conversation,Topic,Audio ,Topic_Image,Text,People
+1,transcript-1,Presentation,,presentation.svg,,"Desmond, Jen, Paulina"
+2,transcript-2,Love & Dating,,love.svg,,"Paulina, Jen"
+3,transcript-3,Race & Identity,,identity.svg,,"Paulina, Jen, Malia"
+4,transcript-4,Coming Out,,comingout.svg,,"Jen, Desmond"

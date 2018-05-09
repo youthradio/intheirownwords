@@ -1,16 +1,54 @@
 <template>
   <div id="profile">
-    {{msg}}
-  </div>
+
+    <div class="row my-3">
+      <div class="col-2 col-md-3 my-auto">
+        <hr>
+      </div>
+      <div class="col-12  col-md-2">
+        <img class="img-fluid person1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFzA50b0MoyZUx7UxC8ccyvXpRRx6R7fAG_FhVVnhEhSVsiuUA">
+      </div>
+      <div class="col-12  col-md-4  p1text">
+        <h2>{{ filterPerson('Person_Name') }}</h2>
+        <p class="font-italic font-weight-light"> {{ filterPerson('Quote') }}</p>
+        <p> {{ filterPerson('Age') }}, {{ filterPerson('Pronoum') }} </p>
+      </div>
+      <div class="col-2 col-md-3 my-auto">
+        <hr>
+      </div>
+    </div>
+
+    <div class="row my-3">
+        <div class="col-12 col-md-8 offset-md-2" v-html="filterPerson('Essay')">
+        </div>
+      </div>
+
+    </div>
 </template>
 
 <script>
 export default {
-  props: ['people'],
+  props: {
+    person: {
+      type: String
+    },
+    people: {
+      type: Object
+    }
+  },
   name: 'MPersonProfile',
   data () {
     return {
       msg: 'profile'
+    }
+  },
+  methods: {
+    filterPerson (key) {
+      if (this.people) {
+        return this.people[this.person]['info'][key]
+      } else {
+        return null
+      }
     }
   }
 }

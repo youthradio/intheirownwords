@@ -1,19 +1,5 @@
 <template>
 <div>
-  <div class="row text-center my-5">
-    <div class="col-4 my-auto">
-      <hr>
-    </div>
-    <div class="col-4">
-      <h2>
-        In Conversation About
-      </h2>
-    </div>
-
-    <div class="col-4 my-auto">
-      <hr>
-    </div>
-  </div>
   <div class="row">
     <div class="col-8 offset-2">
       <div class="row">

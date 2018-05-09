@@ -5,7 +5,7 @@
       "Conversation": "transcript-1",
       "Topic": "Presentation",
       "Audio": "",
-      "Topic Image": "",
+      "Topic_Image": "presentation.svg",
       "Text": "",
       "People": "Desmond, Jen, Paulina"
     },
@@ -14,7 +14,7 @@
       "Conversation": "transcript-2",
       "Topic": "Love & Dating",
       "Audio": "",
-      "Topic Image": "",
+      "Topic_Image": "love.svg",
       "Text": "",
       "People": "Paulina, Jen"
     },
@@ -23,7 +23,7 @@
       "Conversation": "transcript-3",
       "Topic": "Race & Identity",
       "Audio": "",
-      "Topic Image": "",
+      "Topic_Image": "identity.svg",
       "Text": "",
       "People": "Paulina, Jen, Malia"
     },
@@ -32,7 +32,7 @@
       "Conversation": "transcript-4",
       "Topic": "Coming Out",
       "Audio": "",
-      "Topic Image": "",
+      "Topic_Image": "comingout.svg",
       "Text": "",
       "People": "Jen, Desmond"
     }
@@ -40,7 +40,7 @@
   "people": [
     {
       "Person_Name": "Desmond",
-      "Person_Color": "green",
+      "Person_Class": "p1text",
       "Person_Image": "des.svg",
       "Pronoum": "He/They",
       "Age": "21",
@@ -49,7 +49,7 @@
     },
     {
       "Person_Name": "Malia",
-      "Person_Color": "red",
+      "Person_Class": "p2text",
       "Person_Image": "mal.svg",
       "Pronoum": "He/They",
       "Age": "17",
@@ -58,7 +58,7 @@
     },
     {
       "Person_Name": "Paulina",
-      "Person_Color": "yellow",
+      "Person_Class": "p3text",
       "Person_Image": "pal.svg",
       "Pronoum": "None preferred",
       "Age": "16",
@@ -67,7 +67,7 @@
     },
     {
       "Person_Name": "Jen",
-      "Person_Color": "purple",
+      "Person_Class": "p4text",
       "Person_Image": "jen.svg",
       "Pronoum": "None preferred",
       "Age": "16",

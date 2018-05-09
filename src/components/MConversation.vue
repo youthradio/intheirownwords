@@ -1,6 +1,41 @@
 <template>
   <main>
 
+    <div class="row text-center my-5">
+      <div class="col-12 col-md-4 my-auto">
+        <hr>
+      </div>
+      <div class="col-12 col-md-4 text-center">
+        <h2>
+          In Conversation About</h2>
+      </div>
+      <div class="col-12 col-md-4 my-auto">
+        <hr>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-10 offset-1 col-md-8 offset-md-2">
+        <div class="row text-center">
+          <div class="col-12 col-md-4">
+            <br>
+            <img src="../assets/images/vin1.png" class="img-fluid">
+            <br> <br>
+            <h4> Presentation </h4>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <img src="../assets/images/vin2.png" class="img-fluid">
+            <h4> Race & Identity </h4>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <img src="../assets/images/vin3.svg" class="img-fluid">
+
+            <h4> Love & Dating</h4>
+          </div>
+        </div>
+
         <div class="row text-center py-4">
           <!--selected -->
           <div class="col-12">
@@ -13,20 +48,23 @@
                   </audio>
             </Plyr>
           </div>
-        </div>
-        <div v-for="(person, passage, index) in selectedTopicTranscripts()" :key="index" class="row">
-
-          <div class="col-2">
-            <img class="img-fluid person1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFzA50b0MoyZUx7UxC8ccyvXpRRx6R7fAG_FhVVnhEhSVsiuUA">
-          </div>
-          <div class="col-10 p1text m-auto">
-            <p v-for="(a, index) in getTextLine(person)" :key="`passage-${index}`" class="">{{a}} : {{index}}</p>
-          </div>
 
         </div>
-    <div class="col-12 col-md-4">
-      <!--empty -->
+
+        <div v-for="(person, passage, index) in selectedTopicTranscripts()" :key="index" class="row my-auto">
+          <div class="order-1 col-3 col-md-2 my-auto p-1">
+            <img class="img-fluid " src="../assets/images/jen.svg">
+          </div>
+          <div class="order-2 col-9 p3text ">
+            <div class="chat">
+              <p class=" "> "There are still times when I wish my skin was clay, so I could sculpt away the feminine qualities I see in my face. " </p>
+              <p v-for="(a, index) in getTextLine(person)" :key="`passage-${index}`" class="">{{a}} : {{index}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
   </main>
 </template>
 
