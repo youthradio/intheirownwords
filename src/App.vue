@@ -45,6 +45,7 @@ export default {
       return this.appData.data.reduce((a, b) => {
         a[slug(b.Topic)] = {
           topic: b.Topic,
+          topicImg: b.Topic_Image,
           people: b.People.split(',').map(t => t.trim()),
           transcript: this.appData[`transcript-${b.ID}`]
         }
