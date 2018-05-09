@@ -6,9 +6,9 @@
         <hr>
       </div>
       <div class="col-12  col-md-2">
-        <img class="img-fluid person1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFzA50b0MoyZUx7UxC8ccyvXpRRx6R7fAG_FhVVnhEhSVsiuUA">
+        <img class="img-fluid " :src="require('../assets/images/' + filterPerson('Person_Image'))">
       </div>
-      <div class="col-12  col-md-4  p1text">
+      <div :class="`${filterPerson('Person_Class')} col-12  col-md-4`">
         <h2>{{ filterPerson('Person_Name') }}</h2>
         <p class="font-italic font-weight-light"> {{ filterPerson('Quote') }}</p>
         <p> {{ filterPerson('Age') }}, {{ filterPerson('Pronoum') }} </p>

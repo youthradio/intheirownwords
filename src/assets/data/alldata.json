@@ -58,7 +58,7 @@
     },
     {
       "Person_Name": "Paulina",
-      "Person_Class": "p3text",
+      "Person_Class": "p4text",
       "Person_Image": "pal.svg",
       "Pronoum": "None preferred",
       "Age": "16",
@@ -67,7 +67,7 @@
     },
     {
       "Person_Name": "Jen",
-      "Person_Class": "p4text",
+      "Person_Class": "p3text",
       "Person_Image": "jen.svg",
       "Pronoum": "None preferred",
       "Age": "16",

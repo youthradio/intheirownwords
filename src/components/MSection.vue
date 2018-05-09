@@ -27,7 +27,7 @@
                   </router-link>
                 </div>
                 <div class="col-8 col-md-12">
-                  <div :class="`p${index+1}text text-md-center`">
+                  <div :class="`${data.info.Person_Class} text-md-center`">
                     <router-link :to="{ name: 'PersonRoute', params: { person: person }}">
                       <h3> {{ person }} </h3>
                     </router-link>
