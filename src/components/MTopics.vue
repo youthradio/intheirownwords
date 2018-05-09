@@ -1,5 +1,5 @@
 <template>
-<div>
+<div id="topics">
   <div class="row text-center my-5">
     <div class="col-12 col-md-4 my-auto">
       <hr>

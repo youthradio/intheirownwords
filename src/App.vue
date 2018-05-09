@@ -70,6 +70,7 @@ export default {
   },
   created () {
     this.fetchData()
+    // this.$root.$emit('triggerScroll')
   }
 }
 // https://gist.github.com/mathewbyrne/1280286

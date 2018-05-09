@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main id="conversation">
     <div class="row">
       <div class="col-10 offset-1 col-md-8 offset-md-2">
         <div class="row text-center py-4">
@@ -96,6 +96,9 @@ export default {
   filters: {
 
   },
+  // created () {
+  //   this.$root.$emit('triggerScroll')
+  // },
   components: {
     Plyr
   }

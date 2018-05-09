@@ -38,13 +38,20 @@ const scrollBehavior = function (to, from, savedPosition) {
 
     return new Promise((resolve, reject) => {
       // check if any matched route config has meta that requires scrolling to top
-      if (to.matched.some(m => m.meta.scrollToTop)) {
-        // coords will be used if no selector is provided,
-        // or if the selector didn't match any element.
-        position.x = 0
-        position.y = 0
+      let scrollTo = to.meta.scrollTo || false
+      if (scrollTo) {
+        if (scrollTo === 'top') {
+          position.x = 0
+          position.y = 0
+        } else {
+          const el = document.querySelector(scrollTo)
+          position.x = el.getBoundingClientRect().x
+          position.y = el.getBoundingClientRect().y
+        }
       }
+      // router.app.$root.$once('triggerScroll', () => {
       resolve(position)
+      // })
     })
   }
 }
@@ -57,7 +64,7 @@ const router = new Router({
       path: '/',
       name: 'Home',
       meta: {
-        scrollToTop: true
+        scrollTo: 'top'
       },
       components: {
         header: MHeader,
@@ -74,6 +81,9 @@ const router = new Router({
     {
       path: '/conversation/:topic',
       name: 'Conversation',
+      meta: {
+        scrollTo: '#topics'
+      },
       components: {
         header: MHeader,
         section: MSection,
