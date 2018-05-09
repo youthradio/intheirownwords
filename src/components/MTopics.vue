@@ -1,5 +1,5 @@
 <template>
-<div>  
+<div>
   <div class="row text-center my-5">
     <div class="col-12 col-md-4 my-auto">
       <hr>
@@ -34,6 +34,9 @@
 <script>
 export default {
   props: {
+    topic: {
+      type: String
+    },
     topics: {
       type: Object
     },

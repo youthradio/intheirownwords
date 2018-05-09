@@ -2,31 +2,9 @@
   <main>
     <div class="row">
       <div class="col-10 offset-1 col-md-8 offset-md-2">
-        <div class="row text-center">
-          <div class="col-12 col-md-4">
-            <br>
-            <img src="../assets/images/vin1.png" class="img-fluid">
-            <br> <br>
-            <h4> Presentation </h4>
-          </div>
-
-          <div class="col-12 col-md-4">
-            <img src="../assets/images/vin2.png" class="img-fluid">
-            <h4> Race & Identity </h4>
-          </div>
-
-          <div class="col-12 col-md-4">
-            <img src="../assets/images/vin3.svg" class="img-fluid">
-
-            <h4> Love & Dating</h4>
-          </div>
-        </div>
-
         <div class="row text-center py-4">
           <!--selected -->
           <div class="col-12">
-            <img src="../assets/images/vin3.svg" class="img-fluid">
-            <h2> Topic </h2>
             <Plyr class="player-custom-style" :options="playerOptions" ref="audioPlayer" :emit="['play','timeupdate']" @play="onAudioPlay" @timeupdate="onTime">
                   <audio>
                     <source src="../assets/audio/a.mp3" type="audio/mp3">
