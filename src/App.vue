@@ -58,7 +58,7 @@ export default {
           if (!p[person]) {
             p[person] = {
               topics: [],
-              info: this.appData.people.filter(e => e['Person  Name'] === person)[0]
+              info: this.appData.people.filter(e => e['Person_Name'] === person)[0]
             }
           }
           p[person].topics.push(topic[0])

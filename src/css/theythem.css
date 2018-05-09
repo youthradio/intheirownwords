@@ -107,7 +107,7 @@ h2{
 }
 
 .chat{
-	background-image: url(img/Jbub.svg);
+	background-image: url(require('./assets/img/Jbub.svg');
 	background-repeat: no-repeat;
 	background-size: contain;
 	height: 100%;

@@ -1,5 +1,13 @@
-Person  Name,Person Color,Person Image ,Pronoum,Age,Quote,Essay
-Desmond,green,person.png,He/They,21,"""never giveup""","Hello one day <span class=""highlight> beutiful </span>"
-Malia,red,person.png,He/They,17,"""never giveup""","Hello one day <span class=""highlight> beutiful </span>"
-Paulina,yellow,person.png,None preferred,16,"""never giveup""","Hello one day <span class=""highlight> beutiful </span>"
-Jen,purple,person.png,None preferred,16,"""never giveup""","Hello one day <span class=""highlight> beutiful </span>"
+Person_Name,Person_Color,Person_Image ,Pronoum,Age,Quote,Essay
+Desmond,green,des.svg,He/They,21,"""Back then, I didn’t have the words for my gender identity, but it’s like my body always knew.
+"" ","<span class=""font-italic""> ""Back then, I didn’t have the words for my gender identity, but it’s like my body always knew.
+"" </span> <br> 21, he/they"
+Malia,red,mal.svg,He/They,17,"""Back then, I didn’t have the words for my gender identity, but it’s like my body always knew.
+"" ","<span class=""font-italic""> ""Back then, I didn’t have the words for my gender identity, but it’s like my body always knew.
+"" </span> <br> 21, he/they"
+Paulina,yellow,pal.svg,None preferred,16,"""Back then, I didn’t have the words for my gender identity, but it’s like my body always knew.
+"" ","<span class=""font-italic""> ""Back then, I didn’t have the words for my gender identity, but it’s like my body always knew.
+"" </span> <br> 21, he/they"
+Jen,purple,jen.svg,None preferred,16,"""Back then, I didn’t have the words for my gender identity, but it’s like my body always knew.
+"" ","<span class=""font-italic""> ""Back then, I didn’t have the words for my gender identity, but it’s like my body always knew.
+"" </span> <br> 21, he/they"

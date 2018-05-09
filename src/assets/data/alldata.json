@@ -39,43 +39,51 @@
   ],
   "people": [
     {
-      "Person  Name": "Desmond",
-      "Person Color": "green",
-      "Person Image": "person.png",
+      "Person_Name": "Desmond",
+      "Person_Color": "green",
+      "Person_Image": "des.svg",
       "Pronoum": "He/They",
       "Age": "21",
-      "Quote": "\"never giveup\"",
-      "Essay": "Hello one day <span class=\"highlight> beutiful </span>"
+      "Quote": "\"Back then, I didn’t have the words for my gender identity, but it’s like my body always knew.\n\"",
+      "Essay": "<span class=\"font-italic\"> \"Back then, I didn’t have the words for my gender identity, but it’s like my body always knew.\n\" </span> <br> 21, he/they"
     },
     {
-      "Person  Name": "Malia",
-      "Person Color": "red",
-      "Person Image": "person.png",
+      "Person_Name": "Malia",
+      "Person_Color": "red",
+      "Person_Image": "mal.svg",
       "Pronoum": "He/They",
       "Age": "17",
-      "Quote": "\"never giveup\"",
-      "Essay": "Hello one day <span class=\"highlight> beutiful </span>"
+      "Quote": "\"Back then, I didn’t have the words for my gender identity, but it’s like my body always knew.\n\"",
+      "Essay": "<span class=\"font-italic\"> \"Back then, I didn’t have the words for my gender identity, but it’s like my body always knew.\n\" </span> <br> 21, he/they"
     },
     {
-      "Person  Name": "Paulina",
-      "Person Color": "yellow",
-      "Person Image": "person.png",
+      "Person_Name": "Paulina",
+      "Person_Color": "yellow",
+      "Person_Image": "pal.svg",
       "Pronoum": "None preferred",
       "Age": "16",
-      "Quote": "\"never giveup\"",
-      "Essay": "Hello one day <span class=\"highlight> beutiful </span>"
+      "Quote": "\"Back then, I didn’t have the words for my gender identity, but it’s like my body always knew.\n\"",
+      "Essay": "<span class=\"font-italic\"> \"Back then, I didn’t have the words for my gender identity, but it’s like my body always knew.\n\" </span> <br> 21, he/they"
     },
     {
-      "Person  Name": "Jen",
-      "Person Color": "purple",
-      "Person Image": "person.png",
+      "Person_Name": "Jen",
+      "Person_Color": "purple",
+      "Person_Image": "jen.svg",
       "Pronoum": "None preferred",
       "Age": "16",
-      "Quote": "\"never giveup\"",
-      "Essay": "Hello one day <span class=\"highlight> beutiful </span>"
+      "Quote": "\"Back then, I didn’t have the words for my gender identity, but it’s like my body always knew.\n\"",
+      "Essay": "<span class=\"font-italic\"> \"Back then, I didn’t have the words for my gender identity, but it’s like my body always knew.\n\" </span> <br> 21, he/they"
     }
   ],
   "transcript-1": [
+    {
+      "Audio Start": "",
+      "Audio End": "",
+      "Desmond": "",
+      "Malia": "",
+      "Paulina": "",
+      "Jen": ""
+    },
     {
       "Audio Start": "0:00:00",
       "Audio End": "0:00:40",
@@ -119,6 +127,14 @@
   ],
   "transcript-2": [
     {
+      "Audio Start": "",
+      "Audio End": "",
+      "Desmond": "",
+      "Malia": "",
+      "Paulina": "",
+      "Jen": ""
+    },
+    {
       "Audio Start": "0:00:00",
       "Audio End": "0:00:40",
       "Desmond": "Hello",
@@ -161,6 +177,14 @@
   ],
   "transcript-3": [
     {
+      "Audio Start": "",
+      "Audio End": "",
+      "Desmond": "",
+      "Malia": "",
+      "Paulina": "",
+      "Jen": ""
+    },
+    {
       "Audio Start": "0:00:00",
       "Audio End": "0:00:40",
       "Desmond": "Hello",
@@ -202,6 +226,14 @@
     }
   ],
   "transcript-4": [
+    {
+      "Audio Start": "",
+      "Audio End": "",
+      "Desmond": "",
+      "Malia": "",
+      "Paulina": "",
+      "Jen": ""
+    },
     {
       "Audio Start": "0:00:00",
       "Audio End": "0:00:40",
