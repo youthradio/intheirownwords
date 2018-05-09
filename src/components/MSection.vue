@@ -57,9 +57,6 @@ export default {
       default: ''
     }
   },
-  created () {
-    console.log('PEOPLE section what is the data', this.people, this.topic)
-  },
   name: 'MSection',
   data () {
     return {
