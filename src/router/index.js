@@ -57,7 +57,7 @@ const scrollBehavior = function (to, from, savedPosition) {
 }
 
 const router = new Router({
-  mode: 'history',
+  // mode: 'history',
   scrollBehavior,
   routes: [
     {
