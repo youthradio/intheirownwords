@@ -12,40 +12,48 @@
         <hr>
       </div>
     </div>
-    <div class="row">
-      <div class="col-12 col-md-8 offset-md-2">
-        <div class="row text-center">
-          <div class="col-12 col-md-3" v-for="(topic, index) in selectTopics()" :key="index">
-            <router-link :to="{ name: 'Conversation', params: { topic: topic.slug }}">
-              <img :src="require('../assets/images/' + topic.image)" class="img-fluid">
-              </router-link>
-            <br> <br>
-            <h4>
-              <router-link :to="{ name: 'Conversation', params: { topic: topic.slug }}">
-                {{ topic.name }}
-              </router-link>
-            </h4>
-          </div>
+
+    <div class="row text-center">
+      <div class="col-1">
+        <button class="d-md-none" v-on:click="prevTopic">Prev</button>
+      </div>
+      <div class="col-10">
+        <div class="slider-parent">
+          <tiny-slider  ref="tslider"
+                        :autoHeight="true"
+                        :controls="false"
+                        :mouse-drag="true"
+                        :loop="false"
+                        items="1"
+                        gutter="20"
+                        :responsive="{
+                          576: {
+                            items: 2
+                          },
+                          768: {
+                            items: 4
+                          }
+                        }"
+                        v-if="selectTopics()">
+
+              <div v-for="(topic, index) in selectTopics()" :key="`item-${topic.slug}`">
+                <router-link :to="{ name: 'Conversation', params: { topic: topic.slug }}">
+                  <img :src="require('../assets/images/' + topic.image)" class="img-fluid">
+                  </router-link>
+                <h4>
+                  <router-link :to="{ name: 'Conversation', params: { topic: topic.slug }}">
+                    {{ topic.name }}
+                  </router-link>
+                </h4>
+              </div>
+          </tiny-slider>
         </div>
+      </div>
+      <div class="col-1">
+        <button class="d-md-none" v-on:click="nextTopic">Next</button>
       </div>
     </div>
 
-    <div class="row text-center">
-      <div class="col-12 col-md-8 offset-md-2">
-        <tiny-slider :responsive="true" :mouse-drag="true" :loop="false" items="1" gutter="20" v-if="selectTopics()">
-            <div v-for="(topic, index) in selectTopics()" :key="index">
-              <router-link :to="{ name: 'Conversation', params: { topic: topic.slug }}">
-                <img :src="require('../assets/images/' + topic.image)" class="img-fluid">
-                </router-link>
-              <h4>
-                <router-link :to="{ name: 'Conversation', params: { topic: topic.slug }}">
-                  {{ topic.name }}
-                </router-link>
-              </h4>
-            </div>
-        </tiny-slider>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -72,11 +80,20 @@ export default {
     }
   },
   mounted () {
-
+    // this.$refs.tslider.slider.events.on('transitionEnd', this.transitionEnd)
   },
   computed: {
   },
   methods: {
+    nextTopic () {
+      this.$refs.tslider.goTo('next')
+    },
+    prevTopic () {
+      this.$refs.tslider.goTo('prev')
+    },
+    transitionEnd (event) {
+      console.log(event)
+    },
     selectTopics () {
       if (this.topics) {
         return Object.entries(this.topics)
@@ -100,5 +117,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 @import 'node_modules/tiny-slider/src/tiny-slider';
+
+.slider-parent{
+  overflow: hidden;
+}
 
 </style>
