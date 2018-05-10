@@ -14,11 +14,10 @@
     "bootstrap": "^4.1.1",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
-    "tiny-slider": "^2.6.0",
     "vue": "^2.5.2",
+    "vue-concise-slider": "^2.4.8",
     "vue-plyr": "^3.0.0",
-    "vue-router": "^3.0.1",
-    "vue-tiny-slider": "^0.1.17"
+    "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

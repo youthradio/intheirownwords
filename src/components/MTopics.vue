@@ -14,43 +14,22 @@
     </div>
 
     <div class="row text-center">
-      <div class="col-1">
-        <button class="d-md-none" v-on:click="prevTopic">Prev</button>
+      <div class="col-1 my-auto">
+        <button v-on:click="prevTopic">Prev</button>
       </div>
       <div class="col-10">
-        <div class="slider-parent">
-          <tiny-slider  ref="tslider"
-                        :autoHeight="true"
-                        :controls="false"
-                        :mouse-drag="true"
-                        :loop="false"
-                        items="1"
-                        gutter="20"
-                        :responsive="{
-                          576: {
-                            items: 2
-                          },
-                          768: {
-                            items: 4
-                          }
-                        }"
-                        v-if="selectTopics">
 
-              <div v-for="topic in selectTopics" :key="`item-${topic.slug}`">
-                <router-link :to="{ name: 'Conversation', params: { topic: topic.slug }}">
-                  <img :src="require('../assets/images/' + topic.image)" class="img-fluid">
-                  </router-link>
-                <h4>
-                  <router-link :to="{ name: 'Conversation', params: { topic: topic.slug }}">
-                    {{ topic.name }}
-                  </router-link>
-                </h4>
-              </div>
-          </tiny-slider>
+        <div style="width:70%; margin:20px auto; height:400px">
+          <slider class="slider-comp" ref="slider" :pages="sliderData" :sliderinit="sliderinit">
+            <div slot="loading">
+                Loding
+            </div>
+          </slider>
         </div>
+
       </div>
-      <div class="col-1">
-        <button class="d-md-none" v-on:click="nextTopic">Next</button>
+      <div class="col-1 my-auto">
+        <button v-on:click="nextTopic">Next</button>
       </div>
     </div>
 
@@ -58,7 +37,7 @@
 </template>
 
 <script>
-import VueTinySlider from 'vue-tiny-slider'
+import slider from 'vue-concise-slider'
 
 export default {
   props: {
@@ -76,14 +55,24 @@ export default {
   name: 'MTopics',
   data () {
     return {
-      msg: 'd'
+      sliderData: [],
+      sliderinit: {
+        effect: 'coverflow',
+        currentPage: 1,
+        tracking: false,
+        thresholdDistance: 100,
+        thresholdTime: 300,
+        deviation: 200,
+        widthScalingRatio: 0.3,
+        heightScalingRatio: 0.8,
+        infinite: 4,
+        slidesToScroll: 1,
+        loop: true
+      }
     }
   },
-  mounted () {
-    // this.$refs.tslider.slider.events.on('transitionEnd', this.transitionEnd)
-  },
   computed: {
-    selectTopics () {
+    selectedTopics () {
       if (this.topics) {
         return Object.entries(this.topics)
           .filter(topic => this.person ? topic[1].people.filter(p => p === this.person).length > 0 : true) // filter all topics by person or return al;
@@ -97,29 +86,54 @@ export default {
       }
     }
   },
+  watch: {
+    selectedTopics () {
+      console.log(this.selectedTopics)
+      this.sliderData = []
+      this.selectedTopics.forEach((t, index) => {
+        this.sliderData.push({
+          html: `slide-${index}`,
+          style: {
+            'width': `${100 / (this.selectedTopics.length)}%`
+          },
+          component: {
+            props: ['topic', 'sliderinit', 'pages'],
+            data () {
+              return {
+                img: require(`../assets/images/${t.image}`)
+              }
+            },
+            template: `
+              <router-link :to="{ name: 'Conversation', params: { topic: '${t.slug}' }}">
+                <img :src="img" class="img-fluid">
+                <h4>
+                  ${t.name}
+                </h4>
+              </router-link>
+              `
+          }
+        })
+      })
+    }
+  },
   methods: {
     nextTopic () {
-      this.$refs.tslider.goTo('next')
+      this.$refs.slider.$emit('slideNext')
     },
     prevTopic () {
-      this.$refs.tslider.goTo('prev')
-    },
-    transitionEnd (event) {
-      console.log(event)
+      this.$refs.slider.$emit('slidePre')
     }
   },
   components: {
-    'tiny-slider': VueTinySlider
+    slider
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
-@import 'node_modules/tiny-slider/src/tiny-slider';
+<style scoped>
 
-.slider-parent{
-  overflow: hidden;
+.slider-comp >>> .slider-pagination {
+  display: none;
 }
-
 </style>
