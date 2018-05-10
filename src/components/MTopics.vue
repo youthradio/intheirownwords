@@ -1,37 +1,57 @@
 <template>
-<div id="topics">
-  <div class="row text-center my-5">
-    <div class="col-12 col-md-4 my-auto">
-      <hr>
+  <div id="topics">
+    <div class="row text-center my-5">
+      <div class="col-12 col-md-4 my-auto">
+        <hr>
+      </div>
+      <div class="col-12 col-md-4 text-center">
+        <h2>
+          In Conversation About</h2>
+      </div>
+      <div class="col-12 col-md-4 my-auto">
+        <hr>
+      </div>
     </div>
-    <div class="col-12 col-md-4 text-center">
-      <h2>
-        In Conversation About</h2>
-    </div>
-    <div class="col-12 col-md-4 my-auto">
-      <hr>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12 col-md-8 offset-md-2">
-      <div class="row text-center">
-        <div class="col-12 col-md-3" v-for="(topic, index) in selectTopics()" :key="index">
-          <router-link :to="{ name: 'Conversation', params: { topic: topic.slug }}">
-            <img :src="require('../assets/images/' + topic.image)" class="img-fluid">
-            </router-link>
-          <br> <br>
-          <h4>
+    <div class="row">
+      <div class="col-12 col-md-8 offset-md-2">
+        <div class="row text-center">
+          <div class="col-12 col-md-3" v-for="(topic, index) in selectTopics()" :key="index">
             <router-link :to="{ name: 'Conversation', params: { topic: topic.slug }}">
-              {{ topic.name }}
-            </router-link> </h4>
+              <img :src="require('../assets/images/' + topic.image)" class="img-fluid">
+              </router-link>
+            <br> <br>
+            <h4>
+              <router-link :to="{ name: 'Conversation', params: { topic: topic.slug }}">
+                {{ topic.name }}
+              </router-link>
+            </h4>
+          </div>
         </div>
       </div>
     </div>
+
+    <div class="row text-center">
+      <div class="col-12 col-md-8 offset-md-2">
+        <tiny-slider :responsive="true" :mouse-drag="true" :loop="false" items="1" gutter="20" v-if="selectTopics()">
+            <div v-for="(topic, index) in selectTopics()" :key="index">
+              <router-link :to="{ name: 'Conversation', params: { topic: topic.slug }}">
+                <img :src="require('../assets/images/' + topic.image)" class="img-fluid">
+                </router-link>
+              <h4>
+                <router-link :to="{ name: 'Conversation', params: { topic: topic.slug }}">
+                  {{ topic.name }}
+                </router-link>
+              </h4>
+            </div>
+        </tiny-slider>
+      </div>
+    </div>
   </div>
-</div>
 </template>
 
 <script>
+import VueTinySlider from 'vue-tiny-slider'
+
 export default {
   props: {
     topic: {
@@ -48,8 +68,13 @@ export default {
   name: 'MTopics',
   data () {
     return {
-      msg: 'ERROR - ERROR'
+      msg: 'd'
     }
+  },
+  mounted () {
+
+  },
+  computed: {
   },
   methods: {
     selectTopics () {
@@ -65,10 +90,15 @@ export default {
         return null
       }
     }
+  },
+  components: {
+    'tiny-slider': VueTinySlider
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
+@import 'node_modules/tiny-slider/src/tiny-slider';
+
 </style>
