@@ -34,9 +34,9 @@
                             items: 4
                           }
                         }"
-                        v-if="selectTopics()">
+                        v-if="selectTopics">
 
-              <div v-for="(topic, index) in selectTopics()" :key="`item-${topic.slug}`">
+              <div v-for="topic in selectTopics" :key="`item-${topic.slug}`">
                 <router-link :to="{ name: 'Conversation', params: { topic: topic.slug }}">
                   <img :src="require('../assets/images/' + topic.image)" class="img-fluid">
                   </router-link>
@@ -83,17 +83,6 @@ export default {
     // this.$refs.tslider.slider.events.on('transitionEnd', this.transitionEnd)
   },
   computed: {
-  },
-  methods: {
-    nextTopic () {
-      this.$refs.tslider.goTo('next')
-    },
-    prevTopic () {
-      this.$refs.tslider.goTo('prev')
-    },
-    transitionEnd (event) {
-      console.log(event)
-    },
     selectTopics () {
       if (this.topics) {
         return Object.entries(this.topics)
@@ -106,6 +95,17 @@ export default {
       } else {
         return null
       }
+    }
+  },
+  methods: {
+    nextTopic () {
+      this.$refs.tslider.goTo('next')
+    },
+    prevTopic () {
+      this.$refs.tslider.goTo('prev')
+    },
+    transitionEnd (event) {
+      console.log(event)
     }
   },
   components: {

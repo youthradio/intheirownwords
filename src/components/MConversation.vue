@@ -5,6 +5,7 @@
         <div class="row text-center py-4">
           <!--selected -->
           <div class="col-12">
+            <h1 v-if="selectedTopic">{{ selectedTopic.name }}</h1>
             <Plyr class="player-custom-style" :options="playerOptions" ref="audioPlayer" :emit="['play','timeupdate']" @play="onAudioPlay" @timeupdate="onTime">
                   <audio>
                     <source src="../assets/audio/a.mp3" type="audio/mp3">
@@ -86,15 +87,22 @@ export default {
           // 'settings' // Settings menu
         ]
       }
+    },
+    selectedTopic () {
+      if (this.topics) {
+        return ({
+          slug: this.topics[this.topic].slug,
+          name: this.topics[this.topic].topic
+        })
+      } else {
+        return null
+      }
     }
   },
   data () {
     return {
       msg: 'conversation'
     }
-  },
-  filters: {
-
   },
   // created () {
   //   this.$root.$emit('triggerScroll')
