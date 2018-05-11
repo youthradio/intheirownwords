@@ -1,5 +1,5 @@
 <template>
-    <div >
+    <div class="container-fluid">
       <router-view name="header"/>
       <router-view :people="allPeople" name="profile"/>
       <router-view :people="allPeople" name="section"/>
