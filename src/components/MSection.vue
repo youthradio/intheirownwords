@@ -15,19 +15,19 @@
     </div>
 
     <div>
-      <div class="row">
+      <div class="row mx-auto">
         <div class="col-12  col-md-8 offset-md-2">
           <div class="row">
             <!-- Profile for loop -->
             <div v-for="(data, person, index) in people" :key="index" class="col-12 col-md-3">
-              <div class="row">
+              <div class="row py-2">
                 <div class="col-4 col-md-12">
                   <router-link :to="{ name: 'PersonRoute', params: { person: person }}">
                     <img class="img-fluid " :src="require('../assets/images/' + data.info.Person_Image)">
                   </router-link>
                 </div>
-                <div class="col-8 col-md-12">
-                  <div :class="`${data.info.Person_Class} text-md-center`">
+                <div class="col-8 col-md-12 my-auto">
+                  <div :class="[data.info.Person_Class, 'text-md-center']">
                     <router-link :to="{ name: 'PersonRoute', params: { person: person }}">
                       <h3> {{ person }} </h3>
                     </router-link>

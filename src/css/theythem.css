@@ -3,11 +3,27 @@
 } */
 
 
+/*
+Font font-size
+*/
+:root {
+  font-size: calc(1vw + 1vh + .5vmin);
+}
+
+@media screen and (max-width: 45em) {
+  p {
+    font-size: 1.0em;
+  }
+	h1 {
+		font-size: 2.5em;
+	}
+}
+
 
 body {
 	margin-bottom: 90px;
 	background-color: #FCFCFC;
-	font-family: 'Nunito Sans', sans-serif;
+	font: 1rem/1.6  'Nunito Sans', sans-serif;
 
 }
 

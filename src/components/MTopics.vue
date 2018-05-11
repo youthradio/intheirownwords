@@ -104,10 +104,14 @@ export default {
             },
             template: `
               <router-link :to="{ name: 'Conversation', params: { topic: '${t.slug}' }}">
+               <div>
                 <img :src="img" class="img-fluid">
-                <h4>
-                  ${t.name}
-                </h4>
+               </div>
+               <div class="my-auto">
+                 <h4>
+                   ${t.name}
+                 </h4>
+               </div>
               </router-link>
               `
           }

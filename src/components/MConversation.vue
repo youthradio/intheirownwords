@@ -6,7 +6,7 @@
           <!--selected -->
           <div class="col-12">
             <h1 v-if="selectedTopic">{{ selectedTopic.name }}</h1>
-            <Plyr class="player-custom-style" :options="playerOptions" ref="audioPlayer" :emit="['play','timeupdate','ready']" @play="onAudioPlay" @timeupdate="onTime" @ready="onPlayerReady" v-if="selectedTopic">
+            <Plyr class="player-custom-style" :options="playerOptions" ref="audioPlayer" :emit="['play','timeupdate','ready','canplay']" @play="onAudioPlay" @timeupdate="onTime" @ready="onPlayerReady" @canplay="audioReady" v-if="selectedTopic">
                   <audio>
                     <source :src="require('../assets/audio/' + `${selectedTopic.audio}.mp3`)" type="audio/mp3">
                     <source :src="require('../assets/audio/' + `${selectedTopic.audio}.ogg`)" type="audio/ogg">
@@ -18,11 +18,11 @@
         </div>
 
         <div v-for="(line, index) in transcriptData" :key="index" class="row my-auto">
-          <div class="order-1 col-3 col-md-2 my-auto p-1">
+          <div :class="[index%2 == 0?'order-1':'order-2', 'col-3', 'col-md-2', 'p-1']">
             <img class="img-fluid " :src="require('../assets/images/' + line.image )">
           </div>
-          <div class="order-2 col-9 p3text ">
-            <div :class="`${line.cssclass}`">
+          <div :class="[line.cssclass, index%2 == 0?'order-2':'order-1 curve-right','my-auto', 'col-9']">
+            <div>
               <p>{{line.passage}}</p>
             </div>
             <div v-if="line.active" class="progress-bar" :style="{width: progress}">
@@ -55,12 +55,26 @@ export default {
   methods: {
     onTime () {
       this.audioDuration = this.$refs.audioPlayer.player.duration
-      this.progress = (100 * this.$refs.audioPlayer.player.currentTime / this.audioDuration) + '%'
+      const currTime = this.$refs.audioPlayer.player.currentTime
+      const start = this.transcriptData[this.activeLine].start
+      const end = this.transcriptData[this.activeLine].end
+      console.log(this.transcriptData[this.activeLine])
+      this.progress = (100 * (currTime - start) / (end -  - start)) + '%'
+      if (currTime > end) {
+        this.transcriptData[this.activeLine].active = false
+        this.progress = '0%'
+        this.activeLine++
+        this.transcriptData[this.activeLine].active = true
+
+      }
     },
     onAudioPlay () {
       console.log(this.$refs.audioPlayer.player.currentTime)
     },
     onPlayerReady () {
+    },
+    audioReady () {
+      console.log('aduio readaaaaaaa')
     },
     getSeconds (timestamp) {
       const t = timestamp.split(':')
@@ -69,7 +83,7 @@ export default {
     },
     selectedTopicTranscripts () {
       var out = []
-      this.topics[this.topic].transcript.forEach((line) => {
+      this.topics[this.topic].transcript.forEach((line, index) => {
         const textRecord = Object.entries(line).splice(2) // splice audio start end, leaving names and passages
         const name = textRecord.filter(e => e[1] !== '')[0][0] // filter name, only not empty passage
         const passage = textRecord.filter(e => e[1] !== '')[0][1] // filter passage
@@ -80,10 +94,11 @@ export default {
           cssclass: this.people[name].info.Person_Class,
           start: this.getSeconds(line.Audio_Start), // Audio start
           end: this.getSeconds(line.Audio_End), // Audio end
-          active: false // progress bar feature
+          active: index === 0 ? true : false // progress bar feature
         })
       })
       this.transcriptData = out
+      console.log(this.transcriptData)
     }
   },
   watch: {
@@ -151,5 +166,7 @@ export default {
 .progress-bar{
   background-color: red;
 }
+
+
 
 </style>
