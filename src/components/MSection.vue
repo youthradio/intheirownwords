@@ -31,7 +31,7 @@
                     <router-link :to="{ name: 'PersonRoute', params: { person: person }}">
                       <h3> {{ person }} </h3>
                     </router-link>
-                    <p> <span class="font-italic"> {{ data.info.Quote }} </span><br>
+                    <p> <span v-if="!topic" class="font-italic"> {{ data.info.Quote }} </span>
                       {{ data.info.Age }}, {{ data.info.Pronoum }}
                     </p>
                   </div>
