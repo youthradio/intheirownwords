@@ -46,6 +46,7 @@ export default {
         a[slug(b.Topic)] = {
           topic: b.Topic,
           topicImg: b.Topic_Image,
+          topicAudio: b.Audio,
           people: b.People.split(',').map(t => t.trim()),
           transcript: this.appData[`transcript-${b.ID}`]
         }

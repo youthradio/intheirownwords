@@ -88,7 +88,6 @@ export default {
   },
   watch: {
     selectedTopics () {
-      console.log(this.selectedTopics)
       this.sliderData = []
       this.selectedTopics.forEach((t, index) => {
         this.sliderData.push({

@@ -8,7 +8,8 @@
             <h1 v-if="selectedTopic">{{ selectedTopic.name }}</h1>
             <Plyr class="player-custom-style" :options="playerOptions" ref="audioPlayer" :emit="['play','timeupdate']" @play="onAudioPlay" @timeupdate="onTime">
                   <audio>
-                    <source src="../assets/audio/a.mp3" type="audio/mp3">
+                    <source :src="require('../assets/audio/' + `${selectedTopic.audio}.mp3`)" type="audio/mp3">
+                    <source :src="require('../assets/audio/' + `${selectedTopic.audio}.ogg`)" type="audio/ogg">
                     Your browser does not support the audio tag.
                   </audio>
             </Plyr>
@@ -16,7 +17,7 @@
 
         </div>
 
-        <div v-for="(person, passage, index) in selectedTopicTranscripts()" :key="index" class="row my-auto">
+        <div v-for="(person, passage, index) in selectedTopicTranscripts" :key="index" class="row my-auto">
           <div class="order-1 col-3 col-md-2 my-auto p-1">
             <img class="img-fluid " src="../assets/images/jen.svg">
           </div>
@@ -47,13 +48,6 @@ export default {
     }
   },
   methods: {
-    selectedTopicTranscripts () {
-      if (this.topics) {
-        return this.topics[this.topic].transcript
-      } else {
-        return null
-      }
-    },
     getTextLine (value) {
       const textRecord = Object.entries(value).splice(3)
       if (!value) return ''
@@ -92,8 +86,16 @@ export default {
       if (this.topics) {
         return ({
           slug: this.topics[this.topic].slug,
-          name: this.topics[this.topic].topic
+          name: this.topics[this.topic].topic,
+          audio: this.topics[this.topic].topicAudio
         })
+      } else {
+        return null
+      }
+    },
+    selectedTopicTranscripts () {
+      if (this.topics) {
+        return this.topics[this.topic].transcript
       } else {
         return null
       }
