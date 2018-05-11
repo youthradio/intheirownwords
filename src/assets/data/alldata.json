@@ -4,7 +4,7 @@
       "ID": "1",
       "Conversation": "transcript-1",
       "Topic": "Presentation",
-      "Audio": "",
+      "Audio": "PresentationVox_JenPaulinaDesmond",
       "Topic_Image": "presentation.svg",
       "Text": "",
       "People": "Desmond, Jen, Paulina"
@@ -13,7 +13,7 @@
       "ID": "2",
       "Conversation": "transcript-2",
       "Topic": "Love & Dating",
-      "Audio": "",
+      "Audio": "LoveVox_PaulinaJen",
       "Topic_Image": "love.svg",
       "Text": "",
       "People": "Paulina, Jen"
@@ -22,7 +22,7 @@
       "ID": "3",
       "Conversation": "transcript-3",
       "Topic": "Race & Identity",
-      "Audio": "",
+      "Audio": "IdentityVox_PaulinaJenMalia",
       "Topic_Image": "identity.svg",
       "Text": "",
       "People": "Paulina, Jen, Malia"
@@ -44,7 +44,7 @@
       "Person_Image": "des.svg",
       "Pronoum": "He/They",
       "Age": "21",
-      "Quote": "\"Back then, I didn’t have the words for my gender identity, but it’s like my body always knew.\n\"",
+      "Quote": "\"I present in the way that I do, in part, to spite my previous self: the one who was ashamed to 'look trans.' \"",
       "Essay": "<span class=\"font-italic\"> \"Back then, I didn’t have the words for my gender identity, but it’s like my body always knew.\n\" </span> <br> 21, he/they"
     },
     {
@@ -53,23 +53,23 @@
       "Person_Image": "mal.svg",
       "Pronoum": "He/They",
       "Age": "17",
-      "Quote": "\"Back then, I didn’t have the words for my gender identity, but it’s like my body always knew.\n\"",
+      "Quote": "\"When I was 15, I told my mom that I preferred they/them pronouns. Her reaction was one of the better ones. \"",
       "Essay": "<span class=\"font-italic\"> \"Back then, I didn’t have the words for my gender identity, but it’s like my body always knew.\n\" </span> <br> 21, he/they"
     },
     {
       "Person_Name": "Paulina",
       "Person_Class": "p4text",
       "Person_Image": "pal.svg",
-      "Pronoum": "None preferred",
+      "Pronoum": "Paulina",
       "Age": "16",
-      "Quote": "\"Back then, I didn’t have the words for my gender identity, but it’s like my body always knew.\n\"",
+      "Quote": "\"I was always a confused kid. When I wasn’t questioning my sexuality, I was questioning my gender.\"",
       "Essay": "<span class=\"font-italic\"> \"Back then, I didn’t have the words for my gender identity, but it’s like my body always knew.\n\" </span> <br> 21, he/they"
     },
     {
       "Person_Name": "Jen",
       "Person_Class": "p3text",
       "Person_Image": "jen.svg",
-      "Pronoum": "None preferred",
+      "Pronoum": "\"I don't care.\"",
       "Age": "16",
       "Quote": "\"Back then, I didn’t have the words for my gender identity, but it’s like my body always knew.\n\"",
       "Essay": "<span class=\"font-italic\"> \"Back then, I didn’t have the words for my gender identity, but it’s like my body always knew.\n\" </span> <br> 21, he/they"
@@ -77,152 +77,168 @@
   ],
   "transcript-1": [
     {
-      "Audio Start": "",
-      "Audio End": "",
+      "Audio_Start": "0:00:00",
+      "Audio_End": "0:00:17",
+      "Desmond": " I think if I'm wearing makeup and I'm presenting masculine and someone feels uncomfortable with that... One, I don't care. And two, part of me is like, \"Good. You deserve to sort of have those wires crossed for you a little bit, because those wires aren't as straight in real life as you think they are.\"",
+      "Malia": "",
+      "Paulina": "",
+      "Jen": ""
+    },
+    {
+      "Audio_Start": "0:00:19",
+      "Audio_End": "0:00:41",
       "Desmond": "",
       "Malia": "",
       "Paulina": "",
-      "Jen": ""
+      "Jen": "I don't really identify with any gender... No shade but all of this gender stuff seems like a scam no matter how you do it or don't do it. I think the scam is when you walk into a store and like it says, boy's, girl's, men's, women's... You can literally shop anywhere in the store if you aren't afraid to. And part of the scam is like, selling people gender."
     },
     {
-      "Audio Start": "0:00:00",
-      "Audio End": "0:00:40",
-      "Desmond": "Hello",
-      "Malia": "",
-      "Paulina": "",
-      "Jen": ""
-    },
-    {
-      "Audio Start": "0:00:45",
-      "Audio End": "0:01:10",
-      "Desmond": "",
-      "Malia": "Hello again",
-      "Paulina": "",
-      "Jen": ""
-    },
-    {
-      "Audio Start": "0:01:10",
-      "Audio End": "0:01:20",
-      "Desmond": "Hello again 2",
-      "Malia": "",
-      "Paulina": "",
-      "Jen": ""
-    },
-    {
-      "Audio Start": "0:01:20",
-      "Audio End": "0:01:50",
+      "Audio_Start": "0:00:42",
+      "Audio_End": "0:01:04",
       "Desmond": "",
       "Malia": "",
-      "Paulina": "Hello again 3",
+      "Paulina": "When I was younger and people like, told me I was a girl and told me I needed to be certain things, it made me reject femininity. So I didn't like skirts, I didn't like accessories, I didn't like pink. Once I realized that I was nonbinary, I began to be more feminine because to me being feminine wasn't associated with being a girl anymore. So I embraced that.",
       "Jen": ""
     },
     {
-      "Audio Start": "0:01:50",
-      "Audio End": "0:02:20",
+      "Audio_Start": "0:01:04",
+      "Audio_End": "0:01:27",
+      "Desmond": "There are some days where I'll like wear makeup in addition to presenting pretty masculine, and my voice is deep, and I look like a dude, or whatever. Even then I am much more comfortable with being read as a man wearing makeup, even though I am nonbinary. If you're visibly gender nonconforming then you're, you know, potentially targeted for violence. And that's not good.",
+      "Malia": "",
+      "Paulina": "",
+      "Jen": ""
+    },
+    {
+      "Audio_Start": "0:01:28",
+      "Audio_End": "0:01:48",
       "Desmond": "",
       "Malia": "",
       "Paulina": "",
-      "Jen": "Hello again 4"
+      "Jen": "Like sometimes, if I want to go to the store and I don't want to be harassed, like, I'm able to throw on something more masc or whatever, and not be bothered. Or if I want to go on a date, and I don't want the person know I'm femme, I just have to like, wear a hat and take off my nail polish. It feels nasty to be like, I can just do this."
+    },
+    {
+      "Audio_Start": "0:01:50",
+      "Audio_End": "0:02:07",
+      "Desmond": "",
+      "Malia": "",
+      "Paulina": "I dress really feminine and I sound really feminine, so I never expect somebody to think I'm nonbinary because there's no indication of that. That's always in the back of my mind when I start talking to somebody like, are they really seeing me how I see myself? Are they really understanding what I'm trying to get across?",
+      "Jen": ""
+    },
+    {
+      "Audio_Start": "0:02:08",
+      "Audio_End": "",
+      "Desmond": "",
+      "Malia": "",
+      "Paulina": "",
+      "Jen": "How I have moved in society and like the world, from being told that I had to be masculine, to being told that I was too feminine-- and then once you've been feminine for a while like an assigned male at birth person you're like trans-feminine, trans-masculine... Those are descriptors for experiences, less than who we are."
     }
   ],
   "transcript-2": [
     {
-      "Audio Start": "",
-      "Audio End": "",
+      "Audio_Start": "0:00:00",
+      "Audio_End": "0:00:06",
+      "Desmond": "Do you find being gender nonconforming makes dating or approaching romantic relationships--",
+      "Malia": "",
+      "Paulina": "",
+      "Jen": ""
+    },
+    {
+      "Audio_Start": "0:00:06",
+      "Audio_End": "0:00:11",
+      "Desmond": "",
+      "Malia": "",
+      "Paulina": "Definitely! You don't even need to finish the sentence!",
+      "Jen": ""
+    },
+    {
+      "Audio_Start": "0:00:11",
+      "Audio_End": "0:00:37",
       "Desmond": "",
       "Malia": "",
       "Paulina": "",
-      "Jen": ""
+      "Jen": "Dating as a femme person for me just makes dating even more ridiculous in my body. It's like, cuz I tend to like bodies that are reflections of mine, it's hard to choose a label. Like am I gay? Am I pan? Am I bi? What am I doing? What do people who date me do? Because sometimes I'm like, our bodies complicate our labels and our labels complicate our bodies."
     },
     {
-      "Audio Start": "0:00:00",
-      "Audio End": "0:00:40",
-      "Desmond": "Hello",
-      "Malia": "",
-      "Paulina": "",
-      "Jen": ""
-    },
-    {
-      "Audio Start": "0:00:45",
-      "Audio End": "0:01:10",
-      "Desmond": "",
-      "Malia": "Hello again",
-      "Paulina": "",
-      "Jen": ""
-    },
-    {
-      "Audio Start": "0:01:10",
-      "Audio End": "0:01:20",
-      "Desmond": "Hello again 2",
-      "Malia": "",
-      "Paulina": "",
-      "Jen": ""
-    },
-    {
-      "Audio Start": "0:01:20",
-      "Audio End": "0:01:50",
+      "Audio_Start": "0:00:38",
+      "Audio_End": "0:00:48",
       "Desmond": "",
       "Malia": "",
-      "Paulina": "Hello again 3",
+      "Paulina": "I feel way more comfortable with dating people who say they're pansexual, because it's like, no matter what I identify [as], either way, like they would love me for who I am.",
       "Jen": ""
     },
     {
-      "Audio Start": "0:01:50",
-      "Audio End": "0:02:20",
+      "Audio_Start": "0:00:49",
+      "Audio_End": "0:00:59",
       "Desmond": "",
       "Malia": "",
       "Paulina": "",
-      "Jen": "Hello again 4"
+      "Jen": "I can almost only date online. And no one who's dating online is typically looking to date online. They're typically looking to hook up one time and never see you again"
+    },
+    {
+      "Audio_Start": "0:00:59",
+      "Audio_End": "0:01:29",
+      "Desmond": "",
+      "Malia": "",
+      "Paulina": "For me, I feel like it's really frustrating, especially because... all around me, all there is is cisgender straight guys, and so like, when I start talking to one of them, I have to be like, hey, you got to realize nonbinary. And then I'm thinking in my head: Do they really think this way? Like, are they even considering that? Do they still-- Do they still see me or think of me as a girl, despite what I say? So that worries me a lot. A lot, a lot.",
+      "Jen": ""
+    },
+    {
+      "Audio_Start": "0:01:29",
+      "Audio_End": "",
+      "Desmond": "",
+      "Malia": "",
+      "Paulina": "",
+      "Jen": "Being a person who is very visibly queer to people... When people are afraid to date me, but call themselves \"real men,\" and they have this whole schema of a real man as like a confident person who is doing the best for society-- I'm like, how can you be attracted to me, and say that you want something real, but then be afraid to date me in public? That's about the only thing. Like, it's not like people think I'm ugly. It's not like I'm not getting any play! But I want to sit down with one person and not do this Bay Area polyamorous stuff."
     }
   ],
   "transcript-3": [
     {
-      "Audio Start": "",
-      "Audio End": "",
+      "Audio_Start": "0:00:00",
+      "Audio_End": "0:00:33",
       "Desmond": "",
       "Malia": "",
       "Paulina": "",
-      "Jen": ""
+      "Jen": "I used to not want to have to think about, like, white people bringing body positivity to me, or white people bringing like, any type of -ism to me because what I'm worried about is getting financially stable. I want a monogamous relationship with a man. And we all know how white people are favored in like certain queer people's standards of what it means to be desirable. So I have to navigate a gender nonconforming body, a black body, and being assigned male at birth, and how people hate femininity and think it's frivolous."
     },
     {
-      "Audio Start": "0:00:00",
-      "Audio End": "0:00:40",
-      "Desmond": "Hello",
-      "Malia": "",
-      "Paulina": "",
-      "Jen": ""
-    },
-    {
-      "Audio Start": "0:00:45",
-      "Audio End": "0:01:10",
+      "Audio_Start": "0:00:34",
+      "Audio_End": "0:00:56",
       "Desmond": "",
-      "Malia": "Hello again",
+      "Malia": "I come from a place of pretty high privilege. I'm white and I'm upper middle class. Both my parents went to college. They both have graduate degrees. So, I think for me, like being nonbinary, being under the trans umbrella, has enabled me to access a lot more information, and just learn a lot more, that I wouldn't have if I, you know was cis and stayed in my white suburban neighborhood.",
       "Paulina": "",
       "Jen": ""
     },
     {
-      "Audio Start": "0:01:10",
-      "Audio End": "0:01:20",
-      "Desmond": "Hello again 2",
-      "Malia": "",
-      "Paulina": "",
-      "Jen": ""
-    },
-    {
-      "Audio Start": "0:01:20",
-      "Audio End": "0:01:50",
+      "Audio_Start": "0:00:58",
+      "Audio_End": "0:01:36",
       "Desmond": "",
       "Malia": "",
-      "Paulina": "Hello again 3",
+      "Paulina": "Especially where I live, people like the Mexican community, they have like, [this] hypermasculinity machismo. And like, all these things that make guys hard and don't want to talk about their feelings and this sortsa crazy stuff. And then you have, here, me telling everybody my problems and my world and not caring what society is telling me. And so they're like, whoa! Who is this girl? And then I have to be like, \"Not girl!\" and then go on to these other problems. So sometimes I just have to explain so much of the world to them, that I'll [be] like, \"Are they getting anything I'm saying? I don't know.\"",
       "Jen": ""
     },
     {
-      "Audio Start": "0:01:50",
-      "Audio End": "0:02:20",
+      "Audio_Start": "0:01:37",
+      "Audio_End": "0:01:53",
       "Desmond": "",
       "Malia": "",
       "Paulina": "",
-      "Jen": "Hello again 4"
+      "Jen": "Like it's hard to be black and be seen as feminine. Regardless of what you are doing. Regardless of whether people think you're fruity, you're this, you're that, you're born with certain parts, it's always like, why don't you think black people are feminine when we feel feminine? You know what I mean?"
+    },
+    {
+      "Audio_Start": "0:01:53",
+      "Audio_End": "0:02:12",
+      "Desmond": "",
+      "Malia": "",
+      "Paulina": "I'm in a Mexican family, and for us... we just don't talk about what male and female-- you don't talk about gender identity, sexual identity or anything like that because you're already expected to be straight. I was expected to be a Catholic and do all these sorts of things. So I was always in a community where they always wanted to categorize.",
+      "Jen": ""
+    },
+    {
+      "Audio_Start": "0:02:14",
+      "Audio_End": "",
+      "Desmond": "",
+      "Malia": "",
+      "Paulina": "",
+      "Jen": "Racism, all these other things that have affected how how we navigate, like, our having to feel queer who we feel we need to give our money to and all of those things... I know that I get tired of being woke and other people get tired of being woke and that we all need some rest."
     }
   ],
   "transcript-4": [
