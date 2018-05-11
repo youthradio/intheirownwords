@@ -6,7 +6,7 @@
           <!--selected -->
           <div class="col-12">
             <h1 v-if="selectedTopic">{{ selectedTopic.name }}</h1>
-            <Plyr class="player-custom-style" :options="playerOptions" ref="audioPlayer" :emit="['play','timeupdate']" @play="onAudioPlay" @timeupdate="onTime">
+            <Plyr class="player-custom-style" :options="playerOptions" ref="audioPlayer" :emit="['play','timeupdate','ready']" @play="onAudioPlay" @timeupdate="onTime" @ready="onPlayerReady" v-if="selectedTopic">
                   <audio>
                     <source :src="require('../assets/audio/' + `${selectedTopic.audio}.mp3`)" type="audio/mp3">
                     <source :src="require('../assets/audio/' + `${selectedTopic.audio}.ogg`)" type="audio/ogg">
@@ -17,14 +17,16 @@
 
         </div>
 
-        <div v-for="(person, passage, index) in selectedTopicTranscripts" :key="index" class="row my-auto">
+        <div v-for="(line, index) in transcriptData" :key="index" class="row my-auto">
           <div class="order-1 col-3 col-md-2 my-auto p-1">
-            <img class="img-fluid " src="../assets/images/jen.svg">
+            <img class="img-fluid " :src="require('../assets/images/' + line.image )">
           </div>
           <div class="order-2 col-9 p3text ">
-            <div class="chat">
-              <p class=" "> "There are still times when I wish my skin was clay, so I could sculpt away the feminine qualities I see in my face. " </p>
-              <p v-for="(a, index) in getTextLine(person)" :key="`passage-${index}`" class="">{{a}} : {{index}}</p>
+            <div :class="`${line.cssclass}`">
+              <p>{{line.passage}}</p>
+            </div>
+            <div v-if="line.active" class="progress-bar" :style="{width: progress}">
+              s
             </div>
           </div>
         </div>
@@ -45,19 +47,52 @@ export default {
     },
     topics: {
       type: Object
+    },
+    people: {
+      type: Object
     }
   },
   methods: {
-    getTextLine (value) {
-      const textRecord = Object.entries(value).splice(3)
-      if (!value) return ''
-      return textRecord.filter(e => e[1] !== '')[0] // return only record with text
+    onTime () {
+      this.audioDuration = this.$refs.audioPlayer.player.duration
+      this.progress = (100 * this.$refs.audioPlayer.player.currentTime / this.audioDuration) + '%'
     },
-    onTime (value) {
+    onAudioPlay () {
       console.log(this.$refs.audioPlayer.player.currentTime)
     },
-    onAudioPlay (value) {
-      console.log(this.$refs.audioPlayer.player.currentTime)
+    onPlayerReady () {
+    },
+    getSeconds (timestamp) {
+      const t = timestamp.split(':')
+      const sm = [3600, 60, 1]
+      return t.map((m, i) => m * sm[i]).reduce((a, b) => a + b) // return total in seconds
+    },
+    selectedTopicTranscripts () {
+      var out = []
+      this.topics[this.topic].transcript.forEach((line) => {
+        const textRecord = Object.entries(line).splice(2) // splice audio start end, leaving names and passages
+        const name = textRecord.filter(e => e[1] !== '')[0][0] // filter name, only not empty passage
+        const passage = textRecord.filter(e => e[1] !== '')[0][1] // filter passage
+        out.push({
+          name: name,
+          passage: passage,
+          image: this.people[name].info.Person_Image,
+          cssclass: this.people[name].info.Person_Class,
+          start: this.getSeconds(line.Audio_Start), // Audio start
+          end: this.getSeconds(line.Audio_End), // Audio end
+          active: false // progress bar feature
+        })
+      })
+      this.transcriptData = out
+    }
+  },
+  watch: {
+    topic () {
+      this.selectedTopicTranscripts()
+      this.$refs.audioPlayer.player.media.load()
+    },
+    topics () {
+      this.selectedTopicTranscripts()
     }
   },
   computed: {
@@ -92,23 +127,16 @@ export default {
       } else {
         return null
       }
-    },
-    selectedTopicTranscripts () {
-      if (this.topics) {
-        return this.topics[this.topic].transcript
-      } else {
-        return null
-      }
     }
   },
   data () {
     return {
-      msg: 'conversation'
+      transcriptData: null,
+      progress: '0%',
+      audioDuration: 0,
+      activeLine: 0
     }
   },
-  // created () {
-  //   this.$root.$emit('triggerScroll')
-  // },
   components: {
     Plyr
   }
@@ -119,6 +147,9 @@ export default {
 <style scoped>
 .player-custom-style >>> .plyr--audio .plyr__controls {
   background: none;
+}
+.progress-bar{
+  background-color: red;
 }
 
 </style>

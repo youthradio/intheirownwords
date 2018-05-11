@@ -4,7 +4,7 @@
       <router-view :people="allPeople" name="profile"/>
       <router-view :people="allPeople" name="section"/>
       <router-view :topics="allTopics" name="topics"/>
-      <router-view :topics="allTopics" name="conversation"/>
+      <router-view :topics="allTopics" :people="allPeople" name="conversation"/>
       <router-view name="footer"/>
       <router-view name="notfound"/>
     </div>
@@ -18,7 +18,7 @@ export default {
   name: 'App',
   data () {
     return {
-      loading: false,
+      isLoading: false,
       appData: null,
       allTopics: null,
       allPeople: null
@@ -33,7 +33,7 @@ export default {
   methods: {
     fetchData () {
       this.appData = AllData
-      this.loading = false
+      this.isLoading = false
       // fetch('assets/data/alldata.json')
       //   .then(d => d.json())
       //   .then(data => {
@@ -70,6 +70,7 @@ export default {
     }
   },
   created () {
+    this.isLoading = true
     this.fetchData()
     // this.$root.$emit('triggerScroll')
   }
