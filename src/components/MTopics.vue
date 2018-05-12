@@ -14,21 +14,34 @@
     </div>
 
     <div class="row text-center">
-      <div class="col-1 my-auto">
+      <div class="d-md-none col-1 my-auto">
         <button v-on:click="prevTopic">Prev</button>
       </div>
-      <div class="col-10">
+      <div class="col-md-12 col-10">
+        <carousel ref="slider"
+                  :per-page="1"
+                  :paginationEnabled="false"
+                  :loop="true"
+                  :perPageCustom="[[768, 4]]">
 
-        <div style="width:70%; margin:20px auto; height:400px">
-          <slider class="slider-comp" ref="slider" :pages="sliderData" :sliderinit="sliderinit">
-            <div slot="loading">
-                Loding
-            </div>
-          </slider>
-        </div>
+          <slide v-for="(topic,index) in selectedTopics" :key="'slide--'+topic.slug">
+            <router-link :to="{ name: 'Conversation', params: { topic: topic.slug }}">
+            <div class="px-2">
+               <div>
+                <img :src="require(`../assets/images/${topic.image}`)" class="img-fluid">
+               </div>
+               <div class="my-auto">
+                 <h4>
+                   {{topic.name}}
+                 </h4>
+               </div>
+             </div>
+            </router-link>
+          </slide>
+        </carousel>
 
       </div>
-      <div class="col-1 my-auto">
+      <div class="d-md-none col-1 my-auto">
         <button v-on:click="nextTopic">Next</button>
       </div>
     </div>
@@ -37,7 +50,7 @@
 </template>
 
 <script>
-import slider from 'vue-concise-slider'
+import { Carousel, Slide } from 'vue-carousel'
 
 export default {
   props: {
@@ -55,20 +68,6 @@ export default {
   name: 'MTopics',
   data () {
     return {
-      sliderData: [],
-      sliderinit: {
-        effect: 'coverflow',
-        currentPage: 1,
-        tracking: false,
-        thresholdDistance: 100,
-        thresholdTime: 300,
-        deviation: 200,
-        widthScalingRatio: 0.3,
-        heightScalingRatio: 0.8,
-        infinite: 4,
-        slidesToScroll: 1,
-        loop: true
-      }
     }
   },
   computed: {
@@ -121,14 +120,15 @@ export default {
   },
   methods: {
     nextTopic () {
-      this.$refs.slider.$emit('slideNext')
+      this.$refs.slider.advancePage()
     },
     prevTopic () {
-      this.$refs.slider.$emit('slidePre')
+      this.$refs.slider.advancePage('backward')
     }
   },
   components: {
-    slider
+    'carousel': Carousel,
+    'slide': Slide
   }
 }
 </script>
@@ -136,7 +136,4 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-.slider-comp >>> .slider-pagination {
-  display: none;
-}
 </style>

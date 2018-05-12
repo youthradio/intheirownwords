@@ -1,5 +1,5 @@
 <template>
-  <header class="row text-center my-3 ">
+  <header class="row text-center">
       <div class="col-12 col-md-3 my-auto text-center pl-5">
           <a href="www.youthradio.org" target="_blank"> <img class="" src="../assets/images/youthradiologo.png" height="50px">
           </a>

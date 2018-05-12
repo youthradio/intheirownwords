@@ -1,6 +1,8 @@
 <template>
-  <footer>
-    {{msg}}
+  <footer class="row text-center">
+    <div class="col-12">
+      {{msg}}
+    </div>
   </footer>
 </template>
 
@@ -9,7 +11,7 @@ export default {
   name: 'MFooter',
   data () {
     return {
-      msg: 'footer'
+      msg: '© 2018 Youth Radio'
     }
   }
 }
