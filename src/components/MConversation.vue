@@ -2,11 +2,11 @@
   <main id="conversation">
     <div class="row">
       <div class="col-10 offset-1 col-md-8 offset-md-2">
-        <div class="row text-center py-4">
+        <div class="row text-center py-4 sticky-top fixed-topic">
           <!--selected -->
           <div class="col-12">
             <h1 v-if="selectedTopic">{{ selectedTopic.name }}</h1>
-            <Plyr class="player-custom-style" :options="playerOptions" ref="audioPlayer" :emit="['play','timeupdate','ready','canplay']" @play="onAudioPlay" @timeupdate="onTime" @ready="onPlayerReady" @canplay="audioReady" v-if="selectedTopic">
+            <Plyr class="player-custom-style" :options="playerOptions" ref="audioPlayer" :emit="['play','timeupdate','ready','canplay','seeking']" @seeking="onSeek" @play="onAudioPlay" @timeupdate="onTime" @ready="onPlayerReady" @canplay="audioReady" v-if="selectedTopic">
                   <audio>
                     <source :src="require('../assets/audio/' + `${selectedTopic.audio}.mp3`)" type="audio/mp3">
                     <source :src="require('../assets/audio/' + `${selectedTopic.audio}.ogg`)" type="audio/ogg">
@@ -25,8 +25,7 @@
             <div>
               <p>{{line.passage}}</p>
             </div>
-            <div v-if="line.active" class="progress-bar" :style="{width: progress}">
-              s
+            <div v-if="index == activeLine " :class="['progress-bar', (index !== activeLine) ? 'progress-out-fast' : '']" :style="{width: progress}">
             </div>
           </div>
         </div>
@@ -47,18 +46,26 @@ export default {
     }
   },
   methods: {
+    onSeek (e) {
+      // find active live when audion seeking
+      const currTime = this.$refs.audioPlayer.player.currentTime
+      this.transcriptData.forEach((e, i) => {
+        const start = e.start
+        const end = e.end
+        if(currTime > start && currTime < end) {
+          this.activeLine = i
+        }
+      })
+    },
     onTime () {
       this.audioDuration = this.$refs.audioPlayer.player.duration
       const currTime = this.$refs.audioPlayer.player.currentTime
       const start = this.transcriptData[this.activeLine].start
       const end = this.transcriptData[this.activeLine].end
-      console.log(this.transcriptData[this.activeLine])
       this.progress = (100 * (currTime - start) / (end - start)) + '%'
-      if (currTime > end) {
-        this.transcriptData[this.activeLine].active = false
+      if (currTime >= end) {
         this.progress = '0%'
-        this.activeLine++
-        this.transcriptData[this.activeLine].active = true
+        this.activeLine = (this.activeLine + 1) % this.transcriptData.length
       }
     },
     onAudioPlay () {
@@ -67,7 +74,7 @@ export default {
     onPlayerReady () {
     },
     audioReady () {
-      console.log('aduio readaaaaaaa')
+      // console.log('aduio readaaaaaaa')
     },
     getSeconds (timestamp) {
       const t = timestamp.split(':')
@@ -77,6 +84,7 @@ export default {
   },
   watch: {
     topic () {
+      this.activeLine = 0
       this.$refs.audioPlayer.player.media.load()
     }
   },
@@ -124,15 +132,17 @@ export default {
           image: this.$store.state.allPeople[name].info.Person_Image,
           cssclass: this.$store.state.allPeople[name].info.Person_Class,
           start: this.getSeconds(line.Audio_Start), // Audio start
-          end: this.getSeconds(line.Audio_End), // Audio end
-          active: index === 0// progress bar feature
+          end: this.getSeconds(line.Audio_End) // Audio end
         })
       })
       return out
     }
   },
+  created () {
+  },
   data () {
     return {
+      lastCurrTime: 0,
       progress: '0%',
       audioDuration: 0,
       activeLine: 0
@@ -149,8 +159,18 @@ export default {
 .player-custom-style >>> .plyr--audio .plyr__controls {
   background: none;
 }
-.progress-bar{
-  background-color: red;
+.progress-bar {
+  background-color: #1aafff;
+  height:10px;
 }
-
+.progress-out-fast {
+  width: 0%;
+  -webkit-transition: width 0s ease-in-out;
+  -moz-transition: width 0s ease-in-out;
+  -o-transition: width 0s ease-in-out;
+  transition: width 0s ease-in-out;
+}
+.fixed-topic {
+  background: #FCFCFC;
+}
 </style>
