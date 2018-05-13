@@ -24,7 +24,7 @@
                   :loop="true"
                   :perPageCustom="[[768, 4]]">
 
-          <slide v-for="(topic,index) in selectedTopics" :key="'slide--'+topic.slug">
+          <slide v-for="topic in selectedTopics" :key="'slide--'+topic.slug">
             <router-link :to="{ name: 'Conversation', params: { topic: topic.slug }}">
             <div class="px-2">
                <div>
@@ -72,50 +72,13 @@ export default {
   },
   computed: {
     selectedTopics () {
-      if (this.topics) {
-        return Object.entries(this.topics)
-          .filter(topic => this.person ? topic[1].people.filter(p => p === this.person).length > 0 : true) // filter all topics by person or return al;
-          .map(a => ({
-            slug: a[0],
-            name: a[1].topic,
-            image: a[1].topicImg
-          })) // return object with slug an topic
-      } else {
-        return null
-      }
-    }
-  },
-  watch: {
-    selectedTopics () {
-      this.sliderData = []
-      this.selectedTopics.forEach((t, index) => {
-        this.sliderData.push({
-          html: `slide-${index}`,
-          style: {
-            'width': `${100 / (this.selectedTopics.length)}%`
-          },
-          component: {
-            props: ['topic', 'sliderinit', 'pages'],
-            data () {
-              return {
-                img: require(`../assets/images/${t.image}`)
-              }
-            },
-            template: `
-              <router-link :to="{ name: 'Conversation', params: { topic: '${t.slug}' }}">
-               <div>
-                <img :src="img" class="img-fluid">
-               </div>
-               <div class="my-auto">
-                 <h4>
-                   ${t.name}
-                 </h4>
-               </div>
-              </router-link>
-              `
-          }
-        })
-      })
+      return Object.entries(this.$store.state.allTopics)
+        .filter(topic => this.person ? topic[1].people.filter(p => p === this.person).length > 0 : true) // filter all topics by person or return al;
+        .map(a => ({
+          slug: a[0],
+          name: a[1].topic,
+          image: a[1].topicImg
+        })) // return object with slug an topic
     }
   },
   methods: {

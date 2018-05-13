@@ -1,18 +1,16 @@
 <template>
     <div class="container-fluid">
       <router-view name="header"/>
-      <router-view :people="allPeople" name="profile"/>
-      <router-view :people="allPeople" name="section"/>
-      <router-view :topics="allTopics" name="topics"/>
-      <router-view :topics="allTopics" :people="allPeople" name="conversation"/>
+      <router-view name="profile"/>
+      <router-view name="section"/>
+      <router-view name="topics"/>
+      <router-view name="conversation"/>
       <router-view name="footer"/>
       <router-view name="notfound"/>
     </div>
 </template>
 
 <script>
-
-import AllData from './assets/data/alldata.json'
 
 export default {
   name: 'App',
@@ -24,64 +22,13 @@ export default {
       allPeople: null
     }
   },
-  mounted () {
-    this.$nextTick(function () {
-      this.allTopics = this.getTopics()
-      this.allPeople = this.getPeople()
-    })
-  },
-  methods: {
-    fetchData () {
-      this.appData = AllData
-      this.isLoading = false
-      // fetch('assets/data/alldata.json')
-      //   .then(d => d.json())
-      //   .then(data => {
-      //     this.loading = false
-      //     this.appData = data
-      //   })
-    },
-    getTopics () {
-      return this.appData.data.reduce((a, b) => {
-        a[slug(b.Topic)] = {
-          topic: b.Topic,
-          topicImg: b.Topic_Image,
-          topicAudio: b.Audio,
-          people: b.People.split(',').map(t => t.trim()),
-          transcript: this.appData[`transcript-${b.ID}`]
-        }
-        return a
-      }, {})
-    },
-    getPeople () {
-      let p = {}
-      Object.entries(this.allTopics).forEach((topic) => {
-        topic[1].people.forEach(person => {
-          if (!p[person]) {
-            p[person] = {
-              topics: [],
-              info: this.appData.people.filter(e => e['Person_Name'] === person)[0]
-            }
-          }
-          p[person].topics.push(topic[0])
-        })
-      })
-      return p
-    }
-  },
   created () {
     this.isLoading = true
-    this.fetchData()
+    this.$store.commit('setData') // fetch data on store vuex
     // this.$root.$emit('triggerScroll')
   }
 }
-// https://gist.github.com/mathewbyrne/1280286
-/*eslint-disable */
-const slug = (e) => e.toString().toLowerCase().trim()
-  .replace(/\s+/g, '-')
-  .replace(/&/g, '-and-')
-  .replace(/[^\w\-]+/g, '')
-  .replace(/\-\-+/g, '-')
+
 </script>
 
 <style>

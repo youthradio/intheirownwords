@@ -1,5 +1,5 @@
 <template>
-  <div id="profile" v-if="getPerson">
+  <div id="profile">
 
     <div class="row my-3">
       <div class="col-2 col-md-3 my-auto">
@@ -31,32 +31,20 @@ export default {
   props: {
     person: {
       type: String
-    },
-    people: {
-      type: Object
     }
   },
   name: 'MPersonProfile',
-  data () {
-    return {
-      msg: 'profile'
-    }
-  },
   computed: {
     getPerson () {
-      if (this.people) {
-        return ({
-          name: this.people[this.person].info.Person_Name,
-          age: this.people[this.person].info.Age,
-          cssclass: this.people[this.person].info.Person_Class,
-          pronoum: this.people[this.person].info.Pronoum,
-          quote: this.people[this.person].info.Quote,
-          essay: this.people[this.person].info.Essay,
-          image: this.people[this.person].info.Person_Image
-        })
-      } else {
-        return null
-      }
+      return ({
+        name: this.$store.state.allPeople[this.person].info.Person_Name,
+        age: this.$store.state.allPeople[this.person].info.Age,
+        cssclass: this.$store.state.allPeople[this.person].info.Person_Class,
+        pronoum: this.$store.state.allPeople[this.person].info.Pronoum,
+        quote: this.$store.state.allPeople[this.person].info.Quote,
+        essay: this.$store.state.allPeople[this.person].info.Essay,
+        image: this.$store.state.allPeople[this.person].info.Person_Image
+      })
     }
   }
 }

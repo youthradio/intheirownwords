@@ -19,7 +19,7 @@
         <div class="col-12  col-md-8 offset-md-2">
           <div class="row">
             <!-- Profile for loop -->
-            <div v-for="(data, person, index) in people" :key="index" class="col-12 col-md-3">
+            <div v-for="(data, person, index) in getPeople" :key="index" class="col-12 col-md-3">
               <div class="row py-2">
                 <div class="col-4 col-md-12">
                   <router-link :to="{ name: 'PersonRoute', params: { person: person }}">
@@ -49,18 +49,15 @@
 <script>
 export default {
   props: {
-    people: {
-      type: Object
-    },
     topic: {
       type: String,
       default: ''
     }
   },
   name: 'MSection',
-  data () {
-    return {
-      msg: 'section sds sds'
+  computed: {
+    getPeople () {
+      return this.$store.state.allPeople
     }
   }
 }

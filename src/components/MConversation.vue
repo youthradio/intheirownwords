@@ -44,12 +44,6 @@ export default {
   props: {
     topic: {
       type: String
-    },
-    topics: {
-      type: Object
-    },
-    people: {
-      type: Object
     }
   },
   methods: {
@@ -59,13 +53,12 @@ export default {
       const start = this.transcriptData[this.activeLine].start
       const end = this.transcriptData[this.activeLine].end
       console.log(this.transcriptData[this.activeLine])
-      this.progress = (100 * (currTime - start) / (end -  - start)) + '%'
+      this.progress = (100 * (currTime - start) / (end - start)) + '%'
       if (currTime > end) {
         this.transcriptData[this.activeLine].active = false
         this.progress = '0%'
         this.activeLine++
         this.transcriptData[this.activeLine].active = true
-
       }
     },
     onAudioPlay () {
@@ -80,34 +73,11 @@ export default {
       const t = timestamp.split(':')
       const sm = [3600, 60, 1]
       return t.map((m, i) => m * sm[i]).reduce((a, b) => a + b) // return total in seconds
-    },
-    selectedTopicTranscripts () {
-      var out = []
-      this.topics[this.topic].transcript.forEach((line, index) => {
-        const textRecord = Object.entries(line).splice(2) // splice audio start end, leaving names and passages
-        const name = textRecord.filter(e => e[1] !== '')[0][0] // filter name, only not empty passage
-        const passage = textRecord.filter(e => e[1] !== '')[0][1] // filter passage
-        out.push({
-          name: name,
-          passage: passage,
-          image: this.people[name].info.Person_Image,
-          cssclass: this.people[name].info.Person_Class,
-          start: this.getSeconds(line.Audio_Start), // Audio start
-          end: this.getSeconds(line.Audio_End), // Audio end
-          active: index === 0 ? true : false // progress bar feature
-        })
-      })
-      this.transcriptData = out
-      console.log(this.transcriptData)
     }
   },
   watch: {
     topic () {
-      this.selectedTopicTranscripts()
       this.$refs.audioPlayer.player.media.load()
-    },
-    topics () {
-      this.selectedTopicTranscripts()
     }
   },
   computed: {
@@ -132,21 +102,37 @@ export default {
         ]
       }
     },
+    count () {
+      return this.$store.state.count
+    },
     selectedTopic () {
-      if (this.topics) {
-        return ({
-          slug: this.topics[this.topic].slug,
-          name: this.topics[this.topic].topic,
-          audio: this.topics[this.topic].topicAudio
+      return ({
+        slug: this.$store.state.allTopics[this.topic].slug,
+        name: this.$store.state.allTopics[this.topic].topic,
+        audio: this.$store.state.allTopics[this.topic].topicAudio
+      })
+    },
+    transcriptData () {
+      var out = []
+      this.$store.state.allTopics[this.topic].transcript.forEach((line, index) => {
+        const textRecord = Object.entries(line).splice(2) // splice audio start end, leaving names and passages
+        const name = textRecord.filter(e => e[1] !== '')[0][0] // filter name, only not empty passage
+        const passage = textRecord.filter(e => e[1] !== '')[0][1] // filter passage
+        out.push({
+          name: name,
+          passage: passage,
+          image: this.$store.state.allPeople[name].info.Person_Image,
+          cssclass: this.$store.state.allPeople[name].info.Person_Class,
+          start: this.getSeconds(line.Audio_Start), // Audio start
+          end: this.getSeconds(line.Audio_End), // Audio end
+          active: index === 0// progress bar feature
         })
-      } else {
-        return null
-      }
+      })
+      return out
     }
   },
   data () {
     return {
-      transcriptData: null,
       progress: '0%',
       audioDuration: 0,
       activeLine: 0
@@ -166,7 +152,5 @@ export default {
 .progress-bar{
   background-color: red;
 }
-
-
 
 </style>
