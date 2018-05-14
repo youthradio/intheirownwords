@@ -1,5 +1,5 @@
 <template>
-  <footer class="row text-center">
+  <footer class="row text-center m-5">
     <div class="col-12">
       {{msg}}
     </div>
