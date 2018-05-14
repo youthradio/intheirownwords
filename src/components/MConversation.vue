@@ -21,7 +21,7 @@
           <div :class="[index%2 == 0?'order-1':'order-2', 'col-3', 'col-md-2', 'p-1']">
             <img class="img-fluid " :src="require('../assets/images/' + line.image )">
           </div>
-          <div :class="[line.cssclass, index%2 == 0?'order-2':'order-1 curve-right','my-auto', 'col-9']">
+          <div :class="[line.cssclass, index%2 == 0?'order-2':'order-1 curve-right','my-auto', 'col-9']" :id="`transcript-${index}`">
             <div class="card m-1">
               <div class="card-body">
                 <blockquote class="blockquote mb-0">
@@ -41,6 +41,8 @@
 
 <script>
 import { Plyr } from 'vue-plyr'
+import smoothscroll from 'smoothscroll-polyfill'
+smoothscroll.polyfill()
 
 export default {
   name: 'MConversation',
@@ -58,6 +60,7 @@ export default {
         const end = e.end
         if (currTime > start && currTime < end) {
           this.activeLine = i
+          this.scrollTo(this.activeLine)
         }
       })
     },
@@ -70,10 +73,12 @@ export default {
       if (currTime >= end) {
         this.progress = '0%'
         this.activeLine = (this.activeLine + 1) % this.transcriptData.length
+        this.scrollTo(this.activeLine)
       }
     },
     onAudioPlay () {
       // console.log(this.$refs.audioPlayer.player.currentTime)
+      this.scrollTo(this.activeLine)
     },
     onPlayerReady () {
     },
@@ -84,6 +89,12 @@ export default {
       const t = timestamp.split(':')
       const sm = [3600, 60, 1]
       return t.map((m, i) => m * sm[i]).reduce((a, b) => a + b) // return total in seconds
+    },
+    scrollTo (index) {
+      // const titleBox = this.$el.querySelector('.fixed-topic')
+      const transcript = this.$el.querySelector(`#transcript-${index}`)
+      transcript.scrollIntoView({ behavior: 'smooth' })
+      // querySelector('.fixed-topic')
     }
   },
   watch: {
