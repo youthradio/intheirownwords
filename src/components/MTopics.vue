@@ -25,7 +25,7 @@
                   :perPageCustom="[[768, 4]]"
                   @pageChange="onPageChange">
 
-          <slide v-for="(topic,index) in selectedTopics" :key="`slide--${topic.slug}`" :data-name="`bt-slide-${topic.slug}`" @slideClick="handleSlideClick">
+          <slide v-for="topic in selectedTopics" :key="`slide--${topic.slug}`" :data-name="`bt-slide-${topic.slug}`" @slideClick="handleSlideClick">
             <!-- <router-link :to="{ name: 'Conversation', params: { topic: topic.slug }}"> -->
             <div class="px-2">
                <div>
@@ -89,13 +89,18 @@ export default {
     prevTopic (event) {
       this.$refs.slider.advancePage('backward')
     },
-    onPageChange (index){
+    onPageChange (index) {
       const slide = this.$refs.slider.$children[index].$el.dataset
-      this.$router.push({ name: 'Conversation', params: { topic: slide.name.split('bt-slide-')[1] }})  // go to slide event page
-
+      this.$router.push({
+        name: 'Conversation',
+        params: { topic: slide.name.split('bt-slide-')[1]
+        }}) // go to slide event page
     },
-    handleSlideClick (slide){
-      this.$router.push({ name: 'Conversation', params: { topic: slide.name.split('bt-slide-')[1] }})  // go to slide event page
+    handleSlideClick (slide) {
+      this.$router.push({
+        name: 'Conversation',
+        params: { topic: slide.name.split('bt-slide-')[1]
+        }}) // go to slide event page
     }
   },
   components: {

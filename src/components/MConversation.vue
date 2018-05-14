@@ -22,10 +22,14 @@
             <img class="img-fluid " :src="require('../assets/images/' + line.image )">
           </div>
           <div :class="[line.cssclass, index%2 == 0?'order-2':'order-1 curve-right','my-auto', 'col-9']">
-            <div>
-              <p>{{line.passage}}</p>
+            <div class="card m-1">
+              <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                  <p>{{line.passage}}</p>
+                </blockquote>
+              </div>
             </div>
-            <div v-if="index == activeLine " :class="['progress-bar', (index !== activeLine) ? 'progress-out-fast' : '']" :style="{width: progress}">
+            <div v-if="index == activeLine " :class="['progress-bar m-1', (index !== activeLine) ? 'progress-out-fast' : '']" :style="{width: progress}">
             </div>
           </div>
         </div>
@@ -69,7 +73,7 @@ export default {
       }
     },
     onAudioPlay () {
-      console.log(this.$refs.audioPlayer.player.currentTime)
+      // console.log(this.$refs.audioPlayer.player.currentTime)
     },
     onPlayerReady () {
     },
