@@ -2,7 +2,7 @@
   <main id="conversation">
     <div class="row">
       <div class="col-10 offset-1 col-md-8 offset-md-2">
-        <div class="row text-center py-4 sticky-top fixed-topic">
+        <div class="row text-center pt-3 sticky-top fixed-topic">
           <!--selected -->
           <div class="col-12">
             <h1 v-if="selectedTopic">{{ selectedTopic.name }}</h1>
