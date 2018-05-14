@@ -52,7 +52,7 @@ export default {
       this.transcriptData.forEach((e, i) => {
         const start = e.start
         const end = e.end
-        if(currTime > start && currTime < end) {
+        if (currTime > start && currTime < end) {
           this.activeLine = i
         }
       })
