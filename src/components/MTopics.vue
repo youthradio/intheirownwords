@@ -25,7 +25,7 @@
                   :perPageCustom="[[768, 4]]"
                   @pageChange="onPageChange">
 
-          <slide v-for="topic in selectedTopics" :key="`slide--${topic.slug}`" :data-name="`bt-slide-${topic.slug}`" @slideClick="handleSlideClick">
+          <slide class="hand-over" v-for="topic in selectedTopics" :key="`slide--${topic.slug}`" :data-name="`bt-slide-${topic.slug}`" @slideClick="handleSlideClick">
             <!-- <router-link :to="{ name: 'Conversation', params: { topic: topic.slug }}"> -->
             <div class="px-2">
                <div>
@@ -112,5 +112,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+.hand-over {
+  cursor: pointer;
+}
 
 </style>
