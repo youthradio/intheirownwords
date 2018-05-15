@@ -5,7 +5,7 @@
         <div class="row text-center pt-3 sticky-top fixed-topic">
           <!--selected -->
           <div class="col-12">
-            <h3 class="d-none d-md-inline" v-if="selectedTopic">{{ selectedTopic.name }}</h3>
+            <h3 v-if="selectedTopic">{{ selectedTopic.name }}</h3>
             <Plyr class="player-custom-style" :options="playerOptions" ref="audioPlayer" :emit="['play','timeupdate','ready','canplay','seeking']" @seeking="onSeek" @play="onAudioPlay" @timeupdate="onTime" @ready="onPlayerReady" @canplay="audioReady" v-if="selectedTopic">
                   <audio>
                     <source :src="require('../assets/audio/' + `${selectedTopic.audio}.mp3`)" type="audio/mp3">
