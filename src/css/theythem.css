@@ -104,7 +104,7 @@ h2{
 	border-radius: 50%;
 }
 
-.p2text h4, .p2text h3, .p2text p, .p2text em {
+.p2text h2, .p2text h4, .p2text h3, .p2text p, .p2text em {
 	color: #4a90e2;
 }
 .p2text-border {
@@ -117,7 +117,7 @@ h2{
 	border-radius: 50%;
 }
 
-.p3text h4, .p3text h3, .p3text p, .p3text em{
+.p3text h2, .p3text h4, .p3text h3, .p3text p, .p3text em{
 	color: #BD10e0;
 }
 .p3text-border {
@@ -129,7 +129,7 @@ h2{
 	border-radius: 50%;
 }
 
-.p4text h4, .p4text h3, .p4text p, .p4text em{
+.p4text h2, .p4text h4, .p4text h3, .p4text p, .p4text em{
 	color: #3dc4a6;
 }
 .p4text-border {
