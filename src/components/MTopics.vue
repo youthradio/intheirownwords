@@ -1,14 +1,14 @@
 <template>
   <div id="topics">
     <div class="row text-center my-5">
-      <div class="col-12 col-md-4 my-auto">
+      <div class="col-12 col-md-3 my-auto">
         <hr>
       </div>
-      <div class="col-12 col-md-4 text-center">
-        <h2>
-          In Conversation About</h2>
+      <div class="col-12 col-md-6 text-center">
+        <h3>
+          In Conversation About</h3>
       </div>
-      <div class="col-12 col-md-4 my-auto">
+      <div class="col-12 col-md-3 my-auto">
         <hr>
       </div>
     </div>
@@ -16,7 +16,7 @@
     <div class="row text-center position-relative">
       <div class="col-12">
         <div class="d-md-none left-arrow hand-over" v-on:click="prevTopic">
-          <svg width="24" height="100" class="octicon octicon-triangle-left" viewBox="0 0 6 16" version="1.1" aria-hidden="true"><path fill-rule="evenodd" d="M6 2L0 8l6 6V2z"></path></svg>
+          <svg width="32" height="32" class="octicon octicon-triangle-left" viewBox="0 0 6 16" version="1.1" aria-hidden="true"><path fill-rule="evenodd" d="M6 2L0 8l6 6V2z"></path></svg>
         </div>
         <carousel ref="slider"
                   :per-page="1"
@@ -41,7 +41,7 @@
           </slide>
         </carousel>
         <div class="d-md-none right-arrow hand-over" v-on:click="nextTopic">
-            <svg width="24" height="100" class="octicon octicon-triangle-right" viewBox="0 0 6 16" version="1.1" aria-hidden="true"><path fill-rule="evenodd" d="M0 14l6-6-6-6v12z"></path></svg>
+            <svg width="32" height="32" class="octicon octicon-triangle-right" viewBox="0 0 6 16" version="1.1" aria-hidden="true"><path fill-rule="evenodd" d="M0 14l6-6-6-6v12z"></path></svg>
         </div>
       </div>
     </div>

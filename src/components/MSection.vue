@@ -29,7 +29,7 @@
                 <div class="col-8 col-md-12 my-auto">
                   <div :class="[data.info.Person_Class, 'text-md-center']">
                     <router-link :to="{ name: 'PersonRoute', params: { person: person }}">
-                      <h3> {{ person }} </h3>
+                      <h4> {{ person }} </h4>
                     </router-link>
                     <p> <span v-if="!topic" class="font-italic"> {{ data.info.Quote }} </span>
                       {{ data.info.Age }}, {{ data.info.Pronoum }}
