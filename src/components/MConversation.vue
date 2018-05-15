@@ -91,10 +91,9 @@ export default {
       return t.map((m, i) => m * sm[i]).reduce((a, b) => a + b) // return total in seconds
     },
     scrollTo (index) {
-      // const titleBox = this.$el.querySelector('.fixed-topic')
-      const transcript = this.$el.querySelector(`#transcript-${index}`)
-      transcript.scrollIntoView({ behavior: 'smooth' })
-      // querySelector('.fixed-topic')
+      const titleBoxH = this.$el.querySelector('.fixed-topic').getBoundingClientRect().height
+      const transcriptTop = this.$el.querySelector(`#transcript-${index}`).getBoundingClientRect().top
+      window.scroll({ top: transcriptTop + window.scrollY - titleBoxH, behavior: 'smooth' })
     }
   },
   watch: {
