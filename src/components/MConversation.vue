@@ -22,7 +22,7 @@
             <img class="img-fluid " :src="require('../assets/images/' + line.image )">
           </div>
           <div :class="[line.cssclass, index%2 == 0?'order-2':'order-1 curve-right','my-auto', 'col-9']" :id="`transcript-${index}`">
-            <div class="card m-1">
+            <div :class="['card m-1', `${line.cssclass}-border`]">
               <div class="card-body">
                 <blockquote class="blockquote mb-0">
                   <p>{{line.passage}}</p>
