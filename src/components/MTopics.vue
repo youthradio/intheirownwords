@@ -13,11 +13,11 @@
       </div>
     </div>
 
-    <div class="row text-center">
-      <div class="d-md-none col-1 my-auto">
-        <button v-on:click="prevTopic">Prev</button>
-      </div>
-      <div class="col-md-12 col-10">
+    <div class="row text-center position-relative">
+      <div class="col-12">
+        <div class="d-md-none left-arrow hand-over" v-on:click="prevTopic">
+          <svg width="24" height="100" class="octicon octicon-triangle-left" viewBox="0 0 6 16" version="1.1" aria-hidden="true"><path fill-rule="evenodd" d="M6 2L0 8l6 6V2z"></path></svg>
+        </div>
         <carousel ref="slider"
                   :per-page="1"
                   :paginationEnabled="false"
@@ -40,10 +40,9 @@
             <!-- </router-link> -->
           </slide>
         </carousel>
-
-      </div>
-      <div class="d-md-none col-1 my-auto">
-        <button v-on:click="nextTopic">Next</button>
+        <div class="d-md-none right-arrow hand-over" v-on:click="nextTopic">
+            <svg width="24" height="100" class="octicon octicon-triangle-right" viewBox="0 0 6 16" version="1.1" aria-hidden="true"><path fill-rule="evenodd" d="M0 14l6-6-6-6v12z"></path></svg>
+        </div>
       </div>
     </div>
 
@@ -115,6 +114,21 @@ export default {
 
 .hand-over {
   cursor: pointer;
+}
+button {
+  font-size: 0.8em;
+}
+.left-arrow {
+  position: absolute;
+  left: 2px;
+  top: 50%;
+  z-index: 1000;
+}
+.right-arrow {
+  position: absolute;
+  right: 2px;
+  top: 50%;
+  z-index: 1000;
 }
 
 </style>
