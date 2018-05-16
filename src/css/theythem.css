@@ -192,3 +192,7 @@ h2{
 .typl8-zeta, h6 {
   font-size: 1em;
 }
+
+.hand-over {
+  cursor: pointer;
+}
