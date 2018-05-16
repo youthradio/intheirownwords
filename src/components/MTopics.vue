@@ -1,6 +1,6 @@
 <template>
   <div id="topics">
-    <div class="row text-center my-5">
+    <div class="row text-center my-2">
       <div class="col-12 col-md-3 my-auto">
         <hr>
       </div>
@@ -27,14 +27,14 @@
 
           <slide class="hand-over" v-for="topic in selectedTopics" :key="`slide--${topic.slug}`" :data-name="`bt-slide-${topic.slug}`" @slideClick="handleSlideClick">
             <!-- <router-link :to="{ name: 'Conversation', params: { topic: topic.slug }}"> -->
-            <div class="px-2">
+            <div class="m-3 p-3">
                <div>
                 <img :src="require(`../assets/images/${topic.image}`)" class="img-fluid">
                </div>
                <div class="my-auto">
-                 <h4>
+                 <h5>
                    {{topic.name}}
-                 </h4>
+                 </h5>
                </div>
              </div>
             <!-- </router-link> -->
