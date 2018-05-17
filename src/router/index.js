@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import MHeader from '@/components/MHeader'
 import MFooter from '@/components/MFooter'
 import MSection from '@/components/MSection'
+import MCredits from '@/components/MCredits'
 import MConversation from '@/components/MConversation'
 import MTopics from '@/components/MTopics'
 import MPersonProfile from '@/components/MPersonProfile'
@@ -76,6 +77,18 @@ const router = new Router({
         people: true,
         section: true,
         topics: true
+      }
+    },
+    {
+      path: '/credits',
+      name: 'Credits',
+      meta: {
+        scrollTo: 'top'
+      },
+      components: {
+        header: MHeader,
+        section: MCredits,
+        footer: MFooter
       }
     },
     {
