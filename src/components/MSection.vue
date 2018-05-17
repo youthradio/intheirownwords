@@ -16,7 +16,7 @@
 
     <div>
       <div class="row mx-auto">
-        <div class="col-12  col-md-8 offset-md-2">
+        <div class="col-12  col-md-10 offset-md-1">
           <div class="row">
             <!-- Profile for loop -->
             <div v-for="(data, person, index) in getPeople" :key="index" class="col-12 col-md-3">

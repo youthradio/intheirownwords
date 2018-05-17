@@ -1,21 +1,23 @@
 <template>
   <header>
     <div class="splash-header position-relative">
-      <nav class="navbar navbar-expand-lg navbar-custom">
+      <nav class="navbar navbar-expand-sm navbar-custom text-right">
         <a class="navbar-brand" href="www.youthradio.org" target="_blank">
-          <img class="" src="../assets/images/youthradiologo.png" height="50px">
+          <img height="30" src="../assets/images/youthradiologo.png">
         </a>
-        <button id="menu-btn" class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <button id="menu-btn" class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <h3 ><router-link :to="{ name: 'Home', params: {}}">They / Them</router-link></h3>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <span class="navbar-text">
+              <h3 ><router-link :to="{ name: 'Home', params: {}}">They / Them</router-link></h3>
+          </span>
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
               <a class="nav-link" href="#"> More Coverage <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Credits</a>
+              <router-link :to="{ name: 'Credits' }"> <a class="nav-link" >Credits</a></router-link>
             </li>
             <li class="nav-item">
               <a class="nav-link disabled" href="#">Share</a>
@@ -143,12 +145,20 @@ export default {
   h1 {
      font-size: 42px;
   }
+  h3 {
+     font-size: 25px;
+  }
 }
-h3 {
-   font-size: 35px;
+@media screen and (max-width: 576px) {
+  h3 {
+     font-size: 20px;
+  }
 }
 .custom-toggler.navbar-toggler {
     border-color: rgba(255,255,255, 0.7);
+    padding-left: 6px;
+    padding-right: 6px;
+
 }
 .custom-toggler .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
