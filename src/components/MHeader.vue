@@ -1,31 +1,46 @@
 <template>
   <header>
     <div class="splash-header position-relative">
-      <nav class="navbar navbar-expand-sm navbar-custom text-right">
-        <a class="navbar-brand" href="www.youthradio.org" target="_blank">
-          <img height="30" src="../assets/images/youthradiologo.png">
-        </a>
-        <button id="menu-btn" class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <span class="navbar-text">
-              <h3 ><router-link :to="{ name: 'Home', params: {}}">They / Them</router-link></h3>
-          </span>
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="#"> More Coverage <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <router-link :to="{ name: 'Credits' }"> <a class="nav-link" >Credits</a></router-link>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Share</a>
-            </li>
-          </ul>
+      <div class="sticky-top">
+        <div class="d-flex justify-content-between bd-highlight mb-3">
+          <div class="p-2">
+            <a class="navbar-brand" href="www.youthradio.org" target="_blank">
+              <img height="50" src="../assets/images/youthradiologo.png">
+            </a>
+          </div>
+          <div class="p-2 bd-highlight">
+            <nav class="navbar navbar-expand-sm navbar-custom">
+              <div class="ml-auto">
+                <button id="menu-btn" class="navbar-toggler custom-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              </div>
+              <div class="collapse navbar-collapse text-right">
+
+                <ul class="navbar-nav mt-2 mt-lg-0">
+                  <li class="nav-item active">
+                    <router-link :to="{ name: 'Home', params: {}}"><a class="nav-link">Home</a></router-link>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"> More Coverage <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <router-link :to="{ name: 'Credits' }"> <a v-on:click="menuItemClicked" class="nav-link" >Credits</a></router-link>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Share</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
         </div>
-      </nav>
-      <div class="position-absolute title-splash row d-sm-none">
+      </div>
+      <div class="position-absolute title-splash row">
           <h1><span>In</span>THEIR<span>Words</span></h1>
       </div>
     </div>
@@ -55,71 +70,74 @@ export default {
       // only randomize if there is a gradient
       gradientEl.style.backgroundImage = `linear-gradient(45deg, ${colors[rand][0]}, ${colors[rand][1]})`
     }
+  },
+  methods: {
+    menuItemClicked () {
+      this.$el.querySelector('#menu-btn').click()
+    }
   }
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-@media (max-width: 576px) {
-  .splash-header {
-      height: 100vh;
-      overflow: hidden;
-      background: -webkit-linear-gradient(45deg, #f5a623, #BD10e0);
-      background: -moz-linear-gradient(45deg, #f5a623, #BD10e0);
-      background: -o-linear-gradient(45deg, #f5a623, #BD10e0);
-      background: linear-gradient(45deg, #f5a623, #BD10e0);
+/* @media (max-width: 576px) { */
+.splash-header {
+    height: 100vh;
+    overflow: hidden;
+    background: -webkit-linear-gradient(45deg, #f5a623, #BD10e0);
+    background: -moz-linear-gradient(45deg, #f5a623, #BD10e0);
+    background: -o-linear-gradient(45deg, #f5a623, #BD10e0);
+    background: linear-gradient(45deg, #f5a623, #BD10e0);
 
-      background-size: 100% 200%;
-      -webkit-animation: Pattern 2s ease infinite;
-      -moz-animation: Pattern 2s ease infinite;
-      -o-animation: Pattern 2s ease infinite;
-      animation: Pattern 2s ease infinite;
+    background-size: 100% 200%;
+    -webkit-animation: Pattern 3s ease infinite;
+    -moz-animation: Pattern 3s ease infinite;
+    -o-animation: Pattern 3s ease infinite;
+    animation: Pattern 3s ease infinite;
 
-      padding: 0;
-      margin-right: -15px;
-      margin-left: -15px;
-  }
-  h3, h3 a {
-    color: white;
-  }
-  h1 span {
-    display: block;
-  }
-  h1 {
-    padding: 1em 1em;
-    font-size: 10vw;
-    color: white;
-  }
-  .navbar-custom {
-    background-color: none;
-  }
-  /* change the brand and text color */
-  .navbar-custom .navbar-brand,
-  .navbar-custom .navbar-text {
-    color: rgba(255,255,255,.8);
-  }
-  /* change the link color */
-  .navbar-custom .navbar-nav .nav-link {
-    color: rgba(255,255,255,.5);
-  }
-  /* change the color of active or hovered links */
-  .navbar-custom .nav-item.active .nav-link,
-  .navbar-custom .nav-item:hover .nav-link {
-    color: #ffffff;
-  }
-  .fa.fa-navicon {
-    color: white;
-  }
+    padding: 0;
+    margin-right: -15px;
+    margin-left: -15px;
 }
-@media (min-width: 576px) {
+h3, h3 a {
+  color: white;
+}
+h1 span {
+  display: block;
+}
+h1 {
+  padding: 1em 1em;
+  font-size: 10vw;
+  color: white;
+}
+.navbar-custom {
+  background-color: none;
+}
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: rgba(255,255,255,.8);
+}
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+  color: rgba(255,255,255,.5);
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+  color: #ffffff;
+}
+
+/* } */
+/* @media (min-width: 576px) {
   h3, h3 a {
     color: grey;
   }
   .splash-header {
     height: 10vh;
   }
-}
+} */
 
 @keyframes Pattern {
   0% {
@@ -129,13 +147,13 @@ export default {
     background-position: 100% 0%
   }
   50% {
-    background-position: 100% 100%
-  }
-  75% {
     background-position: 0% 100%
   }
+  75% {
+    background-position: 100% 100%
+  }
   100% {
-    background-position: 0% 0%
+    background-position: 100% 0%
   }
 }
 .title-splash {
