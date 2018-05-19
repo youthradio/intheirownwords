@@ -20,7 +20,6 @@ const scrollBehavior = function (to, from, savedPosition) {
     return new Promise((resolve, reject) => {
       // check if any matched route config has meta that requires scrolling to top
       const scrollTo = to.meta.scrollTo
-      console.log(scrollTo)
       if (scrollTo) {
         const el = document.querySelector(scrollTo)
         el.scrollIntoView({

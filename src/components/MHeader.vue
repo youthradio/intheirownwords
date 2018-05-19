@@ -94,11 +94,7 @@ export default {
       ['#BD10e0', '#3dc4a6']]
     const gradientEl = this.$el.querySelector('.splash-header')
     const rand = Math.floor(Math.random() * 2)
-    const styles = window.getComputedStyle(gradientEl)
-    if (!styles.backgroundImage) {
-      // only randomize if there is a gradient
-      gradientEl.style.backgroundImage = `linear-gradient(45deg, ${colors[rand][0]}, ${colors[rand][1]})`
-    }
+    gradientEl.style.backgroundImage = `linear-gradient(45deg, ${colors[rand][0]}, ${colors[rand][1]})`
   },
   methods: {
     menuItemClicked () {
