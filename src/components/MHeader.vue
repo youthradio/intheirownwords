@@ -38,7 +38,7 @@
       <div class="d-flex justify-content-between bd-highlight mb-3">
         <div class="p-2">
           <a class="navbar-brand" href="www.youthradio.org" target="_blank">
-            <img height="50" src="../assets/images/youthradiologo.png">
+            <img height="50" src="../assets/images/YR_logo.svg">
           </a>
         </div>
         <div class="p-2 bd-highlight">
