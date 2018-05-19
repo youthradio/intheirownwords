@@ -50,8 +50,6 @@
 
 <script>
 import { Plyr } from 'vue-plyr'
-import smoothscroll from 'smoothscroll-polyfill'
-smoothscroll.polyfill()
 
 export default {
   name: 'MConversation',
