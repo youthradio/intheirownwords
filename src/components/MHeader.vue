@@ -1,11 +1,11 @@
 <template>
   <header>
-    <div class="splash-header position-relative">
-      <div class="sticky-top">
+    <div class="splash-header mb-5 position-relative">
+      <div class="no-margin">
         <div class="d-flex justify-content-between bd-highlight mb-3">
           <div class="p-2">
             <a class="navbar-brand" href="www.youthradio.org" target="_blank">
-              <img height="50" src="../assets/images/youthradiologo.png">
+              <img height="50" src="../assets/images/yrlogofull.png">
             </a>
           </div>
           <div class="p-2 bd-highlight">
@@ -40,8 +40,37 @@
           </div>
         </div>
       </div>
-      <div class="position-absolute title-splash row">
-          <h1><span>In</span>THEIR<span>Words</span></h1>
+      <div class="row h-100 no-margin justify-content-center align-items-center">
+        <div class="col-10 col-md-4">
+          <div class="d-flex align-items-start">
+            <div class="mr-4">
+              <img class="img-fluid" :src="require('../assets/images/NB_symbol.svg')">
+            </div>
+            <div class="">
+              <h1>
+                <span>in</span>
+                <span class="w">their</span>
+                <span>own</span>
+                <span>words</span>
+              </h1>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center flex-wrap">
+            <div class="mt-5">
+              <p>
+                In Their Own Words is an exploration of
+                non-binary gender indentity through
+                essays and conversations produced by
+                non-binary teens & young adults at
+                Youth Radio.
+              </p>
+            </div>
+            <div v-on:click="scrollTo" class="mt-5">
+              <svg width="30" height="30" class="octicon octicon-triangle-down" fill="white" viewBox="0 0 12 16" version="1.1" aria-hidden="true"><path fill-rule="evenodd" d="M0 5l6 6 6-6H0z"></path></svg>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </header>
@@ -74,6 +103,12 @@ export default {
   methods: {
     menuItemClicked () {
       this.$el.querySelector('#menu-btn').click()
+    },
+    scrollTo () {
+      window.scroll({
+        top: this.$el.offsetHeight,
+        behavior: 'smooth'
+      })
     }
   }
 }
@@ -84,7 +119,7 @@ export default {
 /* @media (max-width: 576px) { */
 .splash-header {
     height: 100vh;
-    overflow: hidden;
+    /* overflow: hidden; */
     background: -webkit-linear-gradient(45deg, #f5a623, #BD10e0);
     background: -moz-linear-gradient(45deg, #f5a623, #BD10e0);
     background: -o-linear-gradient(45deg, #f5a623, #BD10e0);
@@ -100,17 +135,27 @@ export default {
     margin-right: -15px;
     margin-left: -15px;
 }
+
+.no-margin {
+  margin-right: 0px;
+  margin-left: 0px;
+}
 h3, h3 a {
+  color: white;
+}
+h1 {
+  color: gray;
+}
+h1 .w {
   color: white;
 }
 h1 span {
   display: block;
 }
-h1 {
-  padding: 1em 1em;
-  font-size: 10vw;
+p {
   color: white;
 }
+
 .navbar-custom {
   background-color: none;
 }
@@ -161,7 +206,7 @@ h1 {
 }
 @media screen and (min-width: 576px) {
   h1 {
-     font-size: 42px;
+     font-size: 52px;
   }
   h3 {
      font-size: 25px;

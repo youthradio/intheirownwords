@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400px" height="666px" viewBox="0 0 400 666" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval" stroke="#F3F2FF" stroke-width="50" cx="200" cy="200" r="175"></circle>
+        <path d="M201.5,416.5 L201.5,640.005034" id="Line" stroke="#F3F2FF" stroke-width="50" stroke-linecap="square"></path>
+        <path d="M201.5,416.5 L201.5,640.005034" id="Line-Copy" stroke="#F3F2FF" stroke-width="50" stroke-linecap="square" transform="translate(201.500000, 528.500000) rotate(90.000000) translate(-201.500000, -528.500000) "></path>
+        <path d="M122.304041,449.304041 L280.345965,607.345965" id="Line-Copy-3" stroke="#F3F2FF" stroke-width="50" stroke-linecap="square"></path>
+        <path d="M122.304041,607.345965 L280.345965,449.304041" id="Line-Copy-2" stroke="#F3F2FF" stroke-width="50" stroke-linecap="square"></path>
+    </g>
+</svg>
