@@ -39,7 +39,7 @@ const router = new Router({
       path: '/',
       name: 'Home',
       meta: {
-        scrollTo: 'body'
+        scrollTo: '#menu'
       },
       components: {
         header: MHeader,
@@ -88,7 +88,7 @@ const router = new Router({
       path: '/person/:person',
       name: 'PersonRoute',
       meta: {
-        scrollTo: '#profile'
+        scrollTo: '#menu'
       },
       components: {
         header: MHeader,

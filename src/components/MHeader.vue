@@ -1,45 +1,6 @@
 <template>
   <header>
-    <div class="splash-header mb-5 position-relative">
-      <div class="no-margin">
-        <div class="d-flex justify-content-between bd-highlight mb-3">
-          <div class="p-2">
-            <a class="navbar-brand" href="www.youthradio.org" target="_blank">
-              <img height="50" src="../assets/images/yrlogofull.png">
-            </a>
-          </div>
-          <div class="p-2 bd-highlight">
-            <nav class="navbar navbar-expand-sm navbar-custom">
-              <div class="ml-auto">
-                <button id="menu-btn" class="navbar-toggler custom-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-              </div>
-              <div class="collapse navbar-collapse text-right">
-
-                <ul class="navbar-nav mt-2 mt-lg-0">
-                  <li class="nav-item active">
-                    <router-link :to="{ name: 'Home', params: {}}"><a class="nav-link">Home</a></router-link>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#"> More Coverage <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item">
-                    <router-link :to="{ name: 'Credits' }"> <a v-on:click="menuItemClicked" class="nav-link" >Credits</a></router-link>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Share</a>
-                  </li>
-                </ul>
-              </div>
-            </nav>
-          </div>
-        </div>
-      </div>
+    <div class="splash-header position-relative">
       <div class="row h-100 no-margin justify-content-center align-items-center">
         <div class="col-10 col-md-4">
           <div class="d-flex align-items-start">
@@ -73,6 +34,45 @@
 
       </div>
     </div>
+    <div id="menu" class="no-margin">
+      <div class="d-flex justify-content-between bd-highlight mb-3">
+        <div class="p-2">
+          <a class="navbar-brand" href="www.youthradio.org" target="_blank">
+            <img height="50" src="../assets/images/youthradiologo.png">
+          </a>
+        </div>
+        <div class="p-2 bd-highlight">
+          <nav class="navbar navbar-expand-sm navbar-custom">
+            <div class="ml-auto">
+              <button id="menu-btn" class="navbar-toggler custom-toggler"
+                  type="button"
+                  data-toggle="collapse"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+            <div class="collapse navbar-collapse text-right">
+
+              <ul class="navbar-nav mt-2 mt-lg-0">
+                <li class="nav-item active">
+                  <router-link :to="{ name: 'Home', params: {}}"><a class="nav-link">Home</a></router-link>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"> More Coverage <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <router-link :to="{ name: 'Credits' }"> <a v-on:click="menuItemClicked" class="nav-link" >Credits</a></router-link>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Share</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
   </header>
 </template>
 
@@ -102,7 +102,7 @@ export default {
     },
     scrollTo () {
       window.scroll({
-        top: this.$el.offsetHeight,
+        top: this.$el.querySelector('.splash-header').offsetHeight,
         behavior: 'smooth'
       })
     }
@@ -121,11 +121,11 @@ export default {
     background: -o-linear-gradient(45deg, #f5a623, #BD10e0);
     background: linear-gradient(45deg, #f5a623, #BD10e0);
 
-    background-size: 100% 200%;
-    -webkit-animation: Pattern 3s ease infinite;
-    -moz-animation: Pattern 3s ease infinite;
-    -o-animation: Pattern 3s ease infinite;
-    animation: Pattern 3s ease infinite;
+    background-size: 150% 300%;
+    -webkit-animation: Pattern 4s ease infinite;
+    -moz-animation: Pattern 4s ease infinite;
+    -o-animation: Pattern 4s ease infinite;
+    animation: Pattern 4s ease infinite;
 
     padding: 0;
     margin-right: -15px;
@@ -158,16 +158,16 @@ p {
 /* change the brand and text color */
 .navbar-custom .navbar-brand,
 .navbar-custom .navbar-text {
-  color: rgba(255,255,255,.8);
+  color: rgba(0,0,0,.8);
 }
 /* change the link color */
 .navbar-custom .navbar-nav .nav-link {
-  color: rgba(255,255,255,.5);
+  color: rgba(0,0,0,.5);
 }
 /* change the color of active or hovered links */
 .navbar-custom .nav-item.active .nav-link,
 .navbar-custom .nav-item:hover .nav-link {
-  color: #ffffff;
+  color: #000;
 }
 
 /* } */
@@ -188,13 +188,13 @@ p {
     background-position: 100% 0%
   }
   50% {
-    background-position: 0% 100%
-  }
-  75% {
     background-position: 100% 100%
   }
+  75% {
+    background-position: 0% 100%
+  }
   100% {
-    background-position: 100% 0%
+    background-position: 0% 0%
   }
 }
 .title-splash {
@@ -214,12 +214,12 @@ p {
   }
 }
 .custom-toggler.navbar-toggler {
-    border-color: rgba(255,255,255, 0.7);
+    border-color: rgba(0,0,0, 0.7);
     padding-left: 6px;
     padding-right: 6px;
 
 }
 .custom-toggler .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 </style>
