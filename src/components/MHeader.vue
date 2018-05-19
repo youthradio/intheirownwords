@@ -26,7 +26,7 @@
                 Youth Radio.
               </p>
             </div>
-            <div v-on:click="scrollTo" class="mt-5">
+            <div v-on:click="scrollTo" class="mt-5 hand-over">
               <svg width="30" height="30" class="octicon octicon-triangle-down" fill="white" viewBox="0 0 12 16" version="1.1" aria-hidden="true"><path fill-rule="evenodd" d="M0 5l6 6 6-6H0z"></path></svg>
             </div>
           </div>

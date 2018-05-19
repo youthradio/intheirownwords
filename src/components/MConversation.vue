@@ -42,6 +42,9 @@
             </div>
           </div>
         </div>
+        <div v-on:click="scrollTop" class="row justify-content-center align-items-center mt-3 hand-over">
+            <svg width="30" height="30" class="octicon octicon-triangle-up" fill="gray" viewBox="0 0 12 16" version="1.1" aria-hidden="true"><path fill-rule="evenodd" d="M12 11L6 5l-6 6h12z"></path></svg>
+        </div>
       </div>
     </div>
 
@@ -101,6 +104,12 @@ export default {
       const titleBoxH = this.$el.querySelector('.fixed-topic').getBoundingClientRect().height
       const transcriptTop = this.$el.querySelector(`#transcript-${index}`).getBoundingClientRect().top
       window.scroll({ top: transcriptTop + window.scrollY - titleBoxH - 5, behavior: 'smooth' })
+    },
+    scrollTop () {
+      window.scroll({
+        top: this.$root.$el.querySelector('.splash-header').offsetHeight,
+        behavior: 'smooth'
+      })
     },
     tweetMessage (msg) {
       const url = 'https://www.youthradio.org'
