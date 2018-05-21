@@ -5,7 +5,7 @@
         <div class="col-10 col-md-4">
           <div class="d-flex align-items-start">
             <div class="mr-4">
-              <img class="img-fluid" :src="require('../assets/images/NB_symbol.svg')">
+              <img class="img-splash" :src="require('../assets/images/NB_symbol.svg')">
             </div>
             <div class="">
               <h1>
@@ -221,5 +221,11 @@ p {
 }
 .custom-toggler .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+.img-splash {
+  max-width: 150px;
+  min-width: 80px;
+
+  width: 100%;
 }
 </style>
