@@ -1,8 +1,8 @@
 <template>
   <header>
-    <div class="splash-header position-relative">
-      <div class="row h-100 no-margin justify-content-center align-items-center">
-        <div class="col-10 col-md-4">
+    <div class="splash-header">
+      <div class="row h-100 justify-content-center">
+        <div class="col-10 col-md-4 mx-auto my-auto">
           <div class="d-flex align-items-start">
             <div class="mr-4">
               <img class="img-splash" :src="require('../assets/images/NB_symbol.svg')">
@@ -140,7 +140,7 @@ h3, h3 a {
   color: white;
 }
 h1 {
-  color: gray;
+  color: #333345;
 }
 h1 .w {
   color: white;
