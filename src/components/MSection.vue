@@ -21,16 +21,14 @@
             <!-- Profile for loop -->
             <div v-for="(data, person, index) in getPeople" :key="index" class="col-12 col-md-3">
               <div class="row py-2">
-                <div class="col-4 col-md-12">
+                <div class="col-4 col-md-12 text-center">
                   <router-link :to="{ name: 'PersonRoute', params: { person: person }}">
                     <img class="img-fluid " :src="require('../assets/images/' + data.info.Person_Image)">
+                    <h5> {{ person }} </h5>
                   </router-link>
                 </div>
                 <div class="col-8 col-md-12 my-auto">
                   <div :class="[data.info.Person_Class, 'text-md-center']">
-                    <router-link :to="{ name: 'PersonRoute', params: { person: person }}">
-                      <h4> {{ person }} </h4>
-                    </router-link>
                     <p> <span v-if="!topic" class="font-italic"> {{ data.info.Quote }} </span>
                       {{ data.info.Age }}, {{ data.info.Pronoum }}
                     </p>
