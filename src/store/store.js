@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import AllData from './../assets/data/alldata.json'
+import AllData from '../assets/data/alldata.json'
 
 Vue.use(Vuex)
 
