@@ -6,14 +6,18 @@
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "start": "npm run dev",
+    "start": "node server.js",
     "lint": "eslint --ext .js,.vue src",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "heroku-postbuild": "npm install --no-shrinkwrap && npm run build"
   },
   "dependencies": {
     "bootstrap": "^4.1.1",
+    "express": "^4.16.3",
+    "express-force-https": "^1.0.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
+    "serve-static": "^1.13.2",
     "smoothscroll-polyfill": "^0.4.3",
     "vue": "^2.5.2",
     "vue-carousel": "^0.7.3",
