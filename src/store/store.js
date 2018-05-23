@@ -1,25 +1,29 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import AllData from '../assets/data/alldata.json'
 
 Vue.use(Vuex)
 
 const state = {
   isLoading: false,
-  appData: null,
   allTopics: null,
   allPeople: null
 }
+const actions = {
+  fetchData ({commit}) {
+    const allData = require('../assets/data/alldata.json')
+    commit('SET_DATA', allData)
+  }
+}
 const mutations = {
-  setData () {
-    state.appData = AllData
-    state.allTopics = filterTopics(state.appData)
-    state.allPeople = filterPeople(state.allTopics, state.appData)
+  SET_DATA (state, allData) {
+    state.allTopics = filterTopics(allData)
+    state.allPeople = filterPeople(state.allTopics, allData)
   }
 }
 export default new Vuex.Store({
   mutations,
-  state
+  state,
+  actions
 })
 
 function filterTopics (appData) {

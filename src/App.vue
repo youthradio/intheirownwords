@@ -24,7 +24,7 @@ export default {
   },
   created () {
     this.isLoading = true
-    this.$store.commit('setData') // fetch data on store vuex
+    this.$store.dispatch('fetchData') // fetch data on store vuex
     // this.$root.$emit('triggerScroll')
   }
 }
