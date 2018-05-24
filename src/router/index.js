@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Meta from 'vue-meta'
 import MHeader from '@/components/MHeader'
 import MFooter from '@/components/MFooter'
 import MSection from '@/components/MSection'
@@ -10,7 +9,6 @@ import MTopics from '@/components/MTopics'
 import MPersonProfile from '@/components/MPersonProfile'
 
 Vue.use(Router)
-Vue.use(Meta)
 
 // https://github.com/vuejs/vue-router/blob/dev/examples/scroll-behavior/app.js
 const scrollBehavior = function (to, from, savedPosition) {
