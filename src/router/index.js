@@ -35,6 +35,7 @@ const scrollBehavior = function (to, from, savedPosition) {
 const router = new Router({
   mode: 'history',
   scrollBehavior,
+  base: '/',
   routes: [
     {
       path: '/',
@@ -100,9 +101,6 @@ const router = new Router({
         profile: true,
         topics: true
       }
-    },
-    {
-      path: '/static*'
     },
     {
       path: '*',
