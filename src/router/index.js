@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Meta from 'vue-meta'
 import MHeader from '@/components/MHeader'
 import MFooter from '@/components/MFooter'
 import MSection from '@/components/MSection'
@@ -7,9 +8,9 @@ import MCredits from '@/components/MCredits'
 import MConversation from '@/components/MConversation'
 import MTopics from '@/components/MTopics'
 import MPersonProfile from '@/components/MPersonProfile'
-import NotFoundComponent from '@/components/NotFoundComponent'
 
 Vue.use(Router)
+Vue.use(Meta)
 
 // https://github.com/vuejs/vue-router/blob/dev/examples/scroll-behavior/app.js
 const scrollBehavior = function (to, from, savedPosition) {
@@ -32,7 +33,7 @@ const scrollBehavior = function (to, from, savedPosition) {
 }
 
 const router = new Router({
-  // mode: 'history',
+  mode: 'history',
   scrollBehavior,
   routes: [
     {
@@ -101,10 +102,11 @@ const router = new Router({
       }
     },
     {
+      path: '/static*'
+    },
+    {
       path: '*',
-      components: {
-        notfound: NotFoundComponent
-      }
+      redirect: '/'
     }
   ]
 })
