@@ -18,10 +18,10 @@
         </div>
 
         <div v-for="(line, index) in transcriptData" :key="index" class="row my-auto">
-          <div :class="[index%2 == 0?'order-1':'order-2', 'col-3', 'col-md-2', 'p-1']">
+          <div :class="[line.posLeft?'order-1':'order-2', 'col-3', 'col-md-2', 'p-1']">
             <img class="img-fluid" :src="require('../assets/images/' + line.image )">
           </div>
-          <div :class="[line.cssclass, index%2 == 0?'order-2':'order-1 curve-right','my-auto', 'col-9']" :id="`transcript-${index}`">
+          <div :class="[line.cssclass, line.posLeft?'order-2':'order-1 curve-right','my-auto', 'col-9']" :id="`transcript-${index}`">
             <div :class="['card m-1', `${line.cssclass}-border`]">
               <div class="card-body">
                 <blockquote class="blockquote mb-0">
@@ -155,13 +155,20 @@ export default {
       })
     },
     transcriptData () {
-      var out = []
+      let out = []
+      let posLeft = false
+      let lastName = ''
       this.$store.state.allTopics[this.topic].transcript.forEach((line, index) => {
         const textRecord = Object.entries(line).splice(2) // splice audio start end, leaving names and passages
         const name = textRecord.filter(e => e[1] !== '')[0][0] // filter name, only not empty passage
         const passage = textRecord.filter(e => e[1] !== '')[0][1] // filter passage
+        if (lastName !== name) {
+          posLeft = !posLeft
+        }
+        lastName = name
         out.push({
           name: name,
+          posLeft: posLeft,
           passage: passage,
           image: this.$store.state.allPeople[name].info.Person_Image,
           cssclass: this.$store.state.allPeople[name].info.Person_Class,
