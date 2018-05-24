@@ -44,15 +44,15 @@ export default {
         { name: 'twitter:description', content: 'An exploration of non-binarygender indentity through essays and conversations produced by non-binary teens & young adults at Youth Radio.' },
         // Your twitter handle, if you have one.
         { name: 'twitter:creator', content: '@youthradio' },
-        { name: 'twitter:image:src', content: '/static/images/vin2.png' },
+        { name: 'twitter:image:src', content: 'https://itow.herokuapp.com/static/socialimg.png' },
 
         // Google / Schema.org markup:
         { itemprop: 'name', content: 'In their own words' },
         { itemprop: 'description', content: 'An exploration of non-binarygender indentity through essays and conversations produced by non-binary teens & young adults at Youth Radio.' },
-        { itemprop: 'image', content: '/static/images/vin2.png' }
+        { itemprop: 'image', content: 'https://itow.herokuapp.com/static/vin2.png' }
       ],
       link: [
-        { rel: 'favicon', href: '/static/images/yrcircle.png' },
+        { rel: 'favicon', href: '/static/images/socialimg.png' },
         { rel: 'canonical', href: 'https://itow.herokuapp.com' }
       ]
     }
