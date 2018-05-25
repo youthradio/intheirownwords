@@ -19,7 +19,7 @@
         </div>
       </div>
       <div class="row h-100 justify-content-center">
-        <div class="col-10 col-md-4 mx-auto my-auto">
+        <div class="col-10 col-md-4 mx-auto my-sm-auto">
           <div class="d-flex align-items-start">
             <div class="mr-4">
               <img class="img-splash" :src="require('../assets/images/NB_symbol.svg')">
@@ -230,10 +230,31 @@ p {
   h3 {
      font-size: 25px;
   }
+  p {
+    font-size: 19px;
+  }
+  .img-splash {
+    max-width: 50px;
+    min-width: 70px;
+
+    width: 100%;
+  }
 }
 @media screen and (max-width: 576px) {
+  h1 {
+     font-size: 32px;
+  }
   h3 {
      font-size: 20px;
+  }
+  p {
+    font-size: 15px;
+  }
+  .img-splash {
+    max-width: 100px;
+    min-width: 50px;
+
+    width: 100%;
   }
 }
 .custom-toggler.navbar-toggler {
@@ -244,11 +265,5 @@ p {
 }
 .custom-toggler .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-}
-.img-splash {
-  max-width: 150px;
-  min-width: 80px;
-
-  width: 100%;
 }
 </style>
