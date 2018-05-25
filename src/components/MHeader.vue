@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="splash-header">
-      <div id="menu" class="no-margin">
+      <div class="no-margin">
         <div class="d-flex justify-content-center justify-content-sm-start bd-highlight mb-3">
           <div class="p-2">
             <a class="navbar-brand ml-1" href="www.youthradio.org" target="_blank">
