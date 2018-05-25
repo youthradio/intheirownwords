@@ -1,8 +1,7 @@
 <template>
   <header>
     <div class="splash-header">
-        <div class="d-flex justify-content-center justify-content-sm-start bd-highlight">
-            <a class="navbar-brand p-2" href="www.youthradio.org" target="_blank">
+        <div class="d-flex justify-content-center justify-content-sm-start bd-highlight p-2">
 
               <svg viewBox="0 0 515.01251 245.6125" height="50">
                 <g transform="matrix(1.25,0,0,-1.25,0,245.6125)" id="g10">
@@ -12,9 +11,8 @@
                 </g>
               </svg>
 
-            </a>
       </div>
-      <div class="row h-100 justify-content-center">
+      <div class="row h-100 justify-content-center no-margin">
         <div class="col-10 col-md-5 mx-auto my-auto">
           <div class="d-flex justify-content-center align-items-center">
             <div class="mr-4">
@@ -50,7 +48,7 @@
     <div id="menu" class="no-margin">
       <div class="d-flex justify-content-between bd-highlight mb-3">
         <div class="p-2">
-          <a class="navbar-brand" href="www.youthradio.org" target="_blank">
+          <a class="navbar-brand" href="https://www.youthradio.org" target="_blank">
             <svg viewBox="0 0 515.01251 245.6125" height="50">
               <g transform="matrix(1.25,0,0,-1.25,0,245.6125)" id="g10">
                 <g transform="scale(0.1,0.1)" id="g12">
