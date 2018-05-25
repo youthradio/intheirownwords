@@ -1,10 +1,8 @@
 <template>
   <header>
     <div class="splash-header">
-      <div class="no-margin">
-        <div class="d-flex justify-content-center justify-content-sm-start bd-highlight mb-3">
-          <div class="p-2">
-            <a class="navbar-brand ml-1" href="www.youthradio.org" target="_blank">
+        <div class="d-flex justify-content-center justify-content-sm-start bd-highlight">
+            <a class="navbar-brand p-2" href="www.youthradio.org" target="_blank">
 
               <svg viewBox="0 0 515.01251 245.6125" height="50">
                 <g transform="matrix(1.25,0,0,-1.25,0,245.6125)" id="g10">
@@ -15,12 +13,10 @@
               </svg>
 
             </a>
-          </div>
-        </div>
       </div>
       <div class="row h-100 justify-content-center">
-        <div class="col-10 col-md-4 mx-auto my-sm-auto">
-          <div class="d-flex align-items-start">
+        <div class="col-10 col-md-5 mx-auto my-auto">
+          <div class="d-flex justify-content-center align-items-center">
             <div class="mr-4">
               <img class="img-splash" :src="require('../assets/images/NB_symbol.svg')">
             </div>
@@ -34,7 +30,7 @@
             </div>
           </div>
           <div class="d-flex justify-content-center flex-wrap">
-            <div class="mt-5">
+            <div class="mt-4">
               <p>
                 In Their Own Words is an exploration of
                 non-binary gender indentity through
@@ -43,7 +39,7 @@
                 Youth Radio.
               </p>
             </div>
-            <div v-on:click="scrollTo" class="mt-5 hand-over">
+            <div v-on:click="scrollTo" class="mt-4 hand-over">
               <svg width="30" height="30" class="octicon octicon-triangle-down" fill="white" viewBox="0 0 12 16" version="1.1" aria-hidden="true"><path fill-rule="evenodd" d="M0 5l6 6 6-6H0z"></path></svg>
             </div>
           </div>
@@ -225,24 +221,24 @@ p {
 }
 @media screen and (min-width: 576px) {
   h1 {
-     font-size: 52px;
+     font-size: 50px;
   }
   h3 {
      font-size: 25px;
   }
   p {
-    font-size: 19px;
+    font-size: 18px;
   }
   .img-splash {
-    max-width: 50px;
-    min-width: 70px;
+    max-width: 140px;
+    min-width: 100px;
 
     width: 100%;
   }
 }
 @media screen and (max-width: 576px) {
   h1 {
-     font-size: 32px;
+     font-size: 30px;
   }
   h3 {
      font-size: 20px;
@@ -251,7 +247,7 @@ p {
     font-size: 15px;
   }
   .img-splash {
-    max-width: 100px;
+    max-width: 90px;
     min-width: 50px;
 
     width: 100%;
