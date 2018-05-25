@@ -1,7 +1,7 @@
 <template>
   <main id="conversation">
     <div class="row">
-      <div class="col-10 offset-1 col-md-8 offset-md-2">
+      <div class="col-12 col-md-8 offset-md-2">
         <div class="row text-center pt-3 sticky-top fixed-topic">
           <!--selected -->
           <div class="col-12">
@@ -23,7 +23,7 @@
           </div>
           <div :class="[line.cssclass, line.posLeft?'order-2':'order-1 curve-right','my-auto', 'col-9']" :id="`transcript-${index}`">
             <div :class="['card m-1', `${line.cssclass}-border`]">
-              <div class="card-body">
+              <div class="card-body custom-padding">
                 <blockquote class="blockquote mb-0">
                   <p>{{line.passage}}</p>
 
@@ -213,5 +213,8 @@ export default {
 }
 .fixed-topic {
   background: #FCFCFC;
+}
+.custom-padding {
+  padding: 0.30rem;
 }
 </style>
