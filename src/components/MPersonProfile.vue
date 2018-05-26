@@ -2,18 +2,18 @@
   <div id="profile">
 
     <div class="row my-3">
-      <div class="col-2 col-md-3 my-auto">
+      <div class="col-12 col-md-3 my-auto">
         <hr>
       </div>
-      <div class="col-12  col-md-2">
-        <img class="img-fluid " :src="require('../assets/images/' + getPerson.image)">
+      <div class="col-12 col-md-2 text-center text-md-left">
+        <img class="img-fluid img-limit" :src="require('../assets/images/' + getPerson.image)">
       </div>
-      <div :class="`${getPerson.cssclass} col-12  col-md-4`">
+      <div :class="[getPerson.cssclass, 'col-12 col-md-4 text-center text-md-left']">
         <h2>{{ getPerson.name }}</h2>
         <p class="font-italic font-weight-light"> {{ getPerson.quote }}</p>
         <p> {{ getPerson.age }}, {{ getPerson.pronoum }} </p>
       </div>
-      <div class="col-2 col-md-3 my-auto">
+      <div class="col-12 col-md-3 my-auto">
         <hr>
       </div>
     </div>

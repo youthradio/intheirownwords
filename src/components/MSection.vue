@@ -63,8 +63,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.img-limit {
-  max-width: 200px;
-  width: 100%;
-}
 </style>

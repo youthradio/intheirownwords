@@ -19,7 +19,7 @@
 
         <div v-for="(line, index) in transcriptData" :key="index" class="row my-auto">
           <div :class="[line.posLeft?'order-1':'order-2', 'col-3', 'col-md-2', 'p-1']">
-            <img class="img-fluid" :src="require('../assets/images/' + line.image )">
+            <img class="img-fluid img-limit" :src="require('../assets/images/' + line.image )">
           </div>
           <div :class="[line.cssclass, line.posLeft?'order-2':'order-1 curve-right','my-auto', 'col-9']" :id="`transcript-${index}`">
             <div :class="['card m-1', `${line.cssclass}-border`]">
