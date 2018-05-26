@@ -23,7 +23,7 @@
               <div :class="[data.info.Person_Class,'row py-2']">
                 <div class="col-12 col-md-12 text-center">
                   <router-link :to="{ name: 'PersonRoute', params: { person: person }}">
-                    <img class="img-fluid " :src="require('../assets/images/' + data.info.Person_Image)">
+                    <img class="img-fluid img-limit" :src="require('../assets/images/' + data.info.Person_Image)">
                     <h5> {{ person }} </h5>
                   </router-link>
                 </div>
@@ -63,4 +63,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.img-limit {
+  max-width: 200px;
+  width: 100%;
+}
 </style>
