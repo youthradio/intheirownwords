@@ -89,6 +89,9 @@ export default {
       this.$refs.slider.advancePage('backward')
     },
     onPageChange (index) {
+      if (this.$route.name === 'Home' || this.$route.name === 'PersonRoute') {
+        return null
+      }
       const slide = this.$refs.slider.$children[index].$el.dataset
       this.$router.push({
         name: 'Conversation',

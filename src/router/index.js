@@ -12,7 +12,7 @@ Vue.use(Router)
 
 // https://github.com/vuejs/vue-router/blob/dev/examples/scroll-behavior/app.js
 const scrollBehavior = function (to, from, savedPosition) {
-  if (to.name === 'Conversation' && from.name === 'Home') {
+  if (to.name === 'Conversation' && (from.name === 'Home')) {
     // if coming from home and to conversation
     return null
   }
