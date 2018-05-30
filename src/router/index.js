@@ -37,7 +37,7 @@ const scrollBehavior = function (to, from, savedPosition) {
 const router = new Router({
   mode: 'history',
   scrollBehavior,
-  base: '/',
+  base: process.env.ROUTER_BASE,
   routes: [
     {
       path: '/',
