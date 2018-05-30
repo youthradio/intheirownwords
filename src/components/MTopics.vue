@@ -29,7 +29,7 @@
             <!-- <router-link :to="{ name: 'Conversation', params: { topic: topic.slug }}"> -->
             <div class="m-3 p-3">
                <div>
-                <img :src="require(`../assets/images/${topic.image}`)" class="img-fluid">
+                <img :src="require(`../assets/images/${topic.image}`)" class="img-limit">
                </div>
                <div class="my-auto">
                  <h5>
@@ -129,6 +129,10 @@ button {
   right: 2px;
   top: 50%;
   z-index: 1000;
+}
+.img-limit {
+  max-height: 200px;
+  width: 100%;
 }
 
 </style>
