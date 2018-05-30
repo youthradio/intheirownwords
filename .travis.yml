@@ -13,7 +13,7 @@ script:
   - npm install
   - npm run build
 env:
-  - PROJECT_URL=itow
+  - PROJECT_URL=intheirownwords
 after_success:
   - cd $TRAVIS_BUILD_DIR/scripts
   - sh -e makeHtaccess.sh $PROJECT_URL
