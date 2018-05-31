@@ -9,8 +9,10 @@ const port = process.env.PORT || 5000
 const app = express()
 
 app.use(secure)
-app.use(history())
-app.use(serveStatic(path.join (__dirname, '/dist')))
+app.use(history({
+  index: '/intheirownwords/index.html'
+}))
+app.use('/intheirownwords/',serveStatic(path.join (__dirname, '/dist')))
 
 app.listen(port, () => {
   console.log('server started ' + port)
