@@ -6,7 +6,8 @@ Vue.use(Vuex)
 const state = {
   isLoading: false,
   allTopics: null,
-  allPeople: null
+  allPeople: null,
+  moreInfo: {},
 }
 const actions = {
   fetchData ({commit}) {
@@ -18,6 +19,8 @@ const mutations = {
   SET_DATA (state, allData) {
     state.allTopics = filterTopics(allData)
     state.allPeople = filterPeople(state.allTopics, allData)
+    state.moreInfo['credits'] = allData['credits'][0]
+    state.moreInfo['coverage'] = allData['more-coverage']
   }
 }
 export default new Vuex.Store({
