@@ -7,7 +7,7 @@ const state = {
   isLoading: false,
   allTopics: null,
   allPeople: null,
-  moreInfo: {},
+  moreInfo: {}
 }
 const actions = {
   fetchData ({commit}) {
