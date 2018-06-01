@@ -141,7 +141,6 @@ export default {
     tweetMessage () {
       const url = 'https://yri.youthradio.org/intheirownwords'
       const tweet = encodeURIComponent('#') + `intheirownwords: “tweet message message message” - via @youthradio ${url}`
-      console.log(tweet)
       const tweetUrl = `https://twitter.com/intent/tweet?text=${tweet}`
       window.open(tweetUrl, 'pop', 'width=600, height=400, scrollbars=no')
     },
