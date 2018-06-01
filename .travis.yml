@@ -5,12 +5,12 @@ cache:
   directories:
   - node_modules
 before_install:
-  - "npm install -g csvtojson"
+  - npm install -g csvtojson
   - cd csvdata/
   - sh -e processCsv.sh
   - cd $TRAVIS_BUILD_DIR
 script:
-  - npm install
+  - npm ci
   - npm run build
 env:
   - PROJECT_URL=intheirownwords
