@@ -3,8 +3,8 @@
       <router-view name="header"/>
       <router-view name="profile"/>
       <router-view name="section"/>
-      <router-view name="topics"/>
       <router-view name="conversation"/>
+      <router-view name="topics"/>
       <router-view name="footer"/>
       <router-view name="notfound"/>
     </div>
