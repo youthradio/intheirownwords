@@ -47,7 +47,7 @@
     </div>
     <div id="menu" class="no-margin">
       <div class="row my-3">
-        <div class="col-8 col-md-2">
+        <div class="col-8 col-md-4">
           <a class="navbar-brand" href="https://www.youthradio.org" target="_blank">
             <svg viewBox="0 0 515.01251 245.6125" height="50">
               <g transform="matrix(1.25,0,0,-1.25,0,245.6125)" id="g10">
@@ -58,7 +58,7 @@
             </svg>
           </a>
         </div>
-        <div class="col-12 order-2 col-md-6 order-md-1 text-md-center">
+        <div class="col-12 order-2 col-md-4 order-md-1 text-md-center">
           <h1>
             <router-link :to="{ name: 'Home', params: {}}"><a class="nav-link">In Their Own Words</a></router-link>
           </h1>
