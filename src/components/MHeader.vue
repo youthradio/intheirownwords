@@ -78,7 +78,7 @@
 
               <ul class="navbar-nav mt-2 mt-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link" href="#"> More Coverage <span class="sr-only">(current)</span></a>
+                  <router-link :to="{ name: 'MoreCoverage' }"> <a v-on:click="menuItemClicked" class="nav-link" >More Coverage</a></router-link>
                 </li>
                 <li class="nav-item">
                   <router-link :to="{ name: 'Credits' }"> <a v-on:click="menuItemClicked" class="nav-link" >Credits</a></router-link>

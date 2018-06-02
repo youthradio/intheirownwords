@@ -29,7 +29,7 @@ export default {
       default: ''
     }
   },
-  name: 'MSection',
+  name: 'MCredits',
   computed: {
     getCredits () {
       return this.$store.state.moreInfo.credits.Credits

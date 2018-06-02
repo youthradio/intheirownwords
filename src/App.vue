@@ -6,7 +6,6 @@
       <router-view name="conversation"/>
       <router-view name="topics"/>
       <router-view name="footer"/>
-      <router-view name="notfound"/>
     </div>
 </template>
 
