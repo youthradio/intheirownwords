@@ -95,14 +95,16 @@ export default {
       const slide = this.$refs.slider.$children[index].$el.dataset
       this.$router.push({
         name: 'Conversation',
-        params: { topic: slide.name.split('bt-slide-')[1]
-        }}) // go to slide event page
+        params: { topic: slide.name.split('bt-slide-')[1] },
+        meta: { scrollTo: '#conversation' }
+      }) // go to slide event page
     },
     handleSlideClick (slide) {
       this.$router.push({
         name: 'Conversation',
-        params: { topic: slide.name.split('bt-slide-')[1]
-        }}) // go to slide event page
+        params: { topic: slide.name.split('bt-slide-')[1] },
+        meta: { scrollTo: '#conversation' }
+      }) // go to slide event page
     }
   },
   components: {

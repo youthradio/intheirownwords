@@ -34,7 +34,6 @@ const scrollBehavior = function (to, from, savedPosition) {
     })
   }
 }
-
 const router = new Router({
   mode: 'history',
   scrollBehavior,
@@ -86,7 +85,7 @@ const router = new Router({
       path: '/conversation/:topic',
       name: 'Conversation',
       meta: {
-        scrollTo: '#topics'
+        scrollTo: '#conversation'
       },
       components: {
         header: MHeader,
