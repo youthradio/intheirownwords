@@ -19,7 +19,7 @@
         <div class="col-12  col-md-10 offset-md-1">
           <div class="row">
             <!-- Profile for loop -->
-            <div v-for="(data, person, index) in getPeople" :key="index" class="col-6 col-md-3">
+            <div v-for="(data, person, index) in getPeople" :key="index" :class="[ (isHome ? 'col-12' : 'col-6'), 'col-md-3']">
               <div :class="[data.info.Person_Class,'row py-2']">
                 <div class="col-12 col-md-12 text-center">
                   <router-link :to="{ name: 'PersonRoute', params: { person: person }}">
@@ -56,6 +56,9 @@ export default {
   computed: {
     getPeople () {
       return this.$store.state.allPeople
+    },
+    isHome () {
+      return this.$route.name === 'Home'
     }
   }
 }

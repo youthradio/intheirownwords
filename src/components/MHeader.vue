@@ -1,6 +1,6 @@
 <template>
   <header>
-    <div class="splash-header">
+    <div v-if="isHome" class="splash-header">
         <div class="d-flex justify-content-center justify-content-sm-start bd-highlight p-2">
 
               <svg viewBox="0 0 515.01251 245.6125" height="50">
@@ -153,6 +153,11 @@ export default {
       const title = 'In their own words'
       const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}&t=${title}`
       window.open(facebookUrl, '_blank')
+    }
+  },
+  computed: {
+    isHome () {
+      return this.$route.name === 'Home'
     }
   }
 }
