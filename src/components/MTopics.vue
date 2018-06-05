@@ -22,8 +22,7 @@
                   :per-page="1"
                   :paginationEnabled="false"
                   :loop="true"
-                  :perPageCustom="[[768, 4]]"
-                  @pageChange="onPageChange">
+                  :perPageCustom="[[768, 4]]">
 
           <slide class="hand-over" v-for="topic in selectedTopics" :key="`slide--${topic.slug}`" :data-name="`bt-slide-${topic.slug}`" @slideClick="handleSlideClick">
             <!-- <router-link :to="{ name: 'Conversation', params: { topic: topic.slug }}"> -->
