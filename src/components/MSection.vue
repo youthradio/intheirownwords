@@ -23,8 +23,8 @@
               <div :class="[data.info.Person_Class,'row py-2']">
                 <div class="col-12 col-md-12 text-center">
                   <router-link :to="{ name: 'PersonRoute', params: { person: person }}">
-                    <img class="img-fluid img-limit" :src="require('../assets/images/' + data.info.Person_Image)">
-                    <h5> {{ person }} </h5>
+                      <img class="img-fluid img-limit" :src="require('../assets/images/' + data.info.Person_Image)">
+                      <h5> {{ person }} </h5>
                   </router-link>
                 </div>
                 <div class="col-12 col-md-12 my-auto text-center">
@@ -63,4 +63,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+a {
+  text-decoration: none;
+}
 </style>

@@ -200,3 +200,6 @@ h2 {
   max-width: 200px;
   width: 100%;
 }
+a {
+  text-decoration: none;
+}

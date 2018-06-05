@@ -14,24 +14,28 @@
       </div>
       <div class="row h-100 justify-content-center no-margin">
         <div class="col-10 col-md-5 mx-auto my-auto">
-          <div class="d-flex justify-content-center align-items-center">
-            <div class="mr-4">
-              <img class="img-splash" :src="require('../assets/images/NB_symbol.svg')">
-            </div>
-            <div class="">
-              <h1>
-                <span>in</span>
-                <span class="w">their</span>
-                <span>own</span>
-                <span>words</span>
-              </h1>
-            </div>
-          </div>
+          <router-link :to="{ name: 'Home', params: {}}">
+            <a>
+              <div class="d-flex justify-content-center align-items-center">
+                    <div class="mr-4">
+                      <img class="img-splash" :src="require('../assets/images/NB_symbol.svg')">
+                    </div>
+                    <div class="">
+                      <h1>
+                        <span>in</span>
+                        <span class="w">their</span>
+                        <span>own</span>
+                        <span>words</span>
+                      </h1>
+                    </div>
+              </div>
+            </a>
+          </router-link>
           <div class="d-flex justify-content-center flex-wrap">
             <div class="mt-4">
               <p>
                 In Their Own Words is an exploration of
-                non-binary gender indentity through
+                non-binary gender identity through
                 essays and conversations produced by
                 non-binary teens & young adults at
                 Youth Radio.
@@ -288,5 +292,8 @@ p {
 }
 .custom-toggler .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+a {
+  text-decoration: none;
 }
 </style>
