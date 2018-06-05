@@ -125,12 +125,14 @@ export default {
       const el = this.$el.querySelector('.navbar-collapse')
       el.classList.contains('collapse') ? el.classList.remove('collapse') : el.classList.add('collapse')
     })
-    const colors = [
-      ['#f5a623', '#4a90e2'],
-      ['#BD10e0', '#3dc4a6']]
-    const gradientEl = this.$el.querySelector('.splash-header')
-    const rand = Math.floor(Math.random() * 2)
-    gradientEl.style.backgroundImage = `linear-gradient(45deg, ${colors[rand][0]}, ${colors[rand][1]})`
+    if (this.isHome) {
+      const colors = [
+        ['#f5a623', '#4a90e2'],
+        ['#BD10e0', '#3dc4a6']]
+      const gradientEl = this.$el.querySelector('.splash-header')
+      const rand = Math.floor(Math.random() * 2)
+      gradientEl.style.backgroundImage = `linear-gradient(45deg, ${colors[rand][0]}, ${colors[rand][1]})`
+    }
   },
   methods: {
     menuItemClicked () {
