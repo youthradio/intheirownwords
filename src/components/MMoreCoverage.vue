@@ -28,6 +28,23 @@
             </div>
           </div>
       </div>
+      <div class="row">
+        <div class="col-12">
+        <div class="d-flex align-items-center align-self-center justify-content-center flex-wrap">
+          <div class="mx-2 my-1 d-inline">
+            Subscribe to get More Coverage <a href="" class="text-white">Click Here</a>
+          </div>
+          <div class="mx-2 my-1">
+            <form action="https://youthradio.us4.list-manage.com/subscribe/post?u=962a6c84da5c12bc5b3486086&amp;id=77a1c5e71a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <div class="d-flex align-items-center align-self-center justify-content-center">
+                <input type="email" value="" name="EMAIL" class="email my-1 d-inline mx-1" placeholder="Subscribe to Youth Radio" required>
+                <input type="submit" value="Subscribe" name="subscribe" class="button btn btn-sm btn-outline-custom d-inline my-1 mx-1">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      </div>
 
   </div>
 </template>

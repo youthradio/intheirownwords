@@ -214,6 +214,15 @@ h2 {
   max-width: 200px;
   width: 100%;
 }
-a {
-  text-decoration: none;
+
+.btn-outline-custom {
+    color: grey;
+    background-color: transparent;
+    background-image: none;
+    border-color: grey;
+}
+
+.email {
+  border-radius:3px;
+  width: 220px;
 }
