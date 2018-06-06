@@ -34,11 +34,7 @@
           <div class="d-flex justify-content-center flex-wrap">
             <div class="mt-4">
               <p>
-                In Their Own Words is an exploration of
-                non-binary gender identity through
-                essays and conversations produced by
-                non-binary teens & young adults at
-                Youth Radio.
+                In Their Own Words is an exploration of non-binary gender identity created by non-binary teens and young adults.
               </p>
             </div>
             <div v-on:click="scrollTo" class="mt-4 hand-over">
