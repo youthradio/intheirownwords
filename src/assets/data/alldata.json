@@ -4,7 +4,7 @@
       "ID": "1",
       "Conversation": "transcript-1",
       "Topic": "Presentation",
-      "Audio": "PresentationVox_JenPaulinaDesmond",
+      "Audio": "Presentation_DesmondPaulinaMaliaJen",
       "Topic_Image": "comingout.svg",
       "Text": "",
       "People": "Desmond, Jen, Paulina, Malia"
@@ -13,7 +13,7 @@
       "ID": "2",
       "Conversation": "transcript-2",
       "Topic": "Love & Dating",
-      "Audio": "LoveVox_PaulinaJen",
+      "Audio": "LoveVox_DesmondJenPaulina",
       "Topic_Image": "presentation.svg",
       "Text": "",
       "People": "Desmond, Jen, Paulina"
@@ -22,7 +22,7 @@
       "ID": "3",
       "Conversation": "transcript-3",
       "Topic": "Race",
-      "Audio": "IdentityVox_PaulinaJenMalia",
+      "Audio": "Race_PaulinaMaliaJen",
       "Topic_Image": "identity.svg",
       "Text": "",
       "People": "Paulina, Jen, Malia"

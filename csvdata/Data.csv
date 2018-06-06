@@ -1,5 +1,5 @@
 ID,Conversation,Topic,Audio ,Topic_Image,Text,People
-1,transcript-1,Presentation,PresentationVox_JenPaulinaDesmond,comingout.svg,,"Desmond, Jen, Paulina, Malia"
-2,transcript-2,Love & Dating,LoveVox_PaulinaJen,presentation.svg,,"Desmond, Jen, Paulina"
-3,transcript-3,Race,IdentityVox_PaulinaJenMalia,identity.svg,,"Paulina, Jen, Malia"
+1,transcript-1,Presentation,Presentation_DesmondPaulinaMaliaJen,comingout.svg,,"Desmond, Jen, Paulina, Malia"
+2,transcript-2,Love & Dating,LoveVox_DesmondJenPaulina,presentation.svg,,"Desmond, Jen, Paulina"
+3,transcript-3,Race,Race_PaulinaMaliaJen,identity.svg,,"Paulina, Jen, Malia"
 4,transcript-4,Coming Out,Coming_Out_PaulinaJenMaliaDesmond,comingout.svg,,"Jen, Desmond, Paulina, Malia"
