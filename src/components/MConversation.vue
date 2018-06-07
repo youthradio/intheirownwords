@@ -6,7 +6,13 @@
           <!--selected -->
           <div class="col-12">
             <h3 v-if="selectedTopic">{{ selectedTopic.name }}</h3>
-            <Plyr class="player-custom-style" :options="playerOptions" ref="audioPlayer" :emit="['play','timeupdate','ready','canplay','seeking']" @seeking="onSeek" @play="onAudioPlay" @timeupdate="onTime" @ready="onPlayerReady" @canplay="audioReady" v-if="selectedTopic">
+            <Plyr class="player-custom-style" :options="playerOptions" ref="audioPlayer" :emit="['play','pause','timeupdate','ready','canplay','seeking']"
+            @seeking="onSeek" @play="onAudioPlay"
+            @pause="onAudioPause"
+            @timeupdate="onTime"
+            @ready="onPlayerReady"
+            @canplay="audioReady"
+            v-if="selectedTopic">
                   <audio>
                     <source :src="require('../assets/audio/' + `${selectedTopic.audio}.mp3`)" type="audio/mp3">
                     <source :src="require('../assets/audio/' + `${selectedTopic.audio}.ogg`)" type="audio/ogg">
@@ -17,7 +23,8 @@
 
         </div>
 
-        <div v-for="(line, index) in transcriptData" :key="index" class="row my-auto">
+        <div v-for="(line, index) in transcriptData" :key="index"
+          :class="[(index == activeLine) || enableTranscript ? 'active' : 'inactive','row my-auto']">
           <div :class="[line.posLeft?'order-1':'order-2', 'col-3', 'col-md-2', 'p-1']">
             <router-link v-if="line.image" :to="{ name: 'PersonRoute', params: { person: line.name }}">
                 <img class="img-fluid img-limit" :src="require('../assets/images/' + line.image )">
@@ -64,6 +71,7 @@ export default {
     onSeek (e) {
       // find active live when audion seeking
       const currTime = this.$refs.audioPlayer.player.currentTime
+      this.enableTranscript = false // make transcript opaque
       this.transcriptData.forEach((e, i) => {
         const start = e.start
         const end = e.end
@@ -88,6 +96,10 @@ export default {
     onAudioPlay () {
       // console.log(this.$refs.audioPlayer.player.currentTime)
       this.scrollTo(this.activeLine)
+      this.enableTranscript = false // make transcript opaque
+    },
+    onAudioPause () {
+      this.enableTranscript = true // make transcript visible
     },
     onPlayerReady () {
     },
@@ -189,7 +201,8 @@ export default {
       lastCurrTime: 0,
       progress: '0%',
       audioDuration: 0,
-      activeLine: 0
+      activeLine: 0,
+      enableTranscript: true
     }
   },
   components: {
@@ -219,5 +232,19 @@ export default {
 }
 .custom-padding {
   padding: 0.30rem;
+}
+.active {
+  opacity: 1;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+.inactive {
+  opacity: 0.3;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
 </style>
