@@ -17,6 +17,8 @@ after_success:
   - cd $TRAVIS_BUILD_DIR/scripts
   - sh -e makeHtaccess.sh $PROJECT_URL
   - cp .htaccess $TRAVIS_BUILD_DIR/dist
+  - cd $TRAVIS_BUILD_DIR/dist
+  - cp index.html 404.html
 deploy:
   provider: pages
   verbose: true
