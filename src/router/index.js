@@ -82,7 +82,7 @@ const router = new Router({
       }
     },
     {
-      path: '/conversation/:topic',
+      path: '/:topic',
       name: 'Conversation',
       meta: {
         scrollTo: '#conversation'
@@ -101,7 +101,7 @@ const router = new Router({
       }
     },
     {
-      path: '/person/:person',
+      path: '/:person',
       name: 'PersonRoute',
       meta: {
         scrollTo: '#menu'
