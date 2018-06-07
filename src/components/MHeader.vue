@@ -130,6 +130,12 @@ export default {
       gradientEl.style.backgroundImage = `linear-gradient(45deg, ${colors[rand][0]}, ${colors[rand][1]})`
     }
   },
+  watch: {
+    '$route' (to, from) {
+      const el = this.$el.querySelector('.navbar-collapse')
+      if (!el.classList.contains('collapse')) { el.classList.add('collapse') }
+    }
+  },
   methods: {
     menuItemClicked () {
       this.$el.querySelector('#menu-btn').click()
