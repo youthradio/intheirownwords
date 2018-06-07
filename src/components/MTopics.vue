@@ -131,9 +131,5 @@ button {
   top: 50%;
   z-index: 1000;
 }
-.img-limit {
-  max-height: 200px;
-  width: 100%;
-}
 
 </style>
