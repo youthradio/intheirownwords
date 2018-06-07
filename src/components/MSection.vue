@@ -30,8 +30,9 @@
                 </div>
                 <div class="col-12 col-md-12 my-auto text-center">
                   <div class="text-md-center">
-                    <p> <span v-if="!topic" class="font-italic"> {{ data.info.Quote }} </span>
-                      {{ data.info.Age }}, {{ data.info.Pronoum }}
+                    <p>
+                      <span v-if="!topic" class="font-italic break"> {{ data.info.Quote }} </span>
+                      <span>{{ data.info.Age }}, {{ data.info.Pronoum }}</span>
                     </p>
                   </div>
                 </div>
@@ -69,5 +70,9 @@ export default {
 <style scoped>
 a {
   text-decoration: none;
+}
+.break:after {
+    content: '\A';
+    white-space: pre;
 }
 </style>
