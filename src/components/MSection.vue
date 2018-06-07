@@ -5,7 +5,7 @@
         <div class="col-12 col-md-2 my-auto">
           <hr>
         </div>
-        <div class="col-12 col-md-8">
+        <div class="col-12 col-md-8 text-center">
           <p>
             Click on a portrait to learn more about that individual’s experience, or select a topic to hear conversations about life beyond the binary.
           </p>
