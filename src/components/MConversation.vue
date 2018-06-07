@@ -19,7 +19,7 @@
 
         <div v-for="(line, index) in transcriptData" :key="index" class="row my-auto">
           <div :class="[line.posLeft?'order-1':'order-2', 'col-3', 'col-md-2', 'p-1']">
-            <router-link :to="{ name: 'PersonRoute', params: { person: line.name }}">
+            <router-link v-if="line.image" :to="{ name: 'PersonRoute', params: { person: line.name }}">
                 <img class="img-fluid img-limit" :src="require('../assets/images/' + line.image )">
             </router-link>
           </div>
@@ -163,15 +163,17 @@ export default {
         const textRecord = Object.entries(line).splice(2) // splice audio start end, leaving names and passages
         const name = textRecord.filter(e => e[1] !== '')[0][0] // filter name, only not empty passage
         const passage = textRecord.filter(e => e[1] !== '')[0][1] // filter passage
+        let img = null
         if (lastName !== name) {
           posLeft = !posLeft
+          img = name
         }
         lastName = name
         out.push({
           name: name,
           posLeft: posLeft,
           passage: passage,
-          image: this.$store.state.allPeople[name].info.Person_Image,
+          image: img ? this.$store.state.allPeople[name].info.Person_Image : img,
           cssclass: this.$store.state.allPeople[name].info.Person_Class,
           start: this.getSeconds(line.Audio_Start), // Audio start
           end: this.getSeconds(line.Audio_End) // Audio end
