@@ -14,7 +14,7 @@
       </div>
 
       <div class="row my-3">
-          <div class="col-12 col-lg-6 offset-lg-3 col-md-8 offset-md-2" v-html="getCredits">
+          <div class="col-12 col-lg-8 offset-lg-2 col-md-10 offset-md-1" v-html="getCredits">
           </div>
       </div>
 
