@@ -210,11 +210,6 @@ h2 {
 .hand-over {
   cursor: pointer;
 }
-.img-limit {
-  max-height: 200px;
-  width: 100%;
-}
-
 .btn-outline-custom {
     color: grey;
     background-color: transparent;

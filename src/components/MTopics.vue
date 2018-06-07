@@ -27,13 +27,15 @@
           <slide class="hand-over" v-for="topic in selectedTopics" :key="`slide--${topic.slug}`" :data-name="`bt-slide-${topic.slug}`" @slideClick="handleSlideClick">
             <!-- <router-link :to="{ name: 'Conversation', params: { topic: topic.slug }}"> -->
             <div class="m-3 p-3">
-               <div>
+               <div class="row">
                 <img :src="require(`../assets/images/${topic.image}`)" class="img-limit">
                </div>
-               <div class="my-auto">
-                 <h5>
-                   {{topic.name}}
-                 </h5>
+               <div class="row">
+                 <div class="col">
+                   <h5>
+                     {{topic.name}}
+                   </h5>
+                 </div>
                </div>
              </div>
             <!-- </router-link> -->
@@ -130,6 +132,10 @@ button {
   right: 2px;
   top: 50%;
   z-index: 1000;
+}
+.img-limit {
+  max-height: 200px;
+  width: 100%;
 }
 
 </style>

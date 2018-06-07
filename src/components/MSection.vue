@@ -75,4 +75,9 @@ a {
     content: '\A';
     white-space: pre;
 }
+.img-limit {
+  max-width: 200px;
+  width: 100%;
+}
+
 </style>
