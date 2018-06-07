@@ -6,7 +6,7 @@
           <hr>
         </div>
         <div class="col-12 col-md-4 text-center">
-          <h2>Credits</h2>
+          <h2>About</h2>
         </div>
         <div class="col-12 col-md-4 my-auto">
           <hr>

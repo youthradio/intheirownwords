@@ -81,7 +81,7 @@
                   <router-link :to="{ name: 'MoreCoverage' }"> <a v-on:click="menuItemClicked" class="nav-link" >More Coverage</a></router-link>
                 </li>
                 <li class="nav-item">
-                  <router-link :to="{ name: 'Credits' }"> <a v-on:click="menuItemClicked" class="nav-link" >Credits</a></router-link>
+                  <router-link :to="{ name: 'Credits' }"> <a v-on:click="menuItemClicked" class="nav-link" >About</a></router-link>
                 </li>
                 <li class="nav-item ml-auto">
                   <div class="nav-link h-100 d-flex flex-wrap align-items-end">

@@ -58,7 +58,7 @@ const router = new Router({
       }
     },
     {
-      path: '/credits',
+      path: '/about',
       name: 'Credits',
       meta: {
         scrollTo: '#credits'
