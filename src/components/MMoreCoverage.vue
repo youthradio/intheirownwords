@@ -23,7 +23,8 @@
             <div class="row">
               <div class="col-sm-6 col-md-4 mt-2" v-for="(item, index) in getMore" :key="index">
                 <div v-on:click="link(item.article_url)" class="card hand-over">
-                  <img class="card-img-top" :src="item.image" alt="Card image cap">
+                  <img class="card-img-top"
+                  :src="require('../assets/images/' + item.image)" alt="Card image cap">
                   <div class="card-body">
                     <h5 class="card-title">{{item.title}}</h5>
                     <p class="card-text" v-html="item.text"></p>

@@ -63,7 +63,7 @@
       "Pronoum": "Paulina",
       "Age": "17",
       "Quote": "\"It was a big shock to my best friend, four years into our friendship, when I came out as non-binary.\"",
-      "Essay": "<p class=\"font-weight-bold\"> Non-Binary Best Friend Blues </p>\n\n<p> I’m non-binary, but that doesn’t mean I like it when my best friend calls me “it.” Even though I tell her that it's offensive, and that I don't like it, she continues to do so. </p>\n\n<p>For the first few years while I was figuring out my gender identity, I kept my confusion and struggle to myself. I was afraid to tell others because I didn’t know how to explain that I didn’t feel like a girl and I didn’t think anyone would be able to understand. I was alone in my own world. </p>\n\n<p>So it was a big shock to my best friend, four years into our friendship, when I came out as non-binary. I remember explaining non-binary as not female, and not male. </p>\n\n<p>Her reply was “Oh, so you’re an it?”  </p>\n \n<p>I was heartbroken. It had taken me a lot of breakdowns, soul searching, and self-validation to identify a gender I was comfortable with. And she just keeps doing it.</p>\n\n<p><span class=\"p4text font-weight-bold bigger\">Every time my friend calls me “it,” even as a joke, it feels like she is betraying my trust. </span> </p>\n\n<p>I remember a time she yelled at me, \"Shut up, you're a girl!\" </p>\n\n<p>Perplexed and hurt, I defended myself. \"What are you talking about? No I'm not.\" I began to re-explain myself to her.</p>\n\n<p>She interrupted. “Yeah, I know.” Then, she dropped the conversation. </p>\n\n\n<p>Despite her ignorance, I won't end our friendship. We met as seventh graders and have helped each other grow. As a kid, I was moody, rude, and obnoxious. I had a big mouth and would say whatever was on my mind, especially if it was to judge someone else. Yet, she saw past that and appreciated me for who I was. Even when I pushed her away, she stuck to me like peanut butter. </p>\n\n\n<p>If it wasn’t for her, I would still be a brat. That’s why I value her so much, but that’s also why it hurts that she can’t understand my gender identity. Or if she does, she doesn’t get that it’s not something I want her to joke about. </p>\n\n\n<p>I want to have a sit-down conservation with her and say, “Whether you understand my gender identity or not, I feel disrespected and hurt when you call me ‘it.’ I feel like a foreign object, something that doesn’t belong, when you call me that. I’ve had people insult me using ‘it.’ There is nothing endearing about the word. <span class=\"p4text font-weight-bold\"> I’m not asking, I’m demanding you stop using that word.</span>”  </p>\n\n\n<p>I haven’t had the opportunity to have that talk with her yet, but I wish I didn’t have to have a conversation with her at all. I don’t like having to question where her mindset is. After all, she’s my best friend. She should have been taking me seriously from the start.</p>\n\n\n<p>When we’re just hanging out, it’s not something I’m usually thinking about. It’s only when she says something ignorant that I have to wonder, <span class=\"p4text font-weight-bold\">“Damn. Is that really how you feel?” </span>  </p>"
+      "Essay": "<p> I’m non-binary, but that doesn’t mean I like it when my best friend calls me “it.” Even though I tell her that it's offensive, and that I don't like it, she continues to do so. </p>\n\n<p>For the first few years while I was figuring out my gender identity, I kept my confusion and struggle to myself. I was afraid to tell others because I didn’t know how to explain that I didn’t feel like a girl and I didn’t think anyone would be able to understand. I was alone in my own world. </p>\n\n<p>So it was a big shock to my best friend, four years into our friendship, when I came out as non-binary. I remember explaining non-binary as not female, and not male. </p>\n\n<p>Her reply was “Oh, so you’re an it?”  </p>\n \n<p>I was heartbroken. It had taken me a lot of breakdowns, soul searching, and self-validation to identify a gender I was comfortable with. And she just keeps doing it.</p>\n\n<p><span class=\"p4text font-weight-bold bigger\">Every time my friend calls me “it,” even as a joke, it feels like she is betraying my trust. </span> </p>\n\n<p>I remember a time she yelled at me, \"Shut up, you're a girl!\" </p>\n\n<p>Perplexed and hurt, I defended myself. \"What are you talking about? No I'm not.\" I began to re-explain myself to her.</p>\n\n<p>She interrupted. “Yeah, I know.” Then, she dropped the conversation. </p>\n\n\n<p>Despite her ignorance, I won't end our friendship. We met as seventh graders and have helped each other grow. As a kid, I was moody, rude, and obnoxious. I had a big mouth and would say whatever was on my mind, especially if it was to judge someone else. Yet, she saw past that and appreciated me for who I was. Even when I pushed her away, she stuck to me like peanut butter. </p>\n\n\n<p>If it wasn’t for her, I would still be a brat. That’s why I value her so much, but that’s also why it hurts that she can’t understand my gender identity. Or if she does, she doesn’t get that it’s not something I want her to joke about. </p>\n\n\n<p>I want to have a sit-down conservation with her and say, “Whether you understand my gender identity or not, I feel disrespected and hurt when you call me ‘it.’ I feel like a foreign object, something that doesn’t belong, when you call me that. I’ve had people insult me using ‘it.’ There is nothing endearing about the word. <span class=\"p4text font-weight-bold\"> I’m not asking, I’m demanding you stop using that word.</span>”  </p>\n\n\n<p>I haven’t had the opportunity to have that talk with her yet, but I wish I didn’t have to have a conversation with her at all. I don’t like having to question where her mindset is. After all, she’s my best friend. She should have been taking me seriously from the start.</p>\n\n\n<p>When we’re just hanging out, it’s not something I’m usually thinking about. It’s only when she says something ignorant that I have to wonder, <span class=\"p4text font-weight-bold\">“Damn. Is that really how you feel?” </span>  </p>"
     },
     {
       "Person_Name": "Jen",
@@ -333,43 +333,55 @@
       "title": "Dating While Trans: A Love Story",
       "text": "Because trans folks don’t just deserve safety. We deserve love too.",
       "article_url": "https://youthradio.org/journalism/outloud/dating-while-trans-a-love-story/",
-      "image": "https://s3.amazonaws.com/media.youthradio.org/wp-content/uploads/2018/02/14131740/trans-heart.png"
+      "image": "love.png"
     },
     {
       "title": "What It Really Means To Be Gender-Fluid",
       "text": "Here’s the thing: gender fluidity is NOT a fashion statement or a trend.",
       "article_url": "https://youthradio.org/journalism/outloud/what-it-really-means-to-be-gender-fluid/",
-      "image": "https://youthradio.org/wp-content/uploads/2017/07/Jacobtobia-e1501191100723.jpg"
+      "image": "genderfluid.jpg"
     },
     {
       "title": "Understanding Singular “They”",
-      "text": "When I tell someone my preferred pronouns are they/ them/ their, I never know what to expect.",
+      "text": "When I tell someone my preferred pronouns are they/them/their, I never know what to expect.",
       "article_url": "https://youthradio.org/journalism/outloud/understanding-singular-they",
-      "image": "https://s3.amazonaws.com/media.youthradio.org/wp-content/uploads/2018/01/10124307/Desmond_1.jpg"
+      "image": "desmond.jpg"
     },
     {
       "title": "Seeing Like A Butterfly: Beyond The Gender Binary",
       "text": "Even the strongest LGBTQQIA advocates I know, struggle with the T part. Trans-gender.",
       "article_url": "https://youthradio.org/journalism/education/seeing-like-a-butterfly-beyond-the-gender-binary/",
-      "image": "https://s3.amazonaws.com/media.youthradio.org/wp-content/uploads/2014/06/23104200/Screen-Shot-2017-02-23-at-10.38.35-AM.png"
+      "image": "beyond.jpg"
     },
     {
       "title": "Trans Teen Longs For True Pride\n",
       "text": "When I attended the Pride parade for the first time this week, I was longing to feel a deep sense of community, but I actually felt more like a spectator looking in.",
       "article_url": "https://youthradio.org/journalism/outloud/trans-teen-longs-for-true-pride/",
-      "image": "https://s3.amazonaws.com/media.youthradio.org/wp-content/uploads/2015/07/IMG_9021-1024x682.jpg"
+      "image": "pride.jpg"
     },
     {
-      "title": "Gender Fluid Generation: Evolving Gender Norms At School",
-      "text": "The torchbearers of gender fluidity aren’t just celebrities or politicians, but kids.",
-      "article_url": "https://youthradio.org/journalism/education/gender-fluid-generation-evolving-gender-norms-at-school/",
-      "image": "https://s3.amazonaws.com/media.youthradio.org/wp-content/uploads/2015/02/IMG_0200-1024x682.jpg"
+      "title": "Searching for a Gender Identity",
+      "text": "I was always confused kid. When I wasn’t questioning my sexuality, I was questioning my gender.",
+      "article_url": "https://youthradio.org/journalism/outloud/searching-for-a-gender-identity/",
+      "image": "searching.jpg"
     },
     {
       "title": "Queer Students Open Up About Politics, Gender, Bathrooms",
       "text": "LGBTQ high school students in Denver, Colorado to reflect on Trump’s decision to no longer require schools to allow transgender students to use bathrooms that match their gender identity.",
       "article_url": "https://youthradio.org/journalism/health/queer-students-react-to-trumps-trans-bathroom-decision/",
-      "image": "https://s3.amazonaws.com/media.youthradio.org/wp-content/uploads/2017/02/07171550/20170302-IMG_71221-780x440.jpg"
+      "image": "bathroom.jpg"
+    },
+    {
+      "title": "Trans YouTubers Say They Are Being Censored. Is It The Algorithm?",
+      "text": "LGBTQ YouTubers have recently been posting screenshots on social media of their videos getting demonetized or put in restricted mode, ultimately controlling what their followers can watch.",
+      "article_url": "https://youthradio.org/journalism/outloud/trans-youtubers-say-they-are-being-censored-and-an-algorithm-may-be-to-blame/",
+      "image": "youtube.jpg"
+    },
+    {
+      "title": "Teens are Queering Up Prom",
+      "text": "Trans folks are winning prom queen, and prom kings are wearing dresses.",
+      "article_url": "https://youthradio.org/journalism/outloud/teens-are-queering-up-prom/",
+      "image": "Klaine_prom_gif.gif"
     }
   ]
 }
