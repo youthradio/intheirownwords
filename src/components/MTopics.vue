@@ -80,6 +80,11 @@ export default {
           name: a[1].topic,
           image: a[1].topicImg
         })) // return object with slug an topic
+    },
+    isIframe () {
+      if (this.$route.params.iframe) {
+        return this.$route.params.iframe.toLowerCase() === 'iframe'
+      }
     }
   },
   methods: {
@@ -101,11 +106,16 @@ export default {
       }) // go to slide event page
     },
     handleSlideClick (slide) {
-      this.$router.push({
-        name: 'Conversation',
-        params: { topic: slide.name.split('bt-slide-')[1] },
-        meta: { scrollTo: '#conversation' }
-      }) // go to slide event page
+      const t = slide.name.split('bt-slide-')[1]
+      if (!this.isIframe) {
+        this.$router.push({
+          name: 'Conversation',
+          params: { topic: t },
+          meta: { scrollTo: '#conversation' }
+        }) // go to slide event page
+      } else {
+        window.open('https://yri.youthradio.org/intheirownwords/c/' + t, '_blank')
+      }
     }
   },
   components: {

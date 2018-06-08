@@ -82,7 +82,7 @@ const router = new Router({
       }
     },
     {
-      path: '/c/:topic',
+      path: '/c/:topic/:iframe?',
       name: 'Conversation',
       meta: {
         scrollTo: '#conversation'
@@ -96,6 +96,7 @@ const router = new Router({
       },
       props: {
         conversation: true,
+        header: true,
         topics: true,
         section: true
       }

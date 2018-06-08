@@ -25,9 +25,23 @@ export default {
     this.isLoading = true
     this.$store.dispatch('fetchData') // fetch data on store vuex
     // this.$root.$emit('triggerScroll')
+  },
+  computed: {
+    isIframe () {
+      if (this.$route.params.iframe) {
+        return this.$route.params.iframe.toLowerCase() === 'iframe'
+      }
+    }
+  },
+  mounted () {
+    const elementHeight = 'elementHeight:' + this.$root.$el.scrollHeight
+    parent.postMessage(elementHeight, '*')
+    window.addEventListener('resize', () => {
+      const elementHeight = 'elementHeight:' + this.$root.$el.scrollHeight
+      parent.postMessage(elementHeight, '*')
+    })
   }
 }
-
 </script>
 
 <style>

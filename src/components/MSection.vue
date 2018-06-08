@@ -23,10 +23,16 @@
             <div v-for="(data, person, index) in getPeople" :key="index" :class="[ (isHome ? 'col-12' : 'col-6'), 'col-md-3']">
               <div :class="[data.info.Person_Class,'row py-2']">
                 <div class="col-12 col-md-12 text-center">
-                  <router-link :to="{ name: 'PersonRoute', params: { person: person }}">
+                  <router-link v-if="!isIframe" :to="{ name: 'PersonRoute', params: { person: person }}">
                       <img class="img-fluid img-limit" :src="require('../assets/images/' + data.info.Person_Image)">
                       <h5> {{ person }} </h5>
                   </router-link>
+                  <a v-else class="nav-link"
+                  :href="'https://yri.youthradio.org/intheirownwords/p/' + person"
+                  target="_blank">
+                    <img class="img-fluid img-limit" :src="require('../assets/images/' + data.info.Person_Image)">
+                    <h5> {{ person }} </h5>
+                  </a>
                 </div>
                 <div class="col-12 col-md-12 my-auto text-center">
                   <div class="text-md-center">
@@ -61,6 +67,11 @@ export default {
     },
     isHome () {
       return this.$route.name === 'Home'
+    },
+    isIframe () {
+      if (this.$route.params.iframe) {
+        return this.$route.params.iframe.toLowerCase() === 'iframe'
+      }
     }
   }
 }

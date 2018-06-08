@@ -47,8 +47,11 @@
     </div>
     <div id="menu" class="no-margin">
       <div class="row my-3">
-        <div class="col-8 col-md-4">
-          <a class="navbar-brand" href="https://www.youthradio.org" target="_blank">
+        <div :class="['col-8', !isIframe? 'col-md-4' :  'col-md-2']">
+          <a
+          class="navbar-brand"
+          :href="!isIframe? 'https://www.youthradio.org' : 'https://yri.youthradio.org/intheirownwords/'"
+          target="_blank">
             <svg viewBox="0 0 515.01251 245.6125" height="50">
               <g transform="matrix(1.25,0,0,-1.25,0,245.6125)" id="g10">
                 <g transform="scale(0.1,0.1)" id="g12">
@@ -58,13 +61,19 @@
             </svg>
           </a>
         </div>
-        <div class="col-12 order-2 col-md-4 order-md-1 text-md-center">
+        <div :class="['col-12 order-2', !isIframe ? 'col-md-4' : 'col-md-8', 'order-md-1 text-md-center']">
           <h1>
-            <router-link :to="{ name: 'Home', params: {}}"><a class="nav-link">In Their Own Words</a></router-link>
+            <router-link v-if="!isIframe" :to="{ name: 'Home', params: {}} "><a class="nav-link">In Their Own Words</a></router-link>
+            <a v-else class="nav-link"
+            href="https://yri.youthradio.org/intheirownwords"
+            target="_blank">In Their Own Words</a>
           </h1>
+          <p>
+            In Their Own Words is an exploration of non-binary gender identity created by non-binary teens and young adults.
+          </p>
         </div>
-        <div class="col-4 order-1 col-md-4 order-md-2">
-          <nav class="navbar navbar-expand-md navbar-custom">
+        <div :class="['col-4 order-1', !isIframe ? 'col-md-4 order-md-2' : 'col-md-2', 'order-md-2']">
+          <nav v-if="!isIframe" class="navbar navbar-expand-md navbar-custom">
             <div class="ml-auto">
               <button id="menu-btn" class="navbar-toggler custom-toggler"
                   type="button"
@@ -117,10 +126,12 @@ export default {
     }
   },
   mounted () {
-    this.$el.querySelector('#menu-btn').addEventListener('click', () => {
-      const el = this.$el.querySelector('.navbar-collapse')
-      el.classList.contains('collapse') ? el.classList.remove('collapse') : el.classList.add('collapse')
-    })
+    if (!this.isIframe) {
+      this.$el.querySelector('#menu-btn').addEventListener('click', () => {
+        const el = this.$el.querySelector('.navbar-collapse')
+        el.classList.contains('collapse') ? el.classList.remove('collapse') : el.classList.add('collapse')
+      })
+    }
     if (this.isHome) {
       const colors = [
         ['#f5a623', '#4a90e2'],
@@ -162,6 +173,11 @@ export default {
   computed: {
     isHome () {
       return this.$route.name === 'Home'
+    },
+    isIframe () {
+      if (this.$route.params.iframe) {
+        return this.$route.params.iframe.toLowerCase() === 'iframe'
+      }
     }
   }
 }
@@ -208,7 +224,9 @@ h1 span {
 p {
   color: white;
 }
-
+#menu p {
+  color: gray;
+}
 .navbar-custom {
   background-color: none;
 }
