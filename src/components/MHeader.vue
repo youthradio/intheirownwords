@@ -13,7 +13,7 @@
 
       </div>
       <div class="row h-100 justify-content-center no-margin">
-        <div class="col-10 col-md-5 mx-auto my-auto">
+        <div class="col-10 col-md-6 col-lg-5 mx-auto my-auto">
           <router-link :to="{ name: 'Home', params: {}}">
             <a>
               <div class="d-flex justify-content-center align-items-center">
@@ -285,7 +285,7 @@ p {
      font-size: 25px;
   }
   p {
-    font-size: 18px;
+    font-size: 22px;
   }
   .img-splash {
     max-width: 140px;
@@ -302,7 +302,7 @@ p {
      font-size: 20px;
   }
   p {
-    font-size: 15px;
+    font-size: 16px;
   }
   .img-splash {
     max-width: 90px;
