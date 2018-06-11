@@ -68,7 +68,7 @@
             href="https://yri.youthradio.org/intheirownwords"
             target="_blank">In Their Own Words</a>
           </h1>
-          <p>
+          <p v-if="isIframe">
             In Their Own Words is an exploration of non-binary gender identity created by non-binary teens and young adults.
           </p>
         </div>
