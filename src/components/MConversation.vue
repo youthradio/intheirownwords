@@ -27,12 +27,12 @@
           :class="[(index == activeLine) || enableTranscript ? 'active' : 'inactive','row my-auto']">
           <div :class="[line.posLeft?'order-1':'order-2', 'col-3', 'col-md-2', 'p-1']">
             <router-link v-if="line.image && !isIframe" :to="{ name: 'PersonRoute', params: { person: line.name }}">
-                <img class="img-fluid img-limit" :src="require('../assets/images/' + line.image )">
+                <img class="img-fluid img-limit profile-shadow" :src="require('../assets/images/' + line.image )">
             </router-link>
             <a v-if="line.image && isIframe" class="nav-link"
             :href="'https://yri.youthradio.org/intheirownwords/p/' + line.name"
             target="_blank">
-              <img class="img-fluid img-limit" :src="require('../assets/images/' + line.image )">
+              <img class="img-fluid img-limit profile-shadow" :src="require('../assets/images/' + line.image )">
             </a>
           </div>
           <div :class="[line.cssclass, line.posLeft?'order-2':'order-1 curve-right','my-auto', 'col-9']" :id="`transcript-${index}`">

@@ -225,3 +225,7 @@ h2 {
 a {
     text-decoration: none;
 }
+
+.profile-shadow:hover {
+  filter: drop-shadow(3px 3px 2px gray);
+}
