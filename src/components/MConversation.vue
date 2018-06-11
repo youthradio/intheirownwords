@@ -2,7 +2,7 @@
   <main id="conversation">
     <div class="row">
       <div class="col-12 col-md-8 offset-md-2">
-        <div class="row text-center pt-3 sticky-top fixed-topic">
+        <div id="player-container" class="row text-center pt-3 sticky-top fixed-topic">
           <!--selected -->
           <div class="col-12">
             <h3 v-if="selectedTopic">{{ selectedTopic.name }}</h3>
@@ -214,6 +214,37 @@ export default {
       activeLine: 0,
       enableTranscript: true
     }
+  },
+  mounted () {
+    const eventMethod = window.addEventListener ? 'addEventListener' : 'attachEvent'
+    const eventer = window[eventMethod]
+    const messageEvent = eventMethod === 'attachEvent' ? 'onmessage' : 'message'
+    // Listen for event
+    eventer(messageEvent, (e) => {
+      // Check that message being passed is the documentHeight
+      if ((typeof e.data === 'string') &&
+          (e.data.indexOf('iframeTop:') > -1) &&
+          (e.data.indexOf('scrollY:') > -1)) {
+        const values = e.data.split(',')
+
+        const iframeTop = parseFloat(values[0].split('iframeTop:')[1])
+        const scrollY = parseFloat(values[1].split('scrollY:')[1])
+        const playerEle = this.$el.querySelector('#player-container')
+        const playerContainer = this.$el
+
+        const playerContainerTop = parseFloat(playerContainer.getBoundingClientRect().top)
+
+        if (scrollY > iframeTop + playerContainerTop) {
+          playerEle.style.position = 'relative'
+          playerEle.style.top = (scrollY - iframeTop - playerContainerTop + 0) + 'px'
+          console.log('Received', iframeTop, scrollY, (iframeTop + playerContainerTop))
+        } else {
+          playerEle.style.top = '0px'
+        }
+        // do stuff with the height
+        // document.getElementById('yritow').height = height + 'px';
+      }
+    }, false)
   },
   components: {
     Plyr
