@@ -46,10 +46,9 @@
       </div>
     </div>
     <div id="menu" class="no-margin">
-      <div class="row my-3">
-        <div :class="['col-1', !isIframe ? 'col-md-4' : 'col-md-2']">
+      <div class="row my-2">
+        <div :class="['col-2', !isIframe ? 'col-lg-4  my-auto' : 'col-lg-2']">
           <a
-          class="navbar-brand"
           :href="!isIframe? 'https://www.youthradio.org' : 'https://yri.youthradio.org/intheirownwords/'"
           target="_blank">
 
@@ -66,10 +65,10 @@
             </svg>
           </a>
         </div>
-        <div :class="['col-10', !isIframe ? 'col-md-4' : 'col-md-8', 'text-center']">
+        <div :class="['col-8 my-auto', !isIframe ? 'col-lg-4' : 'col-lg-8', 'text-center']">
           <h1>
-            <router-link v-if="!isIframe" :to="{ name: 'Home', params: {}} "><a class="nav-link">In Their Own Words</a></router-link>
-            <a v-else class="nav-link"
+            <router-link v-if="!isIframe" :to="{ name: 'Home', params: {}} "><a class="">In Their Own Words</a></router-link>
+            <a v-else
             href="https://yri.youthradio.org/intheirownwords"
             target="_blank">In Their Own Words</a>
           </h1>
@@ -77,28 +76,29 @@
             In Their Own Words is an exploration of non-binary gender identity created by non-binary teens and young adults.
           </p>
         </div>
-        <div :class="['col-1', !isIframe ? 'col-md-4' : 'col-md-2']">
-          <nav v-if="!isIframe" class="navbar navbar-expand-md navbar-custom">
-            <div class="ml-auto">
-              <button id="menu-btn" class="navbar-toggler custom-toggler"
-                  type="button"
-                  data-toggle="collapse"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-            </div>
-            <div class="collapse navbar-collapse text-right">
+        <div id="menu-items" :class="['col-2 my-auto text-right', !isIframe ? 'col-lg-4' : 'col-lg-2']">
+          <div v-if="!isIframe" class="d-lg-none" id="menu-btn">
+            <svg width="30" height="30" viewBox="0 0 448 512" class="">
+              <path fill="gray" d="M442 114H6a6 6 0 0 1-6-6V84a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6z">
+            </path>
+            </svg>
+          </div>
+          <div v-if="!isIframe" class="row d-none d-lg-flex">
+            <div class="col-12 ml-auto">
+              <div class="row text-right">
+                <div class="col-6 my-auto">
+                    <router-link :to="{ name: 'MoreCoverage' }">
+                      <a v-on:click="menuItemClicked">More Coverage</a>
+                    </router-link>
+                </div>
+                <div class="col-3 my-auto">
+                    <router-link :to="{ name: 'Credits' }">
+                      <a v-on:click="menuItemClicked">About</a>
+                    </router-link>
+                </div>
+                <div class="col-3 my-auto">
 
-              <ul class="navbar-nav mt-2 mt-lg-0">
-                <li class="nav-item">
-                  <router-link :to="{ name: 'MoreCoverage' }"> <a v-on:click="menuItemClicked" class="nav-link" >More Coverage</a></router-link>
-                </li>
-                <li class="nav-item">
-                  <router-link :to="{ name: 'Credits' }"> <a v-on:click="menuItemClicked" class="nav-link" >About</a></router-link>
-                </li>
-                <li class="nav-item ml-auto">
-                  <div class="nav-link h-100 d-flex flex-wrap align-items-end">
+                  <div class="d-flex justify-content-end">
                     <div class="p-1">
                       <a v-on:click="tweetMessage()" class="hand-over" title="Share on Twitter">
                         <svg class="float-right" fill="#3ec0b3" width="20" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="White" x="0px" y="0px" viewBox="0 0 400 400" style="enable-background:new 0 0 400 400;" xml:space="preserve">
@@ -112,10 +112,11 @@
                       </a>
                     </div>
                   </div>
-                </li>
-              </ul>
+
+                </div>
+              </div>
             </div>
-          </nav>
+          </div>
         </div>
       </div>
     </div>
@@ -232,37 +233,6 @@ p {
 #menu p {
   color: gray;
 }
-.navbar-custom {
-  background-color: none;
-  padding: 0 0;
-}
-/* change the brand and text color */
-.navbar-custom .navbar-brand,
-.navbar-custom .navbar-text {
-  color: rgba(0,0,0,.8);
-}
-/* change the link color */
-.navbar-custom .navbar-nav .nav-link {
-  color: rgba(0,0,0,.5);
-}
-/* change the color of active or hovered links */
-.navbar-custom .nav-item.active .nav-link,
-.navbar-custom .nav-item:hover .nav-link {
-  color: #000;
-}
-.navbar-collapse {
-  flex-grow: unset;
-}
-/* } */
-/* @media (min-width: 576px) {
-  h3, h3 a {
-    color: grey;
-  }
-  .splash-header {
-    height: 10vh;
-  }
-} */
-
 @keyframes Pattern {
   0% {
     background-position: 0 0;
@@ -304,6 +274,9 @@ p {
   h1 {
      font-size: 30px;
   }
+  h1 a {
+     font-size: 22px;
+  }
   h3 {
      font-size: 20px;
   }
@@ -317,16 +290,16 @@ p {
     width: 100%;
   }
 }
-.custom-toggler.navbar-toggler {
-    border-color: rgba(0,0,0, 0.7);
-    padding-left: 6px;
-    padding-right: 6px;
-
-}
-.custom-toggler .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-}
 a:hover {
   text-decoration: none;
+  color: black;
+}
+
+a {
+  color: gray;
+}
+
+#menu-items a {
+  font-size: 0.9em;
 }
 </style>
