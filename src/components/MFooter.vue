@@ -1,19 +1,19 @@
 <template>
   <footer class="row text-center m-5">
     <div class="col-12">
-      {{msg}}
+      <p>
+          © 2018
+        <a href="https://www.youthradio.org">
+          Youth Radio
+        </a>
+      </p>
     </div>
   </footer>
 </template>
 
 <script>
 export default {
-  name: 'MFooter',
-  data () {
-    return {
-      msg: '© 2018 Youth Radio'
-    }
-  }
+  name: 'MFooter'
 }
 </script>
 
