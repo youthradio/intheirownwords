@@ -229,3 +229,6 @@ a {
 .profile-shadow:hover {
   filter: drop-shadow(3px 3px 2px gray);
 }
+p .b {
+  color: #333345;
+}

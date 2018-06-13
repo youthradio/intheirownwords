@@ -34,7 +34,7 @@
           <div class="d-flex justify-content-center flex-wrap">
             <div class="mt-4">
               <p>
-                In Their Own Words is an exploration of non-binary gender identity created by non-binary teens and young adults.
+                In <span class="b">Their</span> Own Words is an exploration of non-binary gender identity created by non-binary teens and young adults.
               </p>
             </div>
             <div v-on:click="scrollTo" class="mt-4 hand-over">
@@ -67,13 +67,17 @@
         </div>
         <div :class="['col-8 my-auto', !isIframe ? 'col-lg-4' : 'col-lg-8', 'text-center']">
           <h1>
-            <router-link v-if="!isIframe" :to="{ name: 'Home', params: {}} "><a class="">In Their Own Words</a></router-link>
+            <router-link v-if="!isIframe" :to="{ name: 'Home', params: {}} ">
+              <a class="">
+                In <span class="b">Their</span> Own Words
+              </a>
+            </router-link>
             <a v-else
             href="https://yri.youthradio.org/intheirownwords"
-            target="_blank">In Their Own Words</a>
+            target="_blank">In <span class="b">Their</span> Own Words</a>
           </h1>
           <p v-if="isIframe">
-            In Their Own Words is an exploration of non-binary gender identity created by non-binary teens and young adults.
+            In <span class="b">Their</span> Own Words is an exploration of non-binary gender identity created by non-binary teens and young adults.
           </p>
         </div>
         <div id="menu-items" :class="['col-2 my-auto text-right', !isIframe ? 'col-lg-4' : 'col-lg-2']">
@@ -224,7 +228,13 @@ h1 {
 h1 .w {
   color: white;
 }
-h1 span {
+p .b {
+  color: #333345;
+}
+h1 .b {
+  color: #333345;
+}
+.splash-header h1 span {
   display: block;
 }
 p {
