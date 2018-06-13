@@ -110,7 +110,8 @@ const router = new Router({
       components: {
         header: MHeader,
         profile: MPersonProfile,
-        topics: MTopics
+        topics: MTopics,
+        footer: MFooter
       },
       props: {
         profile: true,
