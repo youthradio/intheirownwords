@@ -82,9 +82,13 @@
         </div>
         <div id="menu-items" :class="['col-2 my-auto text-right', !isIframe ? 'col-lg-4' : 'col-lg-2']">
           <div v-if="!isIframe" class="d-lg-none" id="menu-btn">
-            <svg width="30" height="30" viewBox="0 0 448 512" class="">
+            <svg width="30" height="30" viewBox="0 0 448 512" class="bt-open">
               <path fill="gray" d="M442 114H6a6 6 0 0 1-6-6V84a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6z">
             </path>
+            </svg>
+            <svg width="30" height="30" viewBox="0 0 320 512" class="bt-closed d-none">
+              <path fill="gray" d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z">
+              </path>
             </svg>
           </div>
           <div v-if="!isIframe" class="row d-none d-lg-flex">
@@ -123,6 +127,36 @@
           </div>
         </div>
       </div>
+      <div id="menu-mobile" v-if="!isIframe" class="row d-lg-none text-center menu collapse">
+        <div class="col-12 flex-wrap">
+          <router-link :to="{ name: 'Home', params: {}}">
+            <h6>Home</h6>
+          </router-link>
+          <hr>
+          <router-link v-for="person in getPeople"
+            :key="person.name"
+            :to="{ name: 'PersonRoute', params: { person: person.param }}">
+            <h6>{{ person.name }}</h6>
+          </router-link>
+          <hr>
+          <router-link v-for="topic in getTopics"
+            :key="topic.name"
+            :to="{ name: 'Conversation', params: { topic: topic.param }}">
+            <h6>{{ topic.name }}</h6>
+          </router-link>
+          <hr>
+          <router-link :to="{ name: 'MoreCoverage' }">
+            <a v-on:click="menuItemClicked">
+              <h6>More Coverage</h6>
+            </a>
+          </router-link>
+          <router-link :to="{ name: 'Credits' }">
+            <a v-on:click="menuItemClicked">
+              <h6>About</h6>
+            </a>
+          </router-link>
+        </div>
+      </div>
     </div>
   </header>
 </template>
@@ -138,8 +172,16 @@ export default {
   mounted () {
     if (!this.isIframe) {
       this.$el.querySelector('#menu-btn').addEventListener('click', () => {
-        const el = this.$el.querySelector('.navbar-collapse')
-        el.classList.contains('collapse') ? el.classList.remove('collapse') : el.classList.add('collapse')
+        const el = this.$el.querySelector('#menu-mobile')
+        if (el.classList.contains('collapse')) {
+          el.classList.remove('collapse')
+          this.$el.querySelector('.bt-open').classList.add('d-none')
+          this.$el.querySelector('.bt-closed').classList.remove('d-none')
+        } else {
+          el.classList.add('collapse')
+          this.$el.querySelector('.bt-open').classList.remove('d-none')
+          this.$el.querySelector('.bt-closed').classList.add('d-none')
+        }
       })
     }
     if (this.isHome) {
@@ -153,7 +195,7 @@ export default {
   },
   watch: {
     '$route' (to, from) {
-      const el = this.$el.querySelector('.navbar-collapse')
+      const el = this.$el.querySelector('#menu-mobile')
       if (!el.classList.contains('collapse')) { el.classList.add('collapse') }
     }
   },
@@ -188,6 +230,18 @@ export default {
       if (this.$route.params.iframe) {
         return this.$route.params.iframe.toLowerCase() === 'iframe'
       }
+    },
+    getPeople () {
+      return Object.keys(this.$store.state.allPeople).map(e => ({
+        name: e,
+        param: e
+      }))
+    },
+    getTopics () {
+      return Object.entries(this.$store.state.allTopics).map(p => ({
+        name: p[1].topic,
+        param: p[0]
+      }))
     }
   }
 }
@@ -311,5 +365,11 @@ a {
 
 #menu-items a {
   font-size: 0.9em;
+}
+.menu hr{
+  border: 0;
+  height: 1px;
+  background: #3ec0b3;
+  background-image: linear-gradient(to right, #fff, #3ec0b3, #fff);
 }
 </style>
