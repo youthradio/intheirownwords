@@ -196,7 +196,11 @@ export default {
   watch: {
     '$route' (to, from) {
       const el = this.$el.querySelector('#menu-mobile')
-      if (!el.classList.contains('collapse')) { el.classList.add('collapse') }
+      if (!el.classList.contains('collapse')) {
+        el.classList.add('collapse')
+        this.$el.querySelector('.bt-open').classList.remove('d-none')
+        this.$el.querySelector('.bt-closed').classList.add('d-none')
+      }
     }
   },
   methods: {
