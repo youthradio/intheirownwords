@@ -40,8 +40,12 @@
     <div id="menu" class="no-margin">
       <div class="row my-2">
         <div :class="['col-2', !isIframe ? 'col-lg-4  my-auto' : 'col-lg-2']">
-          <a
-          :href="!isIframe? 'https://www.youthradio.org' : 'https://yri.youthradio.org/intheirownwords/'"
+          <router-link v-if="!isIframe" :to="{ name: 'Home', params: {}}">
+              <div class="youthradio-simple d-lg-none"></div>
+              <div class="youthradio d-none d-lg-flex" style="fill:black"></div>
+          </router-link>
+          <a v-else
+          href="https://yri.youthradio.org/intheirownwords/"
           target="_blank">
             <div class="youthradio-simple d-lg-none"></div>
             <div class="youthradio d-none d-lg-flex" style="fill:black"></div>
