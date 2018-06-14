@@ -129,7 +129,7 @@ export default {
     },
     tweetMessage (person, msg) {
       const url = 'https://yri.youthradio.org/intheirownwords'
-      const tweet = `#intheirownwords: “${msg}” - ${person} via @youthradio ${url}`
+      const tweet = `#InTheirOwnWords: “${msg}” - ${person} via @youthradio ${url}`
       const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweet)}`
       window.open(tweetUrl, 'pop', 'width=600, height=400, scrollbars=no')
     }
