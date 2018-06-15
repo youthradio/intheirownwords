@@ -143,7 +143,7 @@ export default {
   computed: {
     playerOptions () {
       return {
-        iconUrl: require('../../node_modules/plyr/dist/plyr.svg'),
+        iconUrl: '/static/plyr.svg',
         'volume': 1,
         controls: [
           'play-large', // The large play button in the center
