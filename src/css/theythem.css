@@ -64,7 +64,7 @@ h2,h3,h4, h5, h6, h6 a,h2 a{
 	color:grey;
 }
 
-h3, h2, h4, h5{
+h2, h4 {
 	font-weight: 800;
 }
 

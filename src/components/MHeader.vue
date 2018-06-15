@@ -54,16 +54,16 @@
         <div :class="['col-8 my-auto', !isIframe ? 'col-lg-4' : 'col-lg-8', 'text-center']">
           <h1>
             <router-link v-if="!isIframe" :to="{ name: 'Home', params: {}} ">
-              <a class="">
-                In <span class="b">Their</span> Own Words
+              <a class="b">
+                in <span class="g">their</span> own words
               </a>
             </router-link>
             <a v-else
             href="https://yri.youthradio.org/intheirownwords"
-            target="_blank">In <span class="b">Their</span> Own Words</a>
+            target="_blank" class="b"> in <span class="g">their</span> own words</a>
           </h1>
           <p v-if="isIframe">
-            In <span class="b">Their</span> Own Words is an exploration of non-binary gender identity created by non-binary teens and young adults.
+            In <span class="g">Their</span> Own Words is an exploration of non-binary gender identity created by non-binary teens and young adults.
           </p>
         </div>
         <div id="menu-items" :class="['col-2 my-auto text-right', !isIframe ? 'col-lg-4' : 'col-lg-2']">
@@ -318,8 +318,8 @@ p {
   bottom: 0;
 }
 @media screen and (min-width: 576px) {
-  h1 {
-     font-size: 50px;
+  h1, h1 a {
+     font-size: 40px;
   }
   h3 {
      font-size: 25px;
@@ -335,11 +335,8 @@ p {
   }
 }
 @media screen and (max-width: 576px) {
-  h1 {
-     font-size: 30px;
-  }
-  h1 a {
-     font-size: 22px;
+  h1, h1 a {
+     font-size: 25px;
   }
   h3 {
      font-size: 20px;
@@ -360,6 +357,9 @@ a:hover {
 }
 
 a {
+  color: gray;
+}
+a .g{
   color: gray;
 }
 

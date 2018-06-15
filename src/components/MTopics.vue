@@ -6,7 +6,7 @@
       </div>
       <div class="col-12 col-md-6 text-center">
         <h3>
-          In Conversation About</h3>
+          in conversation about</h3>
       </div>
       <div class="col-12 col-md-3 my-auto">
         <hr>
