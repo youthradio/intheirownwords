@@ -26,7 +26,7 @@
           <div class="d-flex justify-content-center flex-wrap">
             <div class="mt-4">
               <p>
-                In <span class="b">Their</span> Own Words is an exploration of non-binary gender identity created by non-binary teens and young adults.
+                In Their Own Words is an exploration of non-binary gender identity created by non-binary teens and young adults.
               </p>
             </div>
             <div v-on:click="scrollTo" class="mt-4 hand-over">
@@ -211,13 +211,13 @@ export default {
     },
     tweetMessage () {
       const url = 'https://yri.youthradio.org/intheirownwords'
-      const tweet = encodeURIComponent('#') + `InTheirOwnWords: “tweet message message message” - via @youthradio ${url}`
-      const tweetUrl = `https://twitter.com/intent/tweet?text=${tweet}`
+      const tweet =`4 #nonbinary young adults @youthradio talk about their experiences with gender #InTheirOwnWords: ${url}`
+      const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweet)}`
       window.open(tweetUrl, 'pop', 'width=600, height=400, scrollbars=no')
     },
     facebookThis () {
       const url = 'https://yri.youthradio.org/intheirownwords'
-      const title = 'In their own words'
+      const title = 'In Their Own Words'
       const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}&t=${title}`
       window.open(facebookUrl, '_blank')
     }
