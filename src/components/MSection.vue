@@ -79,9 +79,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-a {
-  text-decoration: none;
-}
+
 .break:after {
     content: '\A';
     white-space: pre;

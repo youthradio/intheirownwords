@@ -51,16 +51,16 @@
             <div class="youthradio d-none d-lg-flex" style="fill:black"></div>
           </a>
         </div>
-        <div :class="['col-8 my-auto', !isIframe ? 'col-lg-4' : 'col-lg-8', 'text-center']">
+        <div :class="['col-8 my-auto', !isIframe ? 'col-lg-4' : 'col-lg-8', 'text-center title-link']">
           <h1>
             <router-link v-if="!isIframe" :to="{ name: 'Home', params: {}} ">
-              <a class="b">
+              <a>
                 in <span class="g">their</span> own words
               </a>
             </router-link>
             <a v-else
             href="https://yri.youthradio.org/intheirownwords"
-            target="_blank" class="b"> in <span class="g">their</span> own words</a>
+            target="_blank"> in <span class="g">their</span> own words</a>
           </h1>
           <p v-if="isIframe">
             In <span class="g">Their</span> Own Words is an exploration of non-binary gender identity created by non-binary teens and young adults.
@@ -279,6 +279,9 @@ h3, h3 a {
 h1 {
   color: #333345;
 }
+a:hover {
+  text-decoration: none;
+}
 h1 .w {
   color: white;
 }
@@ -351,18 +354,23 @@ p {
     width: 100%;
   }
 }
-a:hover {
-  text-decoration: none;
-  color: black;
+
+.title-link a{
+  color: #333345;
+}
+.title-link a .g {
+  color: gray;
+}
+.title-link a:hover {
+  color: gray;
+}
+.title-link a:hover .g {
+  color: #333345;
 }
 
 a {
   color: gray;
 }
-a .g{
-  color: gray;
-}
-
 #menu-items a {
   font-size: 0.9em;
 }
