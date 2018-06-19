@@ -123,7 +123,12 @@ export default {
         window.scroll({ top: transcriptTop + window.scrollY - titleBoxH - 5, behavior: 'smooth' })
       } else {
         const transcriptEl = this.$el.querySelector(`#transcript-${index}`)
-        transcriptEl.scrollIntoView({ behavior: 'smooth' })
+        const isIE = !!document.documentMode
+        if (isIE) {
+          transcriptEl.scrollIntoView()
+        } else {
+          transcriptEl.scrollIntoView({ behavior: 'smooth' })
+        }
       }
     },
     scrollTop () {
