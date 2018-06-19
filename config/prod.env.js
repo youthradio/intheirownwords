@@ -1,5 +1,5 @@
 'use strict'
 module.exports = {
   NODE_ENV: '"production"',
-  ROUTER_BASE: '"/intheirownwords"'
+  ROUTER_BASE: '"/intheirownwords/"'
 }

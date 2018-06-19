@@ -143,7 +143,7 @@ export default {
   computed: {
     playerOptions () {
       return {
-        iconUrl: process.env.ROUTER_BASE + '/static/plyr.svg',
+        iconUrl: process.env.ROUTER_BASE + 'static/plyr.svg',
         'volume': 1,
         controls: [
           'play-large', // The large play button in the center
