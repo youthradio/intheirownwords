@@ -11,7 +11,7 @@ eventer(messageEvent,function(e) {
 
     // Split string from identifier
     var height = e.data.split('elementHeight:')[1];
-    console.log("Received", height)
+  //  console.log("Received", height)
    // do stuff with the height
     document.getElementById('yritow').height = height + 'px';
 

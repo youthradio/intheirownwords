@@ -117,9 +117,14 @@ export default {
       return t.map((m, i) => m * sm[i]).reduce((a, b) => a + b) // return total in seconds
     },
     scrollTo (index) {
-      const titleBoxH = this.$el.querySelector('.fixed-topic').getBoundingClientRect().height
-      const transcriptTop = this.$el.querySelector(`#transcript-${index}`).getBoundingClientRect().top
-      window.scroll({ top: transcriptTop + window.scrollY - titleBoxH - 5, behavior: 'smooth' })
+      if (!this.isIframe) {
+        const titleBoxH = this.$el.querySelector('.fixed-topic').getBoundingClientRect().height
+        const transcriptTop = this.$el.querySelector(`#transcript-${index}`).getBoundingClientRect().top
+        window.scroll({ top: transcriptTop + window.scrollY - titleBoxH - 5, behavior: 'smooth' })
+      } else {
+        const transcriptEl = this.$el.querySelector(`#transcript-${index}`)
+        transcriptEl.scrollIntoView({ behavior: 'smooth' })
+      }
     },
     scrollTop () {
       window.scroll({
@@ -236,8 +241,8 @@ export default {
 
         if (scrollY > iframeTop + playerContainerTop) {
           playerEle.style.position = 'relative'
-          playerEle.style.top = (scrollY - iframeTop - playerContainerTop + 0) + 'px'
-          console.log('Received', iframeTop, scrollY, (iframeTop + playerContainerTop))
+          playerEle.style.top = (scrollY - iframeTop - playerContainerTop + 29) + 'px'
+          // console.log('Received', iframeTop, scrollY, (iframeTop + playerContainerTop))
         } else {
           playerEle.style.top = '0px'
         }
