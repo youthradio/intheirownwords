@@ -5,7 +5,7 @@
       "Conversation": "transcript-1",
       "Topic": "Presentation",
       "Audio": "Presentation_DesmondPaulinaMaliaJen",
-      "Topic_Image": "comingout.svg",
+      "Topic_Image": "presentation.svg",
       "Text": "",
       "People": "Desmond, Jen, Paulina, Malia"
     },
@@ -14,7 +14,7 @@
       "Conversation": "transcript-2",
       "Topic": "Love & Dating",
       "Audio": "LoveVox_DesmondJenPaulina",
-      "Topic_Image": "presentation.svg",
+      "Topic_Image": "love.svg",
       "Text": "",
       "People": "Desmond, Jen, Paulina"
     },
@@ -23,7 +23,7 @@
       "Conversation": "transcript-3",
       "Topic": "Race",
       "Audio": "Race_PaulinaMaliaJen",
-      "Topic_Image": "identity.svg",
+      "Topic_Image": "race.svg",
       "Text": "",
       "People": "Paulina, Jen, Malia"
     },
