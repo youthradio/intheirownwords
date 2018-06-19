@@ -122,13 +122,14 @@ export default {
         const transcriptTop = this.$el.querySelector(`#transcript-${index}`).getBoundingClientRect().top
         window.scroll({ top: transcriptTop + window.scrollY - titleBoxH - 5, behavior: 'smooth' })
       } else {
+        const isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0  // eslint-disable-line
+        const isFirefox = typeof InstallTrigger !== 'undefined'
+        const isChrome = !!window.chrome && !!window.chrome.webstore
         const transcriptEl = this.$el.querySelector(`#transcript-${index}`)
-        const isIE = !!document.documentMode
-        const isEdge = !isIE && !!window.StyleMedia
-        if (isIE || isEdge) {
-          transcriptEl.scrollIntoView(false)
-        } else {
+        if (isOpera || isFirefox || isChrome) {
           transcriptEl.scrollIntoView({ behavior: 'smooth' })
+        } else {
+          transcriptEl.scrollIntoView(false)
         }
       }
     },
