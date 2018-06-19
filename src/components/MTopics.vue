@@ -6,7 +6,7 @@
       </div>
       <div class="col-12 col-md-6 text-center">
         <h3>
-          In Conversation About</h3>
+          in conversation about</h3>
       </div>
       <div class="col-12 col-md-3 my-auto">
         <hr>
@@ -28,7 +28,7 @@
             <!-- <router-link :to="{ name: 'Conversation', params: { topic: topic.slug }}"> -->
             <div class="m-3 p-3">
                <div class="row">
-                <img :src="require(`../assets/images/${topic.image}`)" class="img-limit">
+                <img :src="require(`../assets/images/${topic.image}`)" class="img-limit topic-img">
                </div>
                <div class="row">
                  <div class="col">
@@ -146,6 +146,7 @@ button {
 .img-limit {
   max-height: 200px;
   width: 100%;
+  height: 100%;
 }
 
 </style>

@@ -45,8 +45,5 @@ export default {
 </script>
 
 <style>
-  @import url("https://fonts.googleapis.com/css?family=Ramabhadra");
-  @import url("https://fonts.googleapis.com/css?family=Montserrat");
-  @import url("https://fonts.googleapis.com/css?family=Lato");
   @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,800");
 </style>

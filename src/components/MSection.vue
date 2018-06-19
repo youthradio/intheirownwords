@@ -24,13 +24,13 @@
               <div :class="[data.info.Person_Class,'row py-2']">
                 <div class="col-12 col-md-12 text-center">
                   <router-link v-if="!isIframe" :to="{ name: 'PersonRoute', params: { person: person }}">
-                      <img class="img-fluid img-limit" :src="require('../assets/images/' + data.info.Person_Image)">
+                      <img class="img-fluid img-limit profile-shadow" :src="require('../assets/images/' + data.info.Person_Image)">
                       <h5> {{ person }} </h5>
                   </router-link>
                   <a v-else class="nav-link"
                   :href="'https://yri.youthradio.org/intheirownwords/p/' + person"
                   target="_blank">
-                    <img class="img-fluid img-limit" :src="require('../assets/images/' + data.info.Person_Image)">
+                    <img class="img-fluid img-limit profile-shadow" :src="require('../assets/images/' + data.info.Person_Image)">
                     <h5> {{ person }} </h5>
                   </a>
                 </div>
@@ -79,9 +79,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-a {
-  text-decoration: none;
-}
+
 .break:after {
     content: '\A';
     white-space: pre;
