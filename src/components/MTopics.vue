@@ -28,7 +28,7 @@
             <!-- <router-link :to="{ name: 'Conversation', params: { topic: topic.slug }}"> -->
             <div class="m-3 p-3">
                <div class="row">
-                <img :src="require(`../assets/images/${topic.image}`)" class="img-limit">
+                <img :src="require(`../assets/images/${topic.image}`)" class="img-limit topic-img">
                </div>
                <div class="row">
                  <div class="col">
