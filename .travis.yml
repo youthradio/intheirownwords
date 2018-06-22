@@ -1,9 +1,6 @@
 language: node_js
 node_js:
   - node
-cache:
-  directories:
-  - node_modules
 before_install:
   - npm install -g csvtojson
   - cd csvdata/
@@ -16,7 +13,8 @@ env:
 after_success:
   - cd $TRAVIS_BUILD_DIR/scripts
   - sh -e makeHtaccess.sh $PROJECT_URL
-  - cp .htaccess $TRAVIS_BUILD_DIR/dist
+  - node siteMap.js
+  - cp robots.txt sitemap.xml .htaccess $TRAVIS_BUILD_DIR/dist
   - cd $TRAVIS_BUILD_DIR/dist
   - cp index.html 404.html
 deploy:
