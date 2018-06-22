@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /intheirownwords/
+
+Sitemap: https://yri.youthradio.org/intheirownwords/sitemap.xml
