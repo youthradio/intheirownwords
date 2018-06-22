@@ -135,7 +135,7 @@ export default {
     },
     scrollTop () {
       window.scroll({
-        top: this.$root.$el.querySelector('.splash-header').offsetHeight,
+        top: this.$root.$el.querySelector('#menu'),
         behavior: 'smooth'
       })
     },
