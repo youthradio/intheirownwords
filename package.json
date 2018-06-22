@@ -9,7 +9,8 @@
     "start": "node server.js",
     "lint": "eslint --ext .js,.vue src",
     "build": "node build/build.js",
-    "heroku-postbuild": "npm install --no-shrinkwrap && npm run build"
+    "postinstall": "npm run build",
+    "heroku-postbuild": "cd scripts && node siteMap.js && cp sitemap.xml robots.txt ../dist/"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
