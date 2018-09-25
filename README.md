@@ -14,6 +14,12 @@ Merge the JSONs using `jq`, install it with `brew install jq`
 jq -s '{data:.[0]}*{people:.[1]}*{"transcript-1":.[2]}*{"transcript-2":.[3]}*{"transcript-3":.[4]}*{"transcript-4":.[5]}' Data.csv.json People.csv.json transcript-1.csv.json transcript-2.csv.json transcript-3.csv.json transcript-4.csv.json > alldata.json
 ```
 
+## Iframed Version script tag
+
+```html
+<iframe id="yritow" width="100%" src="https://yri.youthradio.org/intheirownwords/c/race/iframe" frameborder="0" scrolling="no" allowfullscreen></iframe>
+<script async defer src="https://yri.youthradio.org/intheirownwords/static/iframe.min.js"></script>
+```
 
 ## Vue.js Front End Build Setup
 
