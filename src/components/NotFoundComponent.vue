@@ -1,7 +1,7 @@
 <template>
-  <div class='row'>
-    <div class='col-12 h-100 my-auto'>
-      <h1>{{msg}}</h1>
+  <div class="row">
+    <div class="col-12 h-100 my-auto">
+      <h1>{{ msg }}</h1>
     </div>
   </div>
 </template>

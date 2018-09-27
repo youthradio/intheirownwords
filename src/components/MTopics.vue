@@ -15,34 +15,62 @@
 
     <div class="row text-center position-relative">
       <div class="col-12">
-        <div class="d-md-none left-arrow hand-over" v-on:click="prevTopic">
-          <svg width="32" height="32" class="octicon octicon-triangle-left" viewBox="0 0 6 16" version="1.1" aria-hidden="true"><path fill-rule="evenodd" d="M6 2L0 8l6 6V2z"></path></svg>
+        <div
+          class="d-md-none left-arrow hand-over"
+          @click="prevTopic">
+          <svg
+            width="32"
+            height="32"
+            class="octicon octicon-triangle-left"
+            viewBox="0 0 6 16"
+            version="1.1"
+            aria-hidden="true"><path
+              fill-rule="evenodd"
+              d="M6 2L0 8l6 6V2z" /></svg>
         </div>
-        <carousel ref="slider"
-                  :per-page="1"
-                  :paginationEnabled="false"
-                  :loop="true"
-                  :perPageCustom="[[768, 4]]">
+        <carousel
+          ref="slider"
+          :per-page="1"
+          :pagination-enabled="false"
+          :loop="true"
+          :per-page-custom="[[768, 4]]">
 
-          <slide class="hand-over" v-for="topic in selectedTopics" :key="`slide--${topic.slug}`" :data-name="`bt-slide-${topic.slug}`" @slideClick="handleSlideClick">
+          <slide
+            v-for="topic in selectedTopics"
+            :key="`slide--${topic.slug}`"
+            :data-name="`bt-slide-${topic.slug}`"
+            class="hand-over"
+            @slideClick="handleSlideClick">
             <!-- <router-link :to="{ name: 'Conversation', params: { topic: topic.slug }}"> -->
             <div class="m-3 p-3">
-               <div class="row">
-                <img :src="require(`../assets/images/${topic.image}`)" class="img-limit topic-img">
-               </div>
-               <div class="row">
-                 <div class="col">
-                   <h5>
-                     {{topic.name}}
-                   </h5>
-                 </div>
-               </div>
-             </div>
+              <div class="row">
+                <img
+                  :src="require(`../assets/images/${topic.image}`)"
+                  class="img-limit topic-img">
+              </div>
+              <div class="row">
+                <div class="col">
+                  <h5>
+                    {{ topic.name }}
+                  </h5>
+                </div>
+              </div>
+            </div>
             <!-- </router-link> -->
           </slide>
         </carousel>
-        <div class="d-md-none right-arrow hand-over" v-on:click="nextTopic">
-            <svg width="32" height="32" class="octicon octicon-triangle-right" viewBox="0 0 6 16" version="1.1" aria-hidden="true"><path fill-rule="evenodd" d="M0 14l6-6-6-6v12z"></path></svg>
+        <div
+          class="d-md-none right-arrow hand-over"
+          @click="nextTopic">
+          <svg
+            width="32"
+            height="32"
+            class="octicon octicon-triangle-right"
+            viewBox="0 0 6 16"
+            version="1.1"
+            aria-hidden="true"><path
+              fill-rule="evenodd"
+              d="M0 14l6-6-6-6v12z" /></svg>
         </div>
       </div>
     </div>
@@ -54,19 +82,25 @@
 import { Carousel, Slide } from 'vue-carousel'
 
 export default {
+  name: 'MTopics',
+  components: {
+    'carousel': Carousel,
+    'slide': Slide
+  },
   props: {
     topic: {
-      type: String
+      type: String,
+      default: ''
     },
     topics: {
-      type: Object
+      type: Object,
+      default: null
     },
     person: {
       type: String,
       default: ''
     }
   },
-  name: 'MTopics',
   data () {
     return {
     }
@@ -88,10 +122,10 @@ export default {
     }
   },
   methods: {
-    nextTopic (event) {
+    nextTopic () {
       this.$refs.slider.advancePage()
     },
-    prevTopic (event) {
+    prevTopic () {
       this.$refs.slider.advancePage('backward')
     },
     onPageChange (index) {
@@ -118,10 +152,6 @@ export default {
       }
     }
   },
-  components: {
-    'carousel': Carousel,
-    'slide': Slide
-  }
 }
 </script>
 

@@ -6,7 +6,9 @@
         <hr>
       </div>
       <div class="col-12 col-md-2 text-center text-md-left">
-        <img class="img-fluid img-limit" :src="require('../assets/images/' + getPerson.image)">
+        <img
+          :src="require('../assets/images/' + getPerson.image)"
+          class="img-fluid img-limit">
       </div>
       <div :class="[getPerson.cssclass, 'col-12 col-md-4 text-center text-md-left']">
         <h2>{{ getPerson.name }}</h2>
@@ -19,21 +21,23 @@
     </div>
 
     <div class="row my-3">
-        <div class="col-12 col-md-8 offset-md-2" v-html="getPerson.essay">
-        </div>
-      </div>
-
+      <div
+        class="col-12 col-md-8 offset-md-2"
+        v-html="getPerson.essay" />
     </div>
+
+  </div>
 </template>
 
 <script>
 export default {
+  name: 'MPersonProfile',
   props: {
     person: {
-      type: String
+      type: String,
+      default: ''
     }
   },
-  name: 'MPersonProfile',
   computed: {
     getPerson () {
       return ({

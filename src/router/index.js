@@ -21,7 +21,7 @@ const scrollBehavior = function (to, from, savedPosition) {
     // savedPosition is only available for popstate navigations.
     return savedPosition
   } else {
-    return new Promise((resolve, reject) => {
+    return new Promise(() => {
       // check if any matched route config has meta that requires scrolling to top
       const scrollTo = to.meta.scrollTo
       if (scrollTo) {
@@ -37,7 +37,7 @@ const scrollBehavior = function (to, from, savedPosition) {
 const router = new Router({
   mode: 'history',
   scrollBehavior,
-  base: process.env.ROUTER_BASE,
+  base: process.env.BASE_URL,
   routes: [
     {
       path: '/',

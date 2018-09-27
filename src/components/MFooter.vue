@@ -2,9 +2,9 @@
   <footer class="row text-center m-5">
     <div class="col-12">
       <p>
-          © 2018
-        <a href="https://www.youthradio.org">
-          Youth Radio
+        © 2018
+        <a href="https://yr.media">
+          YR Media
         </a>
       </p>
     </div>
