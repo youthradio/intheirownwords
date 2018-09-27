@@ -5,7 +5,10 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "rm -rf dist/* && vue-cli-service build --no-clean",
-    "lint": "vue-cli-service lint"
+    "start": "node server.js",
+    "postinstall": "npm run build",
+    "lint": "vue-cli-service lint",
+    "heroku-postbuild": "cd scripts && node siteMap.js && cp sitemap.xml robots.txt ../dist/"
   },
   "dependencies": {
     "bootstrap": "^4.1.3",
