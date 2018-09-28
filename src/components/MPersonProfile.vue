@@ -22,7 +22,7 @@
 
     <div class="row my-3">
       <div
-        class="col-12 col-md-8 offset-md-2"
+        :class="[!isIframe?'col-md-8 offset-md-2':'','col-12']"
         v-html="getPerson.essay" />
     </div>
 

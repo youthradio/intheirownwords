@@ -1,7 +1,7 @@
 <template>
   <main id="conversation">
     <div class="row">
-      <div class="col-12 col-md-8 offset-md-2">
+      <div :class="[!isIframe?'col-md-8 offset-md-2':'','col-12']">
         <div
           id="player-container"
           class="row text-center pt-3 sticky-top fixed-topic">
