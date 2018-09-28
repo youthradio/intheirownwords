@@ -22,7 +22,7 @@
 
     <div class="row my-3">
       <div
-        :class="[!isIframe?'col-md-8 offset-md-2':'','col-12']"
+        :class="[isIframe?'': 'col-md-8 offset-md-2','col-12']"
         v-html="getPerson.essay" />
     </div>
 
@@ -30,8 +30,13 @@
 </template>
 
 <script>
+import CommonUtils from '../mixins/CommonUtils'
+
 export default {
   name: 'MPersonProfile',
+  mixins: [
+    CommonUtils,
+  ],
   props: {
     person: {
       type: String,
