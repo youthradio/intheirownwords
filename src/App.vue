@@ -45,5 +45,5 @@ export default {
 </script>
 
 <style>
-  @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,800");
+  @import url("https://yri.youthradio.org/yr-typography/yr-typography.css");
 </style>

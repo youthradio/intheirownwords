@@ -333,7 +333,7 @@ export default {
   transition: width 0s ease-in-out;
 }
 .fixed-topic {
-  background: #FCFCFC;
+  background: #FFFFFF;
 }
 .custom-padding {
   padding: 0.30rem;
