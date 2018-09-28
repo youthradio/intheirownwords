@@ -1,7 +1,7 @@
 ''<template>
   <header>
-    <div 
-      v-if="isHome" 
+    <div
+      v-if="isHome && !isIframe"
       class="splash-header">
       <div class="d-flex justify-content-center justify-content-sm-start bd-highlight p-2">
         <div class="youthradio-w" />
@@ -12,8 +12,8 @@
             <a>
               <div class="d-flex justify-content-center align-items-center">
                 <div class="mr-4">
-                  <img 
-                    :src="require('../assets/images/NB_symbol.svg')" 
+                  <img
+                    :src="require('../assets/images/NB_symbol.svg')"
                     class="img-splash">
                 </div>
                 <div class="">
@@ -33,18 +33,18 @@
                 In Their Own Words is an exploration of non-binary gender identity created by non-binary teens and young adults.
               </p>
             </div>
-            <div 
-              class="mt-4 hand-over" 
+            <div
+              class="mt-4 hand-over"
               @click="scrollTo">
-              <svg 
-                width="30" 
-                height="30" 
-                class="octicon octicon-triangle-down" 
-                fill="white" 
-                viewBox="0 0 12 16" 
-                version="1.1" 
-                aria-hidden="true"><path 
-                  fill-rule="evenodd" 
+              <svg
+                width="30"
+                height="30"
+                class="octicon octicon-triangle-down"
+                fill="white"
+                viewBox="0 0 12 16"
+                version="1.1"
+                aria-hidden="true"><path
+                  fill-rule="evenodd"
                   d="M0 5l6 6 6-6H0z" /></svg>
             </div>
           </div>
@@ -52,75 +52,60 @@
 
       </div>
     </div>
-    <div 
-      id="menu" 
+    <div
+      id="menu"
       class="no-margin">
       <div class="row my-2">
         <div :class="['col-2', !isIframe ? 'col-lg-4  my-auto' : 'col-lg-2']">
-          <router-link 
-            v-if="!isIframe" 
+          <router-link
             :to="{ name: 'Home', params: {}}">
             <div class="youthradio-simple d-lg-none" />
-            <div 
-              class="youthradio d-none d-lg-flex" 
+            <div
+              class="youthradio d-none d-lg-flex"
               style="fill:black" />
           </router-link>
-          <a 
-            v-else
-            href="https://yri.youthradio.org/intheirownwords/"
-            target="_blank">
-            <div class="youthradio-simple d-lg-none" />
-            <div 
-              class="youthradio d-none d-lg-flex" 
-              style="fill:black" />
-          </a>
         </div>
         <div :class="['col-8 my-auto', !isIframe ? 'col-lg-4' : 'col-lg-8', 'text-center title-link']">
           <h1>
-            <router-link 
-              v-if="!isIframe" 
+            <router-link
               :to="{ name: 'Home', params: {}} ">
               <a>
                 in <span class="g">their</span> own words
               </a>
             </router-link>
-            <a 
-              v-else
-              href="https://yri.youthradio.org/intheirownwords"
-              target="_blank"> in <span class="g">their</span> own words</a>
           </h1>
           <p v-if="isIframe">
             In <span class="g">Their</span> Own Words is an exploration of non-binary gender identity created by non-binary teens and young adults.
           </p>
         </div>
-        <div 
-          id="menu-items" 
+        <div
+          id="menu-items"
           :class="['col-2 my-auto text-right', !isIframe ? 'col-lg-4' : 'col-lg-2']">
-          <div 
-            v-if="!isIframe" 
-            id="menu-btn" 
+          <div
+            v-if="!isIframe"
+            id="menu-btn"
             class="d-lg-none">
-            <svg 
-              width="30" 
-              height="30" 
-              viewBox="0 0 448 512" 
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 448 512"
               class="bt-open">
-              <path 
-                fill="gray" 
+              <path
+                fill="gray"
                 d="M442 114H6a6 6 0 0 1-6-6V84a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6z" />
             </svg>
-            <svg 
-              width="30" 
-              height="30" 
-              viewBox="0 0 320 512" 
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 320 512"
               class="bt-closed d-none">
-              <path 
-                fill="gray" 
+              <path
+                fill="gray"
                 d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z" />
             </svg>
           </div>
-          <div 
-            v-if="!isIframe" 
+          <div
+            v-if="!isIframe"
             class="row d-none d-lg-flex">
             <div class="col-12 ml-auto">
               <div class="row text-right">
@@ -138,17 +123,17 @@
 
                   <div class="d-flex justify-content-end">
                     <div class="p-1">
-                      <a 
-                        class="hand-over" 
-                        title="Share on Twitter" 
+                      <a
+                        class="hand-over"
+                        title="Share on Twitter"
                         @click="tweetMessage()">
                         <div class="twitter" />
                       </a>
                     </div>
                     <div class="p-1 ">
-                      <a 
-                        class="hand-over" 
-                        title="Share on Facebook" 
+                      <a
+                        class="hand-over"
+                        title="Share on Facebook"
                         @click="facebookThis()">
                         <div class="facebook" />
                       </a>
@@ -161,23 +146,23 @@
           </div>
         </div>
       </div>
-      <div 
-        v-if="!isIframe" 
-        id="menu-mobile" 
+      <div
+        v-if="!isIframe"
+        id="menu-mobile"
         class="row d-lg-none text-center menu collapse">
         <div class="col-12 flex-wrap">
           <router-link :to="{ name: 'Home', params: {}}">
             <h6>Home</h6>
           </router-link>
           <hr>
-          <router-link 
+          <router-link
             v-for="person in getPeople"
             :key="person.name"
             :to="{ name: 'PersonRoute', params: { person: person.param }}">
             <h6>{{ person.name }}</h6>
           </router-link>
           <hr>
-          <router-link 
+          <router-link
             v-for="topic in getTopics"
             :key="topic.name"
             :to="{ name: 'Conversation', params: { topic: topic.param }}">
@@ -196,17 +181,17 @@
           </router-link>
           <div class="d-flex justify-content-center">
             <div class="p-1">
-              <a 
-                class="hand-over" 
-                title="Share on Twitter" 
+              <a
+                class="hand-over"
+                title="Share on Twitter"
                 @click="tweetMessage()">
                 <div class="twitter" />
               </a>
             </div>
             <div class="p-1 ">
-              <a 
-                class="hand-over" 
-                title="Share on Facebook" 
+              <a
+                class="hand-over"
+                title="Share on Facebook"
                 @click="facebookThis()">
                 <div class="facebook" />
               </a>
@@ -219,22 +204,19 @@
 </template>
 
 <script>
+import CommonUtils from '../mixins/CommonUtils'
+
 export default {
   name: 'MHeader',
+  mixins: [
+    CommonUtils,
+  ],
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
   },
   computed: {
-    isHome () {
-      return this.$route.name === 'Home'
-    },
-    isIframe () {
-      if (this.$route.params.iframe) {
-        return this.$route.params.iframe.toLowerCase() === 'iframe'
-      }
-    },
     getPeople () {
       return Object.keys(this.$store.state.allPeople).map(e => ({
         name: e,
@@ -250,11 +232,13 @@ export default {
   },
   watch: {
     '$route' () {
-      const el = this.$el.querySelector('#menu-mobile')
-      if (!el.classList.contains('collapse')) {
-        el.classList.add('collapse')
-        this.$el.querySelector('.bt-open').classList.remove('d-none')
-        this.$el.querySelector('.bt-closed').classList.add('d-none')
+      if(!this.isIframe){
+        const el = this.$el.querySelector('#menu-mobile')
+        if (!el.classList.contains('collapse')) {
+          el.classList.add('collapse')
+          this.$el.querySelector('.bt-open').classList.remove('d-none')
+          this.$el.querySelector('.bt-closed').classList.add('d-none')
+        }
       }
     }
   },
@@ -273,7 +257,7 @@ export default {
         }
       })
     }
-    if (this.isHome) {
+    if (this.isHome && !this.isIframe) {
       const colors = [
         ['#f5a623', '#4a90e2'],
         ['#BD10e0', '#3dc4a6']]

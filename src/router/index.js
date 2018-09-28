@@ -40,7 +40,7 @@ const router = new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
+      path: '/:iframe?',
       name: 'Home',
       meta: {
         scrollTo: '#menu'

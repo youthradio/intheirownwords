@@ -3,16 +3,27 @@
     <router-view name="header" />
     <router-view name="profile" />
     <router-view name="section" />
+    <router-view
+      v-if="isIframe"
+      name="topics" />
     <router-view name="conversation" />
-    <router-view name="topics" />
-    <router-view name="footer" />
+    <router-view
+      v-if="!isIframe"
+      name="topics" />
+    <router-view
+      v-if="!isIframe"
+      name="footer" />
   </div>
 </template>
 
 <script>
+import CommonUtils from './mixins/CommonUtils'
 
 export default {
   name: 'App',
+  mixins: [
+    CommonUtils,
+  ],
   data () {
     return {
       isLoading: false,
@@ -21,16 +32,18 @@ export default {
       allPeople: null
     }
   },
-  computed: {
-    isIframe () {
-      if (this.$route.params.iframe) {
-        return this.$route.params.iframe.toLowerCase() === 'iframe'
-      }
-    }
-  },
   created () {
     this.isLoading = true
     this.$store.dispatch('fetchData') // fetch data on store vuex
+    let isIframe = false
+    if (this.$route.params.iframe) {
+      isIframe = this.$route.params.iframe.toLowerCase() === 'iframe'
+    }
+    this.$store.dispatch({
+      type: 'setIframe',
+      isIframe,
+    }) // fetch data on store vuex
+
     // this.$root.$emit('triggerScroll')
   },
   mounted () {

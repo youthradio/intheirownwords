@@ -80,6 +80,7 @@
 
 <script>
 import { Carousel, Slide } from 'vue-carousel'
+import CommonUtils from '../mixins/CommonUtils'
 
 export default {
   name: 'MTopics',
@@ -87,6 +88,9 @@ export default {
     'carousel': Carousel,
     'slide': Slide
   },
+  mixins: [
+    CommonUtils,
+  ],
   props: {
     topic: {
       type: String,
@@ -114,11 +118,6 @@ export default {
           name: a[1].topic,
           image: a[1].topicImg
         })) // return object with slug an topic
-    },
-    isIframe () {
-      if (this.$route.params.iframe) {
-        return this.$route.params.iframe.toLowerCase() === 'iframe'
-      }
     }
   },
   methods: {
@@ -141,15 +140,11 @@ export default {
     },
     handleSlideClick (slide) {
       const t = slide.name.split('bt-slide-')[1]
-      if (!this.isIframe) {
-        this.$router.push({
-          name: 'Conversation',
-          params: { topic: t },
-          meta: { scrollTo: '#conversation' }
-        }) // go to slide event page
-      } else {
-        window.open('https://yri.youthradio.org/intheirownwords/c/' + t, '_blank')
-      }
+      this.$router.push({
+        name: 'Conversation',
+        params: { topic: t },
+        meta: { scrollTo: '#conversation' }
+      }) // go to slide event page
     }
   },
 }
