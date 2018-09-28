@@ -343,7 +343,7 @@ p {
   color: white;
 }
 #menu p {
-  color: gray;
+  color: #2e2e2e;
 }
 @keyframes Pattern {
   0% {

@@ -31,7 +31,7 @@ body {
 h1, h1 a{
 	font-family: 'Roboto Mono', sans-serif;
 	font-weight: 700;
-	color: grey;
+	color: #2e2e2e;
 	font-size: 30px;
 
 }
@@ -44,7 +44,7 @@ li {
 }
 
 li a{
-	color: grey;
+	color: #2e2e2e;
 	/* font-size: 1.1em; */
 }
 
@@ -57,13 +57,13 @@ p {
 	font-size: 1rem;
   line-height: 1.7;
   letter-spacing: 0.5px;
-	color:grey;
+	color: #2e2e2e;
 }
 
 h2,h3,h4, h5, h6, h6 a,h2 a{
 	font-family: 'Roboto Mono', sans-serif;
   font-weight: 700;
-	color: grey;
+	color: #2e2e2e;
 }
 
 h2, h4 {
@@ -231,5 +231,5 @@ h2 {
   filter: drop-shadow(3px 3px 2px gray);
 }
 p .b {
-  color: #333345;
+  color: ##2e2e2e;
 }
