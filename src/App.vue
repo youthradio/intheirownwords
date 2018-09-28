@@ -18,6 +18,7 @@
 
 <script>
 import CommonUtils from './mixins/CommonUtils'
+import ResizeObserver from 'resize-observer-polyfill';
 
 export default {
   name: 'App',
@@ -46,14 +47,18 @@ export default {
 
     // this.$root.$emit('triggerScroll')
   },
-  mounted () {
-    const elementHeight = 'elementHeight:' + this.$root.$el.scrollHeight
-    parent.postMessage(elementHeight, '*')
-    window.addEventListener('resize', () => {
-      const elementHeight = 'elementHeight:' + this.$root.$el.scrollHeight
-      parent.postMessage(elementHeight, '*')
-    })
-  }
+  mounted() {
+    const elementRoot = this.$root.$el;
+    const resizeObserver = new ResizeObserver(entries => {
+      for (const entry of entries) {
+        const { height } = entry.contentRect;
+        const elementHeight = 'elementHeight:' + height;
+        // console.log(elementHeight);
+        parent.postMessage(elementHeight, '*');
+      }
+    });
+    resizeObserver.observe(elementRoot);
+  },
 }
 </script>
 

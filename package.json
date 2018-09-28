@@ -17,6 +17,7 @@
     "express": "^4.16.3",
     "express-force-https": "^1.0.0",
     "path": "^0.12.7",
+    "resize-observer-polyfill": "^1.5.0",
     "serve-static": "^1.13.2",
     "smoothscroll-polyfill": "^0.4.3",
     "url-polyfill": "^1.1.0",
