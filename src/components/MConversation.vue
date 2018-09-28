@@ -40,21 +40,12 @@
           :class="[(index == activeLine) || enableTranscript ? 'active' : 'inactive','row my-auto']">
           <div :class="[line.posLeft?'order-1':'order-2', 'col-3', 'col-md-2', 'p-1']">
             <router-link
-              v-if="line.image && !isIframe"
+              v-if="line.image"
               :to="{ name: 'PersonRoute', params: { person: line.name }}">
               <img
                 :src="require('../assets/images/' + line.image )"
                 class="img-fluid img-limit profile-shadow">
             </router-link>
-            <a
-              v-if="line.image && isIframe"
-              :href="'https://yri.youthradio.org/intheirownwords/p/' + line.name"
-              class="nav-link"
-              target="_blank">
-              <img
-                :src="require('../assets/images/' + line.image )"
-                class="img-fluid img-limit profile-shadow">
-            </a>
           </div>
           <div
             :class="[line.cssclass, line.posLeft?'order-2':'order-1 curve-right','my-auto', 'col-9']"
@@ -118,9 +109,13 @@
 
 <script>
 import 'vue-plyr'
+import CommonUtils from '../mixins/CommonUtils'
 
 export default {
   name: 'MConversation',
+  mixins: [
+    CommonUtils,
+  ],
   props: {
     topic: {
       type: String,
@@ -193,11 +188,6 @@ export default {
         })
       })
       return out
-    },
-    isIframe () {
-      if (this.$route.params.iframe) {
-        return this.$route.params.iframe.toLowerCase() === 'iframe'
-      }
     }
   },
   watch: {

@@ -7,12 +7,16 @@ const state = {
   isLoading: false,
   allTopics: null,
   allPeople: null,
+  isIframe: false,
   moreInfo: {}
 }
 const actions = {
   fetchData ({commit}) {
     const allData = require('../assets/data/alldata.json')
     commit('SET_DATA', allData)
+  },
+  setIframe({commit}, { isIframe }){
+    commit('SET_IFRAME', isIframe)
   }
 }
 const mutations = {
@@ -21,6 +25,9 @@ const mutations = {
     state.allPeople = filterPeople(state.allTopics, allData)
     state.moreInfo['credits'] = allData['credits'][0]
     state.moreInfo['coverage'] = allData['more-coverage']
+  },
+  SET_IFRAME (state, isIframe){
+    state.isIframe = isIframe;
   }
 }
 export default new Vuex.Store({
