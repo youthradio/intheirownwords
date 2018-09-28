@@ -26,4 +26,4 @@ deploy:
   keep-history: false
   target-branch: gh-pages
   on:
-    branch: vue-js
+    branch: new_platform
