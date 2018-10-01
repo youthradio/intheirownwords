@@ -33,8 +33,8 @@
           :per-page="1"
           :pagination-enabled="false"
           :loop="true"
-          :per-page-custom="[[768, 4]]">
-
+          :per-page-custom="[[768, 4]]"
+          :center-mode="true">
           <slide
             v-for="topic in selectedTopics"
             :key="`slide--${topic.slug}`"
@@ -173,7 +173,7 @@ button {
   width: 100%;
   height: 100%;
 }
-h5 {
+h5, h3 {
   color: gray;
 }
 
