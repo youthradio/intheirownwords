@@ -58,6 +58,7 @@
       <div class="row my-2">
         <div :class="['col-2', !isIframe ? 'col-lg-4  my-auto' : 'col-lg-2']">
           <router-link
+            v-if="!isIframe"
             :to="{ name: 'Home', params: {}}">
             <div class="youthradio-simple d-lg-none" />
             <div
@@ -66,7 +67,7 @@
           </router-link>
         </div>
         <div :class="['col-8 my-auto', !isIframe ? 'col-lg-4' : 'col-lg-8', 'text-center title-link']">
-          <h1>
+          <h1 v-if="!isIframe">
             <router-link
               :to="{ name: 'Home', params: {}} ">
               <a>
