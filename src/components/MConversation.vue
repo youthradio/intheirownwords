@@ -342,4 +342,7 @@ export default {
   -o-transition: opacity 1s ease-in-out;
   transition: opacity 1s ease-in-out;
 }
+h3 {
+  color: gray;
+}
 </style>
