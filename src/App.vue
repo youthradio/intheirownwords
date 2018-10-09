@@ -48,7 +48,7 @@ export default {
     // this.$root.$emit('triggerScroll')
   },
   mounted() {
-    const elementRoot = this.$root.$el;
+    const elementRoot = document.querySelector('html');
     const resizeObserver = new ResizeObserver(entries => {
       for (const entry of entries) {
         const { height } = entry.contentRect;
