@@ -55,7 +55,7 @@
     <div
       id="menu"
       class="no-margin">
-      <div class="row my-2">
+      <div class="row">
         <div :class="['col-2', !isIframe ? 'col-lg-4  my-auto' : 'col-lg-2']">
           <router-link
             v-if="!isIframe"
