@@ -278,13 +278,13 @@ export default {
       })
     },
     tweetMessage () {
-      const url = 'https://yri.youthradio.org/intheirownwords'
-      const tweet = `4 #nonbinary young adults @youthradio talk about their experiences with gender #InTheirOwnWords: ${url}`
+      const url = 'https://yr.media/intheirownwords'
+      const tweet = `4 #nonbinary young adults @itsyrmedia talk about their experiences with gender #InTheirOwnWords: ${url}`
       const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweet)}`
       window.open(tweetUrl, 'pop', 'width=600, height=400, scrollbars=no')
     },
     facebookThis () {
-      const url = 'https://yri.youthradio.org/intheirownwords'
+      const url = 'https://yr.media/intheirownwords'
       const title = 'In Their Own Words'
       const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}&t=${title}`
       window.open(facebookUrl, '_blank')

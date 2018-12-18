@@ -63,5 +63,5 @@ export default {
 </script>
 
 <style>
-  @import url("https://yri.youthradio.org/yr-typography/yr-typography.css");
+  @import url("https://yr.media/statics/yr-media-typography/yr-typography.css");
 </style>

@@ -269,8 +269,8 @@ export default {
       })
     },
     tweetMessage (person, msg) {
-      const url = 'https://yri.youthradio.org/intheirownwords'
-      const tweet = `#InTheirOwnWords: “${msg}” - via @youthradio ${url}`
+      const url = 'https://yr.media/intheirownwords'
+      const tweet = `#InTheirOwnWords: “${msg}” - via @itsyrmedia ${url}`
       const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweet)}`
       window.open(tweetUrl, 'pop', 'width=600, height=400, scrollbars=no')
     }
