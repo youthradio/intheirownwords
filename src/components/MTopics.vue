@@ -40,7 +40,7 @@
             :key="`slide--${topic.slug}`"
             :data-name="`bt-slide-${topic.slug}`"
             class="hand-over"
-            @slideClick="handleSlideClick">
+            @slideclick="handleSlideClick">
             <!-- <router-link :to="{ name: 'Conversation', params: { topic: topic.slug }}"> -->
             <div class="m-3 p-3">
               <div class="row">

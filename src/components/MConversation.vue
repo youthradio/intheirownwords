@@ -8,7 +8,7 @@
           <!--selected -->
           <div class="col-12">
             <h3 v-if="selectedTopic">{{ selectedTopic.name }}</h3>
-            <vue-plyr
+            <VuePlyr
               v-if="selectedTopic"
               ref="audioPlayer"
               :options="playerOptions"
@@ -29,7 +29,7 @@
                   type="audio/ogg">
                 Your browser does not support the audio tag.
               </audio>
-            </vue-plyr>
+            </VuePlyr>
           </div>
 
         </div>
@@ -108,11 +108,14 @@
 </template>
 
 <script>
-import 'vue-plyr'
+import VuePlyr from './VuePlyr.vue'
 import CommonUtils from '../mixins/CommonUtils'
 
 export default {
   name: 'MConversation',
+  components:{
+    VuePlyr
+  },
   mixins: [
     CommonUtils,
   ],
