@@ -3,7 +3,7 @@ module.exports = {
     sourceMap: true
   },
 
-  baseUrl: '/intheirownwords/',
+  publicPath: '/intheirownwords/',
   outputDir: 'dist',
   assetsDir: 'src/assets',
   runtimeCompiler: undefined,
