@@ -11,27 +11,27 @@
     "heroku-postbuild": "cd scripts && node siteMap.js && cp sitemap.xml robots.txt ../dist/"
   },
   "dependencies": {
-    "bootstrap": "^4.2.1",
+    "bootstrap": "^4.3.1",
     "connect-history-api-fallback": "^1.6.0",
-    "custom-event-polyfill": "^1.0.6",
-    "express": "^4.16.4",
+    "custom-event-polyfill": "^1.0.7",
+    "express": "^4.17.1",
     "express-force-https": "^1.0.0",
     "path": "^0.12.7",
-    "plyr": "^3.4.8",
+    "plyr": "^3.5.6",
     "resize-observer-polyfill": "^1.5.1",
-    "serve-static": "^1.13.2",
-    "smoothscroll-polyfill": "^0.4.3",
-    "url-polyfill": "^1.1.3",
-    "vue": "^2.6.3",
+    "serve-static": "^1.14.1",
+    "smoothscroll-polyfill": "^0.4.4",
+    "url-polyfill": "^1.1.7",
+    "vue": "^2.6.10",
     "vue-carousel": "^0.17.0",
-    "vue-router": "^3.0.2",
-    "vuex": "^3.1.0"
+    "vue-router": "^3.1.1",
+    "vuex": "^3.1.1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.4.0",
-    "@vue/cli-plugin-eslint": "^3.4.0",
-    "@vue/cli-service": "^3.4.0",
-    "vue-template-compiler": "^2.6.3"
+    "@vue/cli-plugin-babel": "^3.10.0",
+    "@vue/cli-plugin-eslint": "^3.10.0",
+    "@vue/cli-service": "^3.10.0",
+    "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {
     "root": true,
