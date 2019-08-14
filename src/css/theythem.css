@@ -85,11 +85,11 @@ h2 {
 }
 
 .p1text{
-	color: #f5a623;
+	/* color: #f5a623; */
 }
 
 .p1text h5, .p1text a, .p1text h4, .p1text h3,  .p1text h2, .p1text p, .p1text em{
-	color: #f5a623;
+	/* color: #f5a623; */
 }
 .p1text-border, .p1text-border a{
 	border-color: #f5a623;
@@ -108,10 +108,10 @@ h2 {
 }
 
 .p2text h5, .p2text a, .p2text h2, .p2text h4, .p2text h3, .p2text p, .p2text em {
-	color: #4a90e2;
+	/* color: #4a90e2; */
 }
 .p2text {
-	color: #4a90e2;
+	/* color: #4a90e2; */
 }
 .p2text-border, .p2text-border a{
 	border-color: #4a90e2;
@@ -126,11 +126,11 @@ h2 {
 }
 
 .p3text h5, .p3text a, .p3text h2, .p3text h4, .p3text h3, .p3text p, .p3text em {
-	color: #BD10e0;
+	/* color: #BD10e0; */
 }
 
 .p3text {
-	color: #BD10e0;
+	/* color: #BD10e0; */
 }
 
 .bigger {
@@ -148,10 +148,10 @@ h2 {
 }
 
 .p4text h5, .p4text a, .p4text h2, .p4text h4, .p4text h3, .p4text p, .p4text em{
-	color: #3dc4a6;
+	/* color: #3dc4a6; */
 }
 .p4text {
-	color: #3dc4a6;
+	/* color: #3dc4a6; */
 }
 .p4text-border, .p4text-border a{
 	border-color: #3dc4a6;
